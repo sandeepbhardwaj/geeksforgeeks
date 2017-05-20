@@ -1,4 +1,4 @@
-package graph;
+package com.geeksforgeeks.graph;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -25,11 +25,9 @@ public class Graph<T>
 			graph.put(dest, list);
 		}
 
-		// linking source with destination and destination with source
+		// linking source with destination
 		List<T> l = graph.get(source);
 		l.add(dest);
-		l = graph.get(dest);
-		l.add(source);
 	}
 
 	public void bfs(T source)
@@ -60,7 +58,6 @@ public class Graph<T>
 				}
 			}
 		}
-
 	}
 
 	public void traverse()
@@ -85,7 +82,7 @@ public class Graph<T>
 		g.addEdge(2, 0);
 		g.addEdge(2, 3);
 		g.addEdge(3, 3);
-
+		g.traverse();
 		System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
 
 		g.bfs(2);

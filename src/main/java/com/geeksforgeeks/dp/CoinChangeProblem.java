@@ -75,7 +75,6 @@ public class CoinChangeProblem
 		int amount = 10;
 		int[] v = { 2, 5, 3, 6 };
 		System.out.println("By Dynamic Programming " + changeCoin(v, amount));
-
 	}
 
 }

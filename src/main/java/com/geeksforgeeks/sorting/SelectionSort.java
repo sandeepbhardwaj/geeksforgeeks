@@ -30,22 +30,17 @@ package com.geeksforgeeks.sorting;
  * @author sandeep
  *
  */
-public class SelectionSort
-{
+public class SelectionSort {
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		int[] arr = { 4, 2, 2, 6, 1, 8, 10, 5 };
 
-		for (int i = 0; i < arr.length; i++)
-		{
+		for (int i = 0; i < arr.length; i++) {
 
 			int minIndex = i;
 			// Compare all the element with this current min
-			for (int j = i + 1; j < arr.length; j++)
-			{
-				if (arr[minIndex] > arr[j])
-				{
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[minIndex] > arr[j]) {
 					minIndex = j;
 				}
 			}
@@ -56,8 +51,7 @@ public class SelectionSort
 			arr[i] = temp;
 		}
 
-		for (int i = 0; i < arr.length; i++)
-		{
+		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
 

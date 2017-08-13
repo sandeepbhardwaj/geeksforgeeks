@@ -19,21 +19,17 @@ import java.util.Scanner;
  * @author sbha47
  *
  */
-public class OddOccurrence
-{
-	public static void main(String[] args)
-	{
+public class OddOccurrence {
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int noOfTestCases = sc.nextInt();
 
-		for (int i = 0; i < noOfTestCases; i++)
-		{
+		for (int i = 0; i < noOfTestCases; i++) {
 			int sizeOfArr = sc.nextInt();
 
 			// populate array
 			int result = 0;
-			for (int j = 0; j < sizeOfArr; j++)
-			{
+			for (int j = 0; j < sizeOfArr; j++) {
 
 				result = result ^ sc.nextInt();
 			}

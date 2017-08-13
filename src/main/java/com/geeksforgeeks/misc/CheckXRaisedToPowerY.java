@@ -20,35 +20,28 @@ package com.geeksforgeeks.misc;
  * @author Sandeep Bhardwaj
  *
  */
-public class CheckXRaisedToPowerY
-{
+public class CheckXRaisedToPowerY {
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		int num = 1;
 		boolean isRaised = false;
 
-		for (int x = 2; x < num; x++)
-		{
-			if (num == 1)
-			{
+		for (int x = 2; x < num; x++) {
+			if (num == 1) {
 				isRaised = true;
 				break;
 			}
 
 			int count = 0;
 			int temp = num;
-			while (temp % x == 0)
-			{
+			while (temp % x == 0) {
 				temp = temp / x;
 				count++;
-				if (temp == 1)
-				{
+				if (temp == 1) {
 					isRaised = true;
 					System.out.println("CheckPower.main() :" + isRaised + " x :" + x + "^" + count);
 					break;
-				} else if (num < 1)
-				{
+				} else if (num < 1) {
 					isRaised = false;
 					break;
 				}

@@ -38,40 +38,33 @@ package com.geeksforgeeks.string;
  * Step 1: aabba<br/>
  * Step 2: bba<br/>
  * Step 3: a (Final Answer)<br/>
+ * 
  * <pre>
  * 
  * @author sandeep
  *
  */
 
-public class BombedStringExample
-{
+public class BombedStringExample {
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 
 		String str = "abbabba";
 		StringBuilder sb = new StringBuilder(str);
 
-		for (int i = 0; i < sb.length(); i++)
-		{
+		for (int i = 0; i < sb.length(); i++) {
 			boolean flag = false;
 			int occurrence = 1;
-			for (int j = i + 1; j < sb.length(); j++)
-			{
-				if (sb.charAt(i) == sb.charAt(j))
-				{
+			for (int j = i + 1; j < sb.length(); j++) {
+				if (sb.charAt(i) == sb.charAt(j)) {
 					flag = true;
 					occurrence++;
-				}
-				else
-				{
+				} else {
 					break;
 				}
 			}
 
-			if (flag)
-			{
+			if (flag) {
 				// remove the bombarded string
 				sb.delete(i, occurrence + i);
 				i = 0;

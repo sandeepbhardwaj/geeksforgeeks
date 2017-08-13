@@ -5,22 +5,18 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Graph<T>
-{
+public class Graph<T> {
 	private LinkedHashMap<T, List<T>> graph = new LinkedHashMap<>();
 
-	public void addEdge(T source, T dest)
-	{
+	public void addEdge(T source, T dest) {
 		// adding source
-		if (!graph.containsKey(source))
-		{
+		if (!graph.containsKey(source)) {
 			List<T> list = new LinkedList<T>();
 			graph.put(source, list);
 		}
 
 		// adding destination
-		if (!graph.containsKey(dest))
-		{
+		if (!graph.containsKey(dest)) {
 			List<T> list = new LinkedList<T>();
 			graph.put(dest, list);
 		}
@@ -30,8 +26,7 @@ public class Graph<T>
 		l.add(dest);
 	}
 
-	public void bfs(T source)
-	{
+	public void bfs(T source) {
 		List<T> visited = new ArrayList<>();
 		// Create a queue for BFS
 		LinkedList<T> queue = new LinkedList<T>();
@@ -41,18 +36,15 @@ public class Graph<T>
 		// make it visited
 		visited.add(source);
 
-		while (!queue.isEmpty())
-		{
+		while (!queue.isEmpty()) {
 			// dequeue the vertex
 			T vertex = queue.poll();
 			System.out.print(vertex + " > ");
 
 			List<T> list = graph.get(vertex);
 
-			for (T t : list)
-			{
-				if (!visited.contains(t))
-				{
+			for (T t : list) {
+				if (!visited.contains(t)) {
 					queue.add(t);
 					visited.add(t);
 				}
@@ -60,21 +52,17 @@ public class Graph<T>
 		}
 	}
 
-	public void traverse()
-	{
-		for (T i : graph.keySet())
-		{
+	public void traverse() {
+		for (T i : graph.keySet()) {
 			System.out.print(i + " -> ");
-			for (T l : graph.get(i))
-			{
+			for (T l : graph.get(i)) {
 				System.out.print(l + " -> ");
 			}
 			System.out.println();
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		Graph<Integer> g = new Graph<Integer>();
 		g.addEdge(0, 1);
 		g.addEdge(0, 2);

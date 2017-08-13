@@ -20,42 +20,33 @@ import java.util.Scanner;
  * 
  * </pre>
  */
-public class PossibleGroups
-{
-	public static void main(String[] args)
-	{
+public class PossibleGroups {
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
 		int noOfTestCases = sc.nextInt();
 
-		for (int t = 0; t < noOfTestCases; t++)
-		{
+		for (int t = 0; t < noOfTestCases; t++) {
 			int sizeOfArray = sc.nextInt();
 			int[] arr = new int[sizeOfArray];
 
-			for (int i = 0; i < sizeOfArray; i++)
-			{
+			for (int i = 0; i < sizeOfArray; i++) {
 				arr[i] = sc.nextInt();
 			}
 
 			int group = 0;
 
 			// one less then size of array
-			for (int i = 0; i < sizeOfArray; i++)
-			{
+			for (int i = 0; i < sizeOfArray; i++) {
 				int j = i + 1;
-				while (j < sizeOfArray)
-				{
-					if ((arr[i] + arr[j]) % 3 == 0)
-					{
+				while (j < sizeOfArray) {
+					if ((arr[i] + arr[j]) % 3 == 0) {
 						group++;
 					}
 
 					int k = j;
-					while (k + 1 < sizeOfArray)
-					{
-						if ((arr[i] + arr[j] + arr[k + 1]) % 3 == 0)
-						{
+					while (k + 1 < sizeOfArray) {
+						if ((arr[i] + arr[j] + arr[k + 1]) % 3 == 0) {
 							group++;
 						}
 						k++;

@@ -7,9 +7,13 @@ package com.geeksforgeeks.sorting;
  * at the right end. Initially, the sorted part is empty and the unsorted part
  * is the entire list.
  * 
- * The smallest element is selected from the unsorted array and swapped with the
- * leftmost element, and that element becomes a part of the sorted array. This
- * process continues moving unsorted array boundary by one element to the right.
+ * Consider sorting n numbers stored in array A by first finding the smallest
+ * element of A and exchanging it with the element in A(1). Then find the second
+ * smallest element of A, and exchange it with A(2). Continue in this manner for
+ * the first n-1 elements of A.
+ * 
+ * The good thing about selection sort is it never makes more than O(n) swaps
+ * and can be useful when memory write is a costly operation.
  * 
  * 64 25 12 22 11 // this is the initial, starting state of the array
  * 
@@ -35,7 +39,7 @@ public class SelectionSort {
 	public static void main(String[] args) {
 		int[] arr = { 4, 2, 2, 6, 1, 8, 10, 5 };
 
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < arr.length - 1; i++) {
 
 			int minIndex = i;
 			// Compare all the element with this current min

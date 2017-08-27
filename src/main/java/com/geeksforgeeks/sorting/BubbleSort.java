@@ -63,7 +63,7 @@ public class BubbleSort {
 			System.out.print(arr[i] + " ");
 		}
 
-		System.out.println("Optimize Bubble sort");
+		System.out.println("\nOptimize Bubble sort");
 		int[] arr1 = { 1, 2, 3, 4, 5, 6, 7, 8 };
 		optimizeSort(arr1);
 

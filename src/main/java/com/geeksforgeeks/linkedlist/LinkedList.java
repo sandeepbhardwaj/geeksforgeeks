@@ -41,6 +41,7 @@ public class LinkedList<E> {
 
 	/**
 	 * Reverse a list iteratively
+	 * 
 	 * @param head
 	 * @return head of reversed list
 	 */
@@ -56,7 +57,26 @@ public class LinkedList<E> {
 		}
 		return prev;
 	}
-	
+
+	/**
+	 * Reverse a list recursively
+	 * 
+	 * @param head
+	 * @return head of reversed list
+	 */
+	public Node<E> reverseRecursively(Node<E> head) {
+		// base condition
+		if (head == null || head.next == null) {
+			return head;
+		}
+
+		Node<E> current = head;
+		head = reverseRecursively(current.next);
+		current.next.next = current; // reverse list
+		current.next = null; // remove link
+		return head;
+	}
+
 	public static void main(String[] arg) {
 		LinkedList<Integer> list = new LinkedList<>();
 		list.add(1);
@@ -66,8 +86,13 @@ public class LinkedList<E> {
 		Node<Integer> head = list.getHead();
 		System.out.println("List before reverse");
 		list.display(head);
-		System.out.println("\nList after reverse");
+		
+		System.out.println("\nList after reverseIteratively");
 		head = list.reverseIteratively(head);
+		list.display(head);
+		
+		System.out.println("\nList after reverseRecursively");
+		head = list.reverseRecursively(head);
 		list.display(head);
 	}
 }

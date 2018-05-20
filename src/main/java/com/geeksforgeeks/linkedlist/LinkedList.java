@@ -76,7 +76,25 @@ public class LinkedList<E> {
 		current.next = null; // remove link
 		return head;
 	}
-
+	
+	/**
+	 * Detect loop in a list
+	 * @param head
+	 * @return true/false
+	 */
+	public boolean detectLoop(Node<E> head) {
+		Node<E> slowPtr = head;
+		Node<E> fastPtr = head;
+		while (slowPtr != null || fastPtr != null || fastPtr.next != null) {
+			slowPtr = slowPtr.next;
+			fastPtr = fastPtr.next.next;
+			if (slowPtr == fastPtr) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public static void main(String[] arg) {
 		LinkedList<Integer> list = new LinkedList<>();
 		list.add(1);

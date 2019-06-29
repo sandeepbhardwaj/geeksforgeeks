@@ -1,4 +1,4 @@
-package com.interviewbit.binarysearch;
+package com.interviewbit;
 
 import java.util.Arrays;
 import java.util.List;

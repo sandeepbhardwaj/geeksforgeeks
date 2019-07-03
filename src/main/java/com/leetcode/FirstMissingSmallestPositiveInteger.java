@@ -1,0 +1,57 @@
+package com.leetcode;
+
+/**
+ * Given an unsorted integer array, find the smallest missing positive integer.
+ * <p>
+ * Example 1:
+ * <p>
+ * Input: [1,2,0]
+ * Output: 3
+ * Example 2:
+ * <p>
+ * Input: [3,4,-1,1]
+ * Output: 2
+ * Example 3:
+ * <p>
+ * Input: [7,8,9,11,12]
+ * Output: 1
+ */
+public class FirstMissingSmallestPositiveInteger {
+
+	public static void main(String[] args) {
+		int[] a = new int[]{-1, -2};
+
+		int[] arr = new int[]{3, 4, -1, 1};
+
+		System.out.println(firstMissingPositive(arr));
+
+	}
+
+	public static int firstMissingPositive(int[] nums) {
+
+		int dummy = nums.length + 2;
+		int size = nums.length;
+
+		//for negative and numbers larger than length
+		for (int i = 0; i < size; i++) {
+			if (nums[i] <= 0 || nums[i] > size) {
+				nums[i] = dummy;
+			}
+		}
+
+		for (int i = 0; i < size; i++) {
+			if (nums[i] == dummy || nums[i] == -dummy) {
+				continue;
+			}
+			int val = Math.abs(nums[i]);
+			nums[val - 1] = -Math.abs(nums[val - 1]);
+		}
+
+		for (int i = 0; i < size; i++) {
+			if (nums[i] >= 0)
+				return i + 1;
+		}
+
+		return size + 1;
+	}
+}

@@ -18,7 +18,8 @@ package com.leetcode;
  * Input: nums = [2,5,6,0,0,1,2], target = 3
  * Output: false
  */
-class SearchInRotatedSortedArrayWithDuplicates {
+public class SearchInRotatedSortedArrayWithDuplicates {
+
 	public boolean search(int[] nums, int target) {
 
 		int low = 0;
@@ -30,7 +31,7 @@ class SearchInRotatedSortedArrayWithDuplicates {
 			if (nums[mid] == target)
 				return true;
 
-			// the only difference from the first one, trickly case, just update left and right
+			// the only difference from the first one, tricky case, just update left and right
 			if (nums[low] == nums[mid] && nums[high] == nums[mid]) {
 				++low;
 				--high;
@@ -53,7 +54,6 @@ class SearchInRotatedSortedArrayWithDuplicates {
 			}
 
 		}
-
 		return false;
 	}
 }

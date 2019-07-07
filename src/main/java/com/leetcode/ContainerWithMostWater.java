@@ -14,7 +14,7 @@ package com.leetcode;
  * Input: [1,8,6,2,5,4,8,3,7]
  * Output: 49
  * <p>
- * Idea / Proof:
+ * Idea/Proof:
  * <p>
  * The widest container (using first and last line) is a good candidate, because of its width. Its water level is the
  * height of the smaller one of first and last line.

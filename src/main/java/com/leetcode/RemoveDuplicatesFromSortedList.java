@@ -16,10 +16,6 @@ package com.leetcode;
  */
 public class RemoveDuplicatesFromSortedList {
 	public ListNode deleteDuplicates(ListNode head) {
-		//base case
-		if (head == null || head.next == null)
-			return head;
-
 		ListNode current = head;
 		while (current != null) {
 			if (current.next == null)

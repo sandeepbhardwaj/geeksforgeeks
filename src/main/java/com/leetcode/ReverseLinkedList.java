@@ -31,4 +31,18 @@ public class ReverseLinkedList {
 		}
 		return prev;
 	}
+
+	public ListNode reverseListRecursively(ListNode head) {
+		//base case
+		if (head == null || head.next == null)
+			return head;
+
+		ListNode reverseList = reverseListRecursively(head.next);
+		//reverse the list
+		head.next.next = head;
+		//remove pointer
+		head.next = null;
+
+		return reverseList;
+	}
 }

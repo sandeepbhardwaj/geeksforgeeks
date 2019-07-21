@@ -3,6 +3,8 @@ package com.leetcode;
 import java.util.Stack;
 
 /**
+ * 20. Valid Parentheses
+ * <p>
  * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
  * <p>
  * An input string is valid if:
@@ -25,6 +27,7 @@ import java.util.Stack;
  * Output: false
  */
 public class ValidParentheses {
+
 	public boolean isValid(String s) {
 
 		Stack<Character> stack = new Stack<>();
@@ -57,6 +60,23 @@ public class ValidParentheses {
 			}
 		}
 
+		return stack.isEmpty();
+	}
+
+	public boolean isValid2(String s) {
+		Stack<Character> stack = new Stack<Character>();
+
+		for (char c : s.toCharArray()) {
+			if (c == '(') {
+				stack.push(')');
+			} else if (c == '{') {
+				stack.push('}');
+			} else if (c == '[') {
+				stack.push(']');
+			} else if (stack.isEmpty() || stack.pop() != c) {
+				return false;
+			}
+		}
 		return stack.isEmpty();
 	}
 }

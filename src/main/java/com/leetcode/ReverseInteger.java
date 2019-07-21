@@ -20,7 +20,6 @@ public class ReverseInteger {
 	public int reverse(int x) {
 		long result = 0;
 
-		//TODO why Math.abs
 		while (Math.abs(x) > 0) {
 			result = result * 10 + x % 10;
 			x = x / 10;

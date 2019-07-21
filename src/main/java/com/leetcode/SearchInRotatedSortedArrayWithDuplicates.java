@@ -31,7 +31,7 @@ public class SearchInRotatedSortedArrayWithDuplicates {
 			if (nums[mid] == target)
 				return true;
 
-			// the only difference from the first one, tricky case, just update left and right
+			// if none of the part is sorted
 			if (nums[low] == nums[mid] && nums[high] == nums[mid]) {
 				++low;
 				--high;

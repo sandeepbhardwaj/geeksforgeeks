@@ -3,6 +3,8 @@ package com.leetcode;
 import java.util.Stack;
 
 /**
+ * 1047. Remove All Adjacent Duplicates In String
+ * <p>
  * Given a string S of lowercase letters, a duplicate removal consists of choosing two adjacent and equal letters, and removing them.
  * <p>
  * We repeatedly make duplicate removals on S until we no longer can.

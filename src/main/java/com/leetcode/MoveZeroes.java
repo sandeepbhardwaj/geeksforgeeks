@@ -16,6 +16,12 @@ package com.leetcode;
  * Minimize the total number of operations.
  */
 public class MoveZeroes {
+
+	/**
+	 * sliding window technique
+	 *
+	 * @param nums
+	 */
 	public void moveZeroes(int[] nums) {
 		int left = 0;
 		int right = 0;
@@ -40,6 +46,27 @@ public class MoveZeroes {
 			left++;
 			right++;
 		}
+	}
 
+	/**
+	 * here number of swapping is large
+	 *
+	 * @param nums
+	 */
+	public void moveZeroes2(int[] nums) {
+		if (nums == null || nums.length == 0) {
+			return;
+		}
+
+		int insertPos = 0;
+		for (int num : nums) {
+			if (num != 0) {
+				nums[insertPos++] = num;
+			}
+		}
+
+		while (insertPos < nums.length) {
+			nums[insertPos++] = 0;
+		}
 	}
 }

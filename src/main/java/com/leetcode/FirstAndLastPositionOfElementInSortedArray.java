@@ -18,7 +18,7 @@ package com.leetcode;
  * Input: nums = [5,7,7,8,8,10], target = 6
  * Output: [-1,-1]
  */
-class FirstAndLastPositionOfElementInSortedArray {
+public class FirstAndLastPositionOfElementInSortedArray {
 	public int[] searchRange(int[] nums, int target) {
 		int start = elementIndex(nums, target, 0, nums.length - 1, true);
 
@@ -30,7 +30,7 @@ class FirstAndLastPositionOfElementInSortedArray {
 		return new int[]{start, end};
 	}
 
-	public int elementIndex(int[] nums, int target, int low, int high, boolean isSearchForStartIndex) {
+	private int elementIndex(int[] nums, int target, int low, int high, boolean isSearchForStartIndex) {
 		int index = -1;
 		while (low <= high) {
 			int mid = (low + high) / 2;

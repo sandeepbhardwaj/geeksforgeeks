@@ -19,7 +19,7 @@ package com.leetcode;
  * Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
  * Follow up:
  * <p>
- * Coud you solve it without converting the integer to a string?
+ * Could you solve it without converting the integer to a string?
  */
 public class PalindromeNumber {
 	public boolean isPalindrome(int x) {

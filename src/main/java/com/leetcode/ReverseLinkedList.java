@@ -7,8 +7,7 @@ package com.leetcode;
  * <p>
  * Example:
  * <p>
- * Input: 1->2->3->4->5->NULL
- * Output: 5->4->3->2->1->NULL
+ * Input: 1->2->3->4->5->NULL Output: 5->4->3->2->1->NULL
  */
 public class ReverseLinkedList {
 
@@ -18,14 +17,14 @@ public class ReverseLinkedList {
 		ListNode current = head;
 
 		while (current != null) {
-			//hold the current next
+			// hold the current next
 			next = current.next;
 
-			//added the reverse list to current next
+			// added the reverse list to current next
 			current.next = prev;
 			prev = current;
 
-			//moved the current to next node
+			// moved the current to next node
 			current = next;
 
 		}
@@ -33,14 +32,14 @@ public class ReverseLinkedList {
 	}
 
 	public ListNode reverseListRecursively(ListNode head) {
-		//base case
+		// base case
 		if (head == null || head.next == null)
 			return head;
 
 		ListNode reverseList = reverseListRecursively(head.next);
-		//reverse the list
+		// reverse the list
 		head.next.next = head;
-		//remove pointer
+		// remove pointer
 		head.next = null;
 
 		return reverseList;

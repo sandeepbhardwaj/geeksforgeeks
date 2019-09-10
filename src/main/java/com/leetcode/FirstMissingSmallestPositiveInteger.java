@@ -5,21 +5,16 @@ package com.leetcode;
  * <p>
  * Example 1:
  * <p>
- * Input: [1,2,0]
- * Output: 3
- * Example 2:
+ * Input: [1,2,0] Output: 3 Example 2:
  * <p>
- * Input: [3,4,-1,1]
- * Output: 2
- * Example 3:
+ * Input: [3,4,-1,1] Output: 2 Example 3:
  * <p>
- * Input: [7,8,9,11,12]
- * Output: 1
+ * Input: [7,8,9,11,12] Output: 1
  */
 public class FirstMissingSmallestPositiveInteger {
 
 	public static void main(String[] args) {
-		int[] arr = new int[]{3, 4, -1, 1};
+		int[] arr = new int[] { 3, 4, -1, 1 };
 
 		System.out.println(firstMissingPositive(arr));
 	}
@@ -29,7 +24,7 @@ public class FirstMissingSmallestPositiveInteger {
 		int dummy = nums.length + 2;
 		int size = nums.length;
 
-		//for negative and numbers larger than length
+		// for negative and numbers larger than length
 		for (int i = 0; i < size; i++) {
 			if (nums[i] <= 0 || nums[i] > size) {
 				nums[i] = dummy;

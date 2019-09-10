@@ -1,11 +1,13 @@
 package com.leetcode;
 
 /**
- * Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+ * Suppose an array sorted in ascending order is rotated at some pivot unknown
+ * to you beforehand.
  * <p>
  * (i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
  * <p>
- * You are given a target value to search. If found in the array return its index, otherwise return -1.
+ * You are given a target value to search. If found in the array return its
+ * index, otherwise return -1.
  * <p>
  * You may assume no duplicate exists in the array.
  * <p>
@@ -13,12 +15,9 @@ package com.leetcode;
  * <p>
  * Example 1:
  * <p>
- * Input: nums = [4,5,6,7,0,1,2], target = 0
- * Output: 4
- * Example 2:
+ * Input: nums = [4,5,6,7,0,1,2], target = 0 Output: 4 Example 2:
  * <p>
- * Input: nums = [4,5,6,7,0,1,2], target = 3
- * Output: -1
+ * Input: nums = [4,5,6,7,0,1,2], target = 3 Output: -1
  */
 public class SearchInRotatedSortedArray {
 	public int search(int[] nums, int target) {
@@ -35,18 +34,18 @@ public class SearchInRotatedSortedArray {
 			if (nums[mid] == target)
 				return mid;
 
-			//first half is sorted
+			// first half is sorted
 			if (nums[low] <= nums[mid]) {
-				//element in b/w low and mid
+				// element in b/w low and mid
 				if (nums[low] <= target && nums[mid] > target) {
 					high = mid - 1;
 				} else {
 					low = mid + 1;
 				}
 			}
-			//second half is sorted
+			// second half is sorted
 			else {
-				//element in b/w low and mid
+				// element in b/w low and mid
 				if (nums[mid + 1] <= target && nums[high] >= target) {
 					low = mid + 1;
 				} else {

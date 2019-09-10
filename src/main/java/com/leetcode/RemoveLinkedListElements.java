@@ -1,13 +1,12 @@
 package com.leetcode;
 
 /**
- * 203. Remove Linked List Elements
- * Remove all elements from a linked list of integers that have value val.
+ * 203. Remove Linked List Elements Remove all elements from a linked list of
+ * integers that have value val.
  * <p>
  * Example:
  * <p>
- * Input:  1->2->6->3->4->5->6, val = 6
- * Output: 1->2->3->4->5
+ * Input: 1->2->6->3->4->5->6, val = 6 Output: 1->2->3->4->5
  */
 public class RemoveLinkedListElements {
 	/**
@@ -22,7 +21,7 @@ public class RemoveLinkedListElements {
 			return head;
 
 		ListNode current = head;
-		//check current.next to so we can remove next
+		// check current.next to so we can remove next
 		while (current.next != null) {
 			if (current.next.val == val) {
 				current.next = current.next.next;

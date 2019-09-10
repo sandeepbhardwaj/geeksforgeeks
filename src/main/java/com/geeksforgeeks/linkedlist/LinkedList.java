@@ -76,9 +76,10 @@ public class LinkedList<E> {
 		current.next = null; // remove link
 		return head;
 	}
-	
+
 	/**
 	 * Detect loop in a list
+	 * 
 	 * @param head
 	 * @return true/false
 	 */
@@ -94,7 +95,7 @@ public class LinkedList<E> {
 		}
 		return false;
 	}
-	
+
 	public static void main(String[] arg) {
 		LinkedList<Integer> list = new LinkedList<>();
 		list.add(1);
@@ -104,11 +105,11 @@ public class LinkedList<E> {
 		Node<Integer> head = list.getHead();
 		System.out.println("List before reverse");
 		list.display(head);
-		
+
 		System.out.println("\nList after reverseIteratively");
 		head = list.reverseIteratively(head);
 		list.display(head);
-		
+
 		System.out.println("\nList after reverseRecursively");
 		head = list.reverseRecursively(head);
 		list.display(head);

@@ -3,17 +3,15 @@ package com.leetcode;
 /**
  * 283. Move Zeroes
  * <p>
- * Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the
- * non-zero elements.
+ * Given an array nums, write a function to move all 0's to the end of it while
+ * maintaining the relative order of the non-zero elements.
  * <p>
  * Example:
  * <p>
- * Input: [0,1,0,3,12]
- * Output: [1,3,12,0,0]
- * Note:
+ * Input: [0,1,0,3,12] Output: [1,3,12,0,0] Note:
  * <p>
- * You must do this in-place without making a copy of the array.
- * Minimize the total number of operations.
+ * You must do this in-place without making a copy of the array. Minimize the
+ * total number of operations.
  */
 public class MoveZeroes {
 
@@ -42,7 +40,7 @@ public class MoveZeroes {
 				continue;
 			}
 
-			//if left is not zero
+			// if left is not zero
 			left++;
 			right++;
 		}

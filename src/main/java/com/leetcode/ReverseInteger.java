@@ -5,16 +5,11 @@ package com.leetcode;
  * <p>
  * Example 1:
  * <p>
- * Input: 123
- * Output: 321
- * Example 2:
+ * Input: 123 Output: 321 Example 2:
  * <p>
- * Input: -123
- * Output: -321
- * Example 3:
+ * Input: -123 Output: -321 Example 3:
  * <p>
- * Input: 120
- * Output: 21
+ * Input: 120 Output: 21
  */
 public class ReverseInteger {
 	public int reverse(int x) {

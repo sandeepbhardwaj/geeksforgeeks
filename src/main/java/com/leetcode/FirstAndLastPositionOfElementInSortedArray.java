@@ -21,11 +21,11 @@ public class FirstAndLastPositionOfElementInSortedArray {
 		int start = elementIndex(nums, target, 0, nums.length - 1, true);
 
 		if (start == -1) {
-			return new int[] { -1, -1 };
+			return new int[]{-1, -1};
 		}
 		int end = elementIndex(nums, target, 0, nums.length - 1, false);
 
-		return new int[] { start, end };
+		return new int[]{start, end};
 	}
 
 	private int elementIndex(int[] nums, int target, int low, int high, boolean isSearchForStartIndex) {

@@ -1,6 +1,7 @@
 package com.leetcode;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 1. Two Sum

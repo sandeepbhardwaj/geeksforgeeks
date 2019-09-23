@@ -14,7 +14,7 @@ package com.leetcode;
 public class FirstMissingSmallestPositiveInteger {
 
 	public static void main(String[] args) {
-		int[] arr = new int[] { 3, 4, -1, 1 };
+		int[] arr = new int[]{3, 4, -1, 1};
 
 		System.out.println(firstMissingPositive(arr));
 	}

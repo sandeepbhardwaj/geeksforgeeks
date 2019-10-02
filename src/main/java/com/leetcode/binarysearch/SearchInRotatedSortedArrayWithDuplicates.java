@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.binarysearch;
 
 /**
  * 81. Search in Rotated Sorted Array II

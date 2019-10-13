@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.array;
 
 /**
  * 53. Maximum Subarray - Kadane's Algorithm

@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.array;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,6 @@ public class FindAllNumbersDisappearedInAnArray {
 			if (nums[i] > 0) {
 				results.add(i + 1);
 			}
-
 		}
 		return results;
 	}

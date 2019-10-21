@@ -4,38 +4,41 @@ public class ContinuousSubArrayWithGivenSum {
 
 	public static void main(String[] args) {
 		int[] arr = new int[] { 1, 2, 3, 7, 21 };
-		int[] output = checkSum(arr, 21);
+		int[] output = checkSum(arr, 0);
 
 		for (int i : output) {
-			System.out.println(i);
+			System.out.print(i + " ");
 		}
 
 	}
 
+	/**
+	 * Simple sliding window technique. This will work only for array containing
+	 * positive numbers only.
+	 * 
+	 * @param arr
+	 * @param sum
+	 * @return index of sub array contains given sum
+	 */
 	public static int[] checkSum(int[] arr, int sum) {
-		int i = 0;
-		int j = 1;
-		int total = arr[i];
+		int left = 0;
+		int right = 0;
+		int curr_sum = arr[left];
 
-		// why i<j condition ?
-		while (j < arr.length || i < j) {
-
-			if (sum > total) {
-				total += arr[j];
-				j++;
-			} else if (sum < total) {
-				total -= arr[i];
-				i++;
+		while (right < arr.length && left <= right) {
+			if (curr_sum == sum) {
+				return new int[] { left, right };
 			}
 
-			// why j-1 in output, because j is incremented above and we check the condition
-			// after that.
-			if (total == sum) {
-				return new int[] { i, j - 1 };
+			if (curr_sum < sum) {
+				right++;
+				curr_sum += arr[right];
+			} else if (curr_sum > sum) {
+				curr_sum -= arr[left];
+				left++;
 			}
 		}
-
-		return new int[] { -1 };
+		return new int[] { -1, -1 };
 	}
 
 }

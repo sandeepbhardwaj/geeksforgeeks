@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.array;
 
 /**
  * Given an unsorted integer array, find the smallest missing positive integer.

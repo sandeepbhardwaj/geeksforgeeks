@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.array;
 
 /**
  * 11. Container With Most Water

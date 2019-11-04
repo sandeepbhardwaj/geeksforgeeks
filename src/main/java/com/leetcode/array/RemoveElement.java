@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.array;
 
 /**
  * Given an array nums and a value val, remove all instances of that value

@@ -1,4 +1,6 @@
-package com.leetcode;
+package com.leetcode.linkedlist;
+
+import com.leetcode.ListNode;
 
 /**
  * 203. Remove Linked List Elements Remove all elements from a linked list of

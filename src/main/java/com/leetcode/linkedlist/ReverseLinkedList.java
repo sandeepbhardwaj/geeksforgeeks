@@ -1,4 +1,6 @@
-package com.leetcode;
+package com.leetcode.linkedlist;
+
+import com.leetcode.ListNode;
 
 /**
  * 206. Reverse Linked List
@@ -12,6 +14,7 @@ package com.leetcode;
 public class ReverseLinkedList {
 
 	public ListNode reverseList(ListNode head) {
+		//prev will be new head of reversed list
 		ListNode prev = null;
 		ListNode next = null;
 		ListNode current = head;
@@ -22,6 +25,7 @@ public class ReverseLinkedList {
 
 			// added the reverse list to current next
 			current.next = prev;
+			//pointing the prev to new reversed list head
 			prev = current;
 
 			// moved the current to next node

@@ -1,4 +1,6 @@
-package com.leetcode;
+package com.leetcode.linkedlist;
+
+import com.leetcode.ListNode;
 
 /**
  * 160. Intersection of Two Linked Lists

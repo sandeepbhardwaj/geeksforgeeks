@@ -1,4 +1,6 @@
-package com.leetcode;
+package com.leetcode.linkedlist;
+
+import com.leetcode.ListNode;
 
 /**
  * 21. Merge Two Sorted Lists

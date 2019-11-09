@@ -21,12 +21,10 @@ public class MeanderingArray {
 		int k = 0;
 		while (k < arr.length - 1) {
 			// adding largest
-			outputArr[k] = arr[right];
-			right--;
+			outputArr[k] = arr[right--];
 			k++;
 			// adding smallest
-			outputArr[k] = arr[left];
-			left++;
+			outputArr[k] = arr[left++];
 			k++;
 		}
 

@@ -37,14 +37,17 @@ public class RotateArray {
         for (int i = 0; i < k; i++) {
             int j = nums.length - 1;
 
+            //store the last element in temp
             int temp = nums[j];
+            
+            //reverse loop for right rotation
             for (; j > 0; j--) {
+            	//replace last with second-last element
                 nums[j] = nums[j - 1];
             }
             nums[j] = temp;
 
-            Arrays.stream(nums).forEach(System.out::print);
-            System.out.println();
+            System.out.println(Arrays.toString(nums));
         }
     }
 }

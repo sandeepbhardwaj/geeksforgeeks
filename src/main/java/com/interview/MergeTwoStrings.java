@@ -1,6 +1,9 @@
 package com.interview;
 
 public class MergeTwoStrings {
+	public static void main(String[] args) {
+		System.out.println(merge("abc", "abcdd"));
+	}
 
 	public static String merge(String a, String b) {
 		StringBuilder res = new StringBuilder();

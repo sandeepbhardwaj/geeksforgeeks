@@ -22,6 +22,7 @@ public class AddTwoNumbers {
 		ListNode output = null;
 		int carry = 0;
 
+		// % for reminder, / for carry
 		ListNode current = null;
 		while (l1 != null && l2 != null) {
 

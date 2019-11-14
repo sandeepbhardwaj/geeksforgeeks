@@ -23,9 +23,10 @@ public class MinWindowSubString {
 	}
 
 	/**
-	 * decrement map counter for end, increment map counter for start decrement
-	 * count for end if element from pattern found, increment count for start if
-	 * element from pattern found.
+	 * decrement map counter for end, increment map counter for start
+	 * <p>
+	 * decrement count for end if element from pattern found, increment count for
+	 * start if element from pattern found.
 	 * 
 	 * @param str
 	 * @param pattern
@@ -43,17 +44,10 @@ public class MinWindowSubString {
 			map[c]++;
 		}
 
-		// variable for sliding window
-		int start = 0, end = 0;
-
-		// variable to hold min window len
-		int minLen = Integer.MAX_VALUE;
-
-		// minStart to hold the output window start index
-		int minStart = 0;
-
-		// count with length of pattern
-		int count = t.length();
+		int start = 0, end = 0; // variable for sliding window
+		int minLen = Integer.MAX_VALUE; // variable to hold min window len
+		int minStart = 0; // minStart to hold the output window start index
+		int count = t.length(); // count with length of pattern
 
 		// till end is less than str size
 		while (end < s.length()) {
@@ -68,6 +62,7 @@ public class MinWindowSubString {
 			end++;
 
 			// found all character of pattern
+			// update the result and reduce the window
 			while (count == 0) {
 				// verify/change the minLen
 				if (minLen > end - start) {
@@ -75,13 +70,11 @@ public class MinWindowSubString {
 					minStart = start;
 				}
 
-				// reduce the size of window
 				map[s.charAt(start)]++;
 
 				if (map[s.charAt(start)] > 0) {
 					count++;
 				}
-
 				start++;
 			}
 		}

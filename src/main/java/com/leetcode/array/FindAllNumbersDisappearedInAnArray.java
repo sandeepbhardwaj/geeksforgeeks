@@ -25,13 +25,15 @@ public class FindAllNumbersDisappearedInAnArray {
 
 		List<Integer> results = new ArrayList<>();
 
+		// negate the value if found
 		for (int i = 0; i < nums.length; i++) {
 			int val = Math.abs(nums[i]);
-
+			
 			// negate the output
 			nums[val - 1] = -Math.abs(nums[val - 1]);
 		}
 
+		// if value at index is positive then add to result
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] > 0) {
 				results.add(i + 1);

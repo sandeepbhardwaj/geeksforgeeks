@@ -1,5 +1,7 @@
 package com.leetcode.array;
 
+import java.util.Arrays;
+
 /**
  * Given an unsorted integer array, find the smallest missing positive integer.
  * <p>
@@ -30,6 +32,7 @@ public class FirstMissingSmallestPositiveInteger {
 				nums[i] = dummy;
 			}
 		}
+		System.out.println(Arrays.toString(nums));
 
 		for (int i = 0; i < size; i++) {
 			if (nums[i] == dummy || nums[i] == -dummy) {
@@ -38,7 +41,8 @@ public class FirstMissingSmallestPositiveInteger {
 			int val = Math.abs(nums[i]);
 			nums[val - 1] = -Math.abs(nums[val - 1]);
 		}
-
+		System.out.println(Arrays.toString(nums));
+		
 		for (int i = 0; i < size; i++) {
 			if (nums[i] >= 0)
 				return i + 1;

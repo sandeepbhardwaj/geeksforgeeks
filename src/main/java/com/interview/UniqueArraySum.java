@@ -14,7 +14,6 @@ public class UniqueArraySum {
 				prev = prev + 1;
 				sum = sum + prev;
 			}
-
 			// No violation.
 			else {
 				sum = sum + arr[i];

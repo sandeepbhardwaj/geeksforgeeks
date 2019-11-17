@@ -12,9 +12,15 @@ package com.leetcode;
  * Input: 120 Output: 21
  */
 public class ReverseInteger {
-	public int reverse(int x) {
+	public static void main(String[] args) {
+		System.out.println(reverse(123));
+	}
+
+	public static int reverse(int x) {
 		long result = 0;
 
+		// number % 10 = last digit of number ex. 123%10=3
+		// number / 10 = get rid of last digit ex. 123/10 =12
 		while (Math.abs(x) > 0) {
 			result = result * 10 + x % 10;
 			x = x / 10;

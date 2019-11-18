@@ -1,5 +1,8 @@
 package com.interview;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 76. Minimum Window Substring
  * 
@@ -19,7 +22,20 @@ package com.interview;
 public class MinWindowSubString {
 
 	public static void main(String[] args) {
-		System.out.println("Min Widnow :" + minWindow("badaabcccdasfasabcd", "abd"));
+		String str="badaabcccdasfasabcd";
+		
+		StringBuilder sb = new StringBuilder();
+		Set<Character> mySet = new HashSet<Character>();
+		for (char c : str.toCharArray()) {
+			if (mySet.add(c)) {
+				sb.append(c);
+			}
+		}
+		String pattern = sb.toString();
+		System.out.println(pattern);
+		
+		
+		System.out.println("Min Window :" + minWindow("badaabcccdasfasabcd", pattern));
 	}
 
 	/**
@@ -32,33 +48,33 @@ public class MinWindowSubString {
 	 * @param pattern
 	 * @return
 	 */
-	public static String minWindow(String s, String t) {
+	public static String minWindow(String str, String pattern) {
 
 		// base case
-		if (s == null || s.length() == 0)
+		if (str == null || str.length() == 0)
 			return "";
 
-		int[] map = new int[128];
+		int[] patternMap = new int[128];
 		// populate the map with count of elements for pattern
-		for (char c : t.toCharArray()) {
-			map[c]++;
+		for (char c : pattern.toCharArray()) {
+			patternMap[c]++;
 		}
 
 		int start = 0, end = 0; // variable for sliding window
 		int minLen = Integer.MAX_VALUE; // variable to hold min window len
 		int minStart = 0; // minStart to hold the output window start index
-		int count = t.length(); // count with length of pattern
+		int count = pattern.length(); // count with length of pattern
 
 		// till end is less than str size
-		while (end < s.length()) {
-			char c = s.charAt(end);
+		while (end < str.length()) {
+			char c = str.charAt(end);
 
 			// if pattern char found in str
-			if (map[c] > 0) {
+			if (patternMap[c] > 0) {
 				count--;
 			}
 
-			map[c]--;
+			patternMap[c]--;
 			end++;
 
 			// found all character of pattern
@@ -70,16 +86,16 @@ public class MinWindowSubString {
 					minStart = start;
 				}
 
-				map[s.charAt(start)]++;
+				patternMap[str.charAt(start)]++;
 
-				if (map[s.charAt(start)] > 0) {
+				if (patternMap[str.charAt(start)] > 0) {
 					count++;
 				}
 				start++;
 			}
 		}
 
-		return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
+		return minLen == Integer.MAX_VALUE ? "" : str.substring(minStart, minStart + minLen);
 	}
 
 }

@@ -4,44 +4,56 @@ import java.util.Arrays;
 
 public class SizeOfMaximumSubMatrixWithOne {
 
-	public static int solution(int[][] matrices) {
-		int res = 0;
+	private static int maxMatrixWithOne(int[][] matrix) {
+		// base case for invalid matrix
+		int row = matrix.length;
+		if (row == 0)
+			return 0;
+		int col = matrix[0].length;
+		if (col == 0)
+			return 0;
 
-		int rows = matrices.length;
-		int cols = matrices[0].length;
-		System.out.println(rows + " " + cols);
-		int[][] temp = new int[matrices.length][matrices[0].length];
+		int max = 0;
+		int temp[][] = new int[row][col];
 
-		for (int i = 0; i < rows; i++) {
-			temp[i][0] = matrices[i][0];
-		}
-		for (int i = 0; i < cols; i++) {
-			temp[0][i] = matrices[0][i];
-		}
-
-		for (int i = 1; i < rows; i++) {
-			for (int j = 1; j < cols; j++) {
-				if (matrices[i][j] == 1)
+		// loop through rows and columns
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < col; j++) {
+				// for first row or first column
+				if (i == 0 || j == 0) {
+					temp[i][j] = matrix[i][j];
+				} else if (matrix[i][j] == 1) {
+					// min of row,column,diagonal
 					temp[i][j] = Math.min(Math.min(temp[i - 1][j], temp[i][j - 1]), temp[i - 1][j - 1]) + 1;
-				else
+				} else {
 					temp[i][j] = 0;
+				}
+
+				// update max
+				if (max < temp[i][j]) {
+					max = temp[i][j];
+				}
+
 			}
 		}
-		for (int i = 0; i < rows; i++) {
+		
+		//print temp matrix
+		for (int i = 0; i < row; i++) {
 			System.out.println(Arrays.toString(temp[i]));
 		}
-		return res;
+
+		return max;
 	}
 
 	public static void main(String[] args) {
-		int M[][] = { 	{ 0, 1, 1, 0, 1 }, 
+		int matrix[][] = { 	{ 0, 1, 1, 0, 1 }, 
 						{ 1, 1, 0, 1, 0 }, 
 						{ 0, 1, 1, 1, 0 }, 
 						{ 1, 1, 1, 1, 0 }, 
 						{ 1, 1, 1, 1, 1 },
 						{ 0, 0, 0, 0, 0 } };
 
-		solution(M);
+		System.out.println(maxMatrixWithOne(matrix));
 	}
 
 }

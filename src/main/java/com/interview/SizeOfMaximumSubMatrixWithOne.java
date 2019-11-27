@@ -33,11 +33,10 @@ public class SizeOfMaximumSubMatrixWithOne {
 				if (max < temp[i][j]) {
 					max = temp[i][j];
 				}
-
 			}
 		}
-		
-		//print temp matrix
+
+		// print temp matrix
 		for (int i = 0; i < row; i++) {
 			System.out.println(Arrays.toString(temp[i]));
 		}
@@ -46,12 +45,8 @@ public class SizeOfMaximumSubMatrixWithOne {
 	}
 
 	public static void main(String[] args) {
-		int matrix[][] = { 	{ 0, 1, 1, 0, 1 }, 
-							{ 1, 1, 0, 1, 0 }, 
-							{ 0, 1, 1, 1, 0 }, 
-							{ 1, 1, 1, 1, 0 },
-							{ 1, 1, 1, 1, 1 }, 
-							{ 0, 0, 0, 0, 0 } };
+		int matrix[][] = { { 0, 1, 1, 0, 1 }, { 1, 1, 0, 1, 0 }, { 0, 1, 1, 1, 0 }, { 1, 1, 1, 1, 0 },
+				{ 1, 1, 1, 1, 1 }, { 0, 0, 0, 0, 0 } };
 
 		System.out.println(maxMatrixWithOne(matrix));
 	}

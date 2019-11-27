@@ -1,5 +1,6 @@
 package com.interview;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,9 +33,7 @@ public class MinWindowSubString {
 			}
 		}
 		String pattern = sb.toString();
-		System.out.println(pattern);
-		
-		
+		System.out.println("Input string :"+str +" Pattern :"+pattern);
 		System.out.println("Min Window :" + minWindow("badaabcccdasfasabcd", pattern));
 	}
 

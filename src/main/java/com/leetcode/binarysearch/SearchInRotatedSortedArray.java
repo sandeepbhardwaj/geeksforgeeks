@@ -34,10 +34,12 @@ public class SearchInRotatedSortedArray {
 			if (nums[mid] == target)
 				return mid;
 
+			// low ..............mid-1, mid, mid+1.............high
+
 			// first half is sorted
 			if (nums[low] <= nums[mid]) {
 				// element in b/w low and mid
-				if (nums[low] <= target && nums[mid] > target) {
+				if (target >= nums[low] && target < nums[mid]) {
 					high = mid - 1;
 				} else {
 					low = mid + 1;
@@ -46,7 +48,7 @@ public class SearchInRotatedSortedArray {
 			// second half is sorted
 			else {
 				// element in b/w low and mid
-				if (nums[mid + 1] <= target && nums[high] >= target) {
+				if (target >= nums[mid + 1] && target <= nums[high]) {
 					low = mid + 1;
 				} else {
 					high = mid - 1;

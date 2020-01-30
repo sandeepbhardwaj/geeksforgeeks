@@ -1,4 +1,4 @@
-package com.interview;
+package com.interview.clearwater;
 
 /**
  * Given a 32-bit signed integer, reverse digits of an integer.

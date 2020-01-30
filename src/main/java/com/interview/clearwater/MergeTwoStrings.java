@@ -1,4 +1,4 @@
-package com.interview;
+package com.interview.clearwater;
 
 public class MergeTwoStrings {
 	public static void main(String[] args) {

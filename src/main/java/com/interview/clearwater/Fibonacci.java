@@ -1,4 +1,4 @@
-package com.interview;
+package com.interview.clearwater;
 
 // Fn = Fn-1 + Fn-2
 // F0 = 0 and F1 = 1

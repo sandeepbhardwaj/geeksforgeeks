@@ -25,29 +25,29 @@ import java.util.Arrays;
  */
 public class RotateArray {
 
-    public static void main(String[] args) {
-        int nums[] = {1, 2, 3, 4, 5, 6, 7};
-        rotate(nums, 3);
-    }
+	public static void main(String[] args) {
+		int nums[] = {1, 2, 3, 4, 5, 6, 7};
+		rotate(nums, 3);
+	}
 
-    public static void rotate(int[] nums, int k) {
-        if (nums == null || nums.length == 0 || k <= 0)
-            return;
+	public static void rotate(int[] nums, int k) {
+		if (nums == null || nums.length == 0 || k <= 0)
+			return;
 
-        for (int i = 0; i < k; i++) {
-            int j = nums.length - 1;
+		for (int i = 0; i < k; i++) {
+			int j = nums.length - 1;
 
-            //store the last element in temp
-            int temp = nums[j];
-            
-            //reverse loop for right rotation
-            for (; j > 0; j--) {
-            	//replace last with second-last element
-                nums[j] = nums[j - 1];
-            }
-            nums[j] = temp;
+			//store the last element in temp
+			int temp = nums[j];
 
-            System.out.println(Arrays.toString(nums));
-        }
-    }
+			//reverse loop for right rotation
+			for (; j > 0; j--) {
+				//replace last with second-last element
+				nums[j] = nums[j - 1];
+			}
+			nums[j] = temp;
+
+			System.out.println(Arrays.toString(nums));
+		}
+	}
 }

@@ -6,25 +6,23 @@ import java.util.Set;
 
 /**
  * 76. Minimum Window Substring
- * 
+ * <p>
  * Given a string S and a string T, find the minimum window in S which will
  * contain all the characters in T in complexity O(n).
- * 
+ * <p>
  * Example: Input: S = "ADOBECODEBANC", T = "ABC" Output: "BANC" Note:
- * 
+ * <p>
  * If there is no such window in S that covers all characters in T, return the
  * empty string "". If there is such window, you are guaranteed that there will
  * always be only one unique minimum window in S.
- * 
- * 
- * @author sandeep
  *
+ * @author sandeep
  */
 public class MinWindowSubString {
 
 	public static void main(String[] args) {
-		String str="badaabcccdasfasabcd";
-		
+		String str = "badaabcccdasfasabcd";
+
 		StringBuilder sb = new StringBuilder();
 		Set<Character> mySet = new HashSet<Character>();
 		for (char c : str.toCharArray()) {
@@ -33,7 +31,7 @@ public class MinWindowSubString {
 			}
 		}
 		String pattern = sb.toString();
-		System.out.println("Input string :"+str +" Pattern :"+pattern);
+		System.out.println("Input string :" + str + " Pattern :" + pattern);
 		System.out.println("Min Window :" + minWindow("badaabcccdasfasabcd", pattern));
 	}
 
@@ -42,7 +40,7 @@ public class MinWindowSubString {
 	 * <p>
 	 * decrement count for end if element from pattern found, increment count for
 	 * start if element from pattern found.
-	 * 
+	 *
 	 * @param str
 	 * @param pattern
 	 * @return

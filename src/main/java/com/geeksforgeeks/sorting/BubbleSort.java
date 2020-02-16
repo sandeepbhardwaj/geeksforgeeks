@@ -4,16 +4,15 @@ package com.geeksforgeeks.sorting;
  * Bubble sort compares each pair of adjacent items and swaps them if they are
  * in the wrong order. The pass through the list is repeated until no swaps are
  * needed, which indicates that the list is sorted.
- * 
+ *
  * <pre>
  * Time complexity of Bubble Sort :-
- * Best Case for optimize bubble sort : O(n) 
- * Average case : O(n^2) 
+ * Best Case for optimize bubble sort : O(n)
+ * Average case : O(n^2)
  * Worst Case : O(n^2)
  * </pre>
- * 
- * @author sandeep
  *
+ * @author sandeep
  */
 public class BubbleSort {
 
@@ -55,7 +54,7 @@ public class BubbleSort {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 4, 2, 6, 1, 8, 10, 5 };
+		int[] arr = {4, 2, 6, 1, 8, 10, 5};
 
 		sort(arr);
 
@@ -64,7 +63,7 @@ public class BubbleSort {
 		}
 
 		System.out.println("\nOptimize Bubble sort");
-		int[] arr1 = { 1, 2, 3, 4, 5, 6, 7, 8 };
+		int[] arr1 = {1, 2, 3, 4, 5, 6, 7, 8};
 		optimizeSort(arr1);
 
 		for (int i = 0; i < arr1.length; i++) {

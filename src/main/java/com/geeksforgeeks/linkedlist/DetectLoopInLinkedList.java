@@ -4,14 +4,13 @@ import com.geeksforgeeks.linkedlist.LinkedList.Node;
 
 /**
  * <pre>
- * 1 > 2 > 3 > 4 
- *     ^       ^ 
+ * 1 > 2 > 3 > 4
+ *     ^       ^
  *     |_______|
- * 
- * </pre>
- * 
- * @author sandeep
  *
+ * </pre>
+ *
+ * @author sandeep
  */
 public class DetectLoopInLinkedList {
 

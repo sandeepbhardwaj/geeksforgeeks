@@ -3,7 +3,7 @@ package com.geeksforgeeks.sorting;
 public class MergeSort {
 
 	public static void main(String[] args) {
-		int[] arr = { 4, 2, 6, 1, 8, 10, 5 };
+		int[] arr = {4, 2, 6, 1, 8, 10, 5};
 
 		sort(arr);
 

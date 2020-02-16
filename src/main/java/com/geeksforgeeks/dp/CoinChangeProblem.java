@@ -3,9 +3,8 @@ package com.geeksforgeeks.dp;
 /**
  * Given a total and coins of certain denominations find number of ways total
  * can be formed from coins assuming infinity supply of coins
- * 
- * @author sandeep
  *
+ * @author sandeep
  */
 public class CoinChangeProblem {
 
@@ -59,7 +58,7 @@ public class CoinChangeProblem {
 
 	public static void main(String[] args) {
 		int amount = 10;
-		int[] v = { 2, 5, 3, 6 };
+		int[] v = {2, 5, 3, 6};
 		System.out.println("By Dynamic Programming " + changeCoin(v, amount));
 	}
 

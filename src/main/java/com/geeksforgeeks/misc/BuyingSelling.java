@@ -2,14 +2,13 @@ package com.geeksforgeeks.misc;
 
 /**
  * Calculate max profit in one iteration O(N)
- * 
- * @author Sandeep
  *
+ * @author Sandeep
  */
 public class BuyingSelling {
 
 	public static void main(String[] args) {
-		int[] stockPrices = { 10, 13, 4, 6, 9 };
+		int[] stockPrices = {10, 13, 4, 6, 9};
 
 		System.out.println("Profit :" + maxProfit(stockPrices));
 	}

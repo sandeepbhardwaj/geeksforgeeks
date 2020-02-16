@@ -3,7 +3,7 @@ package com.geeksforgeeks.array;
 public class SegregateZeroAndOne {
 
 	public static void main(String[] args) {
-		int[] arr = new int[] { 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1 };
+		int[] arr = new int[]{1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1};
 
 		int start = 0;
 		int end = arr.length - 1;

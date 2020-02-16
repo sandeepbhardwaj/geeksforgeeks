@@ -20,57 +20,57 @@ package com.leetcode.binarysearch;
  */
 public class BinarySearch {
 
-    /**
-     * Iterative binary search
-     *
-     * @param nums
-     * @param target
-     * @return
-     */
-    public int search(int[] nums, int target) {
-        int low = 0;
-        int high = nums.length - 1;
+	/**
+	 * Iterative binary search
+	 *
+	 * @param nums
+	 * @param target
+	 * @return
+	 */
+	public int search(int[] nums, int target) {
+		int low = 0;
+		int high = nums.length - 1;
 
-        while (low <= high) {
-            int mid = (low + high) / 2;
+		while (low <= high) {
+			int mid = (low + high) / 2;
 
-            if (nums[mid] == target)
-                return mid;
+			if (nums[mid] == target)
+				return mid;
 
-            // mid greater than target then search in left part
-            if (nums[mid] > target) {
-                high = mid - 1;
-            } else {
-                low = mid + 1;
-            }
-        }
-        return -1;
-    }
+			// mid greater than target then search in left part
+			if (nums[mid] > target) {
+				high = mid - 1;
+			} else {
+				low = mid + 1;
+			}
+		}
+		return -1;
+	}
 
-    /**
-     * Recursive binary search
-     *
-     * @param nums
-     * @param low
-     * @param high
-     * @param target
-     * @return index of search element if found else -1
-     */
-    public int binarySearch(int[] nums, int low, int high, int target) {
-        while (low <= high) {
-            int mid = (low + high) / 2;
+	/**
+	 * Recursive binary search
+	 *
+	 * @param nums
+	 * @param low
+	 * @param high
+	 * @param target
+	 * @return index of search element if found else -1
+	 */
+	public int binarySearch(int[] nums, int low, int high, int target) {
+		while (low <= high) {
+			int mid = (low + high) / 2;
 
-            if (nums[mid] == target)
-                return mid;
+			if (nums[mid] == target)
+				return mid;
 
-            // mid greater than target then search in left part
-            if (nums[mid] > target) {
-                return binarySearch(nums, low, mid - 1, target);
-            } else {
-                return binarySearch(nums, mid + 1, high, target);
-            }
-        }
-        return -1;
-    }
+			// mid greater than target then search in left part
+			if (nums[mid] > target) {
+				return binarySearch(nums, low, mid - 1, target);
+			} else {
+				return binarySearch(nums, mid + 1, high, target);
+			}
+		}
+		return -1;
+	}
 
 }

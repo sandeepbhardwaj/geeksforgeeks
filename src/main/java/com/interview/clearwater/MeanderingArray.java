@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MeanderingArray {
 
 	public static void main(String[] args) {
-		int[] testArr = { -1, 1, 2, 3, -5 };
+		int[] testArr = {-1, 1, 2, 3, -5};
 		System.out.println(Arrays.toString(arrangeLargeSmall(testArr)));
 	}
 

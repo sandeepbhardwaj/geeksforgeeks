@@ -41,7 +41,7 @@ public class LinkedList<E> {
 
 	/**
 	 * Reverse a list iteratively
-	 * 
+	 *
 	 * @param head
 	 * @return head of reversed list
 	 */
@@ -60,7 +60,7 @@ public class LinkedList<E> {
 
 	/**
 	 * Reverse a list recursively
-	 * 
+	 *
 	 * @param head
 	 * @return head of reversed list
 	 */
@@ -79,7 +79,7 @@ public class LinkedList<E> {
 
 	/**
 	 * Detect loop in a list
-	 * 
+	 *
 	 * @param head
 	 * @return true/false
 	 */

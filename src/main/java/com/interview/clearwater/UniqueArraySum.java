@@ -27,7 +27,7 @@ public class UniqueArraySum {
 
 	// Driver code
 	public static void main(String[] args) {
-		int arr[] = { 2, 2, 3, 5, 6 };
+		int arr[] = {2, 2, 3, 5, 6};
 		int n = arr.length;
 		System.out.println(minSum(arr, n));
 	}

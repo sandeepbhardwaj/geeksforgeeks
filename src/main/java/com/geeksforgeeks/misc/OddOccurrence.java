@@ -6,18 +6,17 @@ import java.util.Scanner;
  * <pre>
  * Given an array of positive integers. All numbers occur even number of times
  * except one number which occurs odd number of times. Find the number.
- * 
- * Expected 
- * 		Time Complexity: O(n) 
+ *
+ * Expected
+ * 		Time Complexity: O(n)
  * 		Expected Auxiliary Space: Constant
- * 
+ *
  * Input 1 5 8 4 4 8 23
- * 
+ *
  * Output 23
  * </pre>
- * 
- * @author sbha47
  *
+ * @author sbha47
  */
 public class OddOccurrence {
 	public static void main(String[] args) {

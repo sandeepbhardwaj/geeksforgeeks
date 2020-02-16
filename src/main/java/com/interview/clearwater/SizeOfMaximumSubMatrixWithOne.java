@@ -45,8 +45,8 @@ public class SizeOfMaximumSubMatrixWithOne {
 	}
 
 	public static void main(String[] args) {
-		int matrix[][] = { { 0, 1, 1, 0, 1 }, { 1, 1, 0, 1, 0 }, { 0, 1, 1, 1, 0 }, { 1, 1, 1, 1, 0 },
-				{ 1, 1, 1, 1, 1 }, { 0, 0, 0, 0, 0 } };
+		int matrix[][] = {{0, 1, 1, 0, 1}, {1, 1, 0, 1, 0}, {0, 1, 1, 1, 0}, {1, 1, 1, 1, 0},
+				{1, 1, 1, 1, 1}, {0, 0, 0, 0, 0}};
 
 		System.out.println(maxMatrixWithOne(matrix));
 	}

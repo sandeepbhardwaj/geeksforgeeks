@@ -42,7 +42,7 @@ public class FirstMissingSmallestPositiveInteger {
 			nums[val - 1] = -Math.abs(nums[val - 1]);
 		}
 		System.out.println(Arrays.toString(nums));
-		
+
 		for (int i = 0; i < size; i++) {
 			if (nums[i] >= 0)
 				return i + 1;

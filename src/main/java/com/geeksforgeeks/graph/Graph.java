@@ -8,6 +8,20 @@ import java.util.List;
 public class Graph<T> {
 	private LinkedHashMap<T, List<T>> graph = new LinkedHashMap<>();
 
+	public static void main(String[] args) {
+		Graph<Integer> g = new Graph<Integer>();
+		g.addEdge(0, 1);
+		g.addEdge(0, 2);
+		g.addEdge(1, 2);
+		g.addEdge(2, 0);
+		g.addEdge(2, 3);
+		g.addEdge(3, 3);
+		g.traverse();
+		System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
+
+		g.bfs(2);
+	}
+
 	public void addEdge(T source, T dest) {
 		// adding source
 		if (!graph.containsKey(source)) {
@@ -60,19 +74,5 @@ public class Graph<T> {
 			}
 			System.out.println();
 		}
-	}
-
-	public static void main(String[] args) {
-		Graph<Integer> g = new Graph<Integer>();
-		g.addEdge(0, 1);
-		g.addEdge(0, 2);
-		g.addEdge(1, 2);
-		g.addEdge(2, 0);
-		g.addEdge(2, 3);
-		g.addEdge(3, 3);
-		g.traverse();
-		System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
-
-		g.bfs(2);
 	}
 }

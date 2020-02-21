@@ -1,17 +1,26 @@
 package com.geeksforgeeks.linkedlist;
 
 public class LinkedList<E> {
-	static class Node<E> {
-		E data;
-		Node<E> next;
-
-		Node(E data, Node<E> next) {
-			this.data = data;
-			this.next = next;
-		}
-	}// end of node class
-
 	private Node<E> head = null;
+
+	public static void main(String[] arg) {
+		LinkedList<Integer> list = new LinkedList<>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		Node<Integer> head = list.getHead();
+		System.out.println("List before reverse");
+		list.display(head);
+
+		System.out.println("\nList after reverseIteratively");
+		head = list.reverseIteratively(head);
+		list.display(head);
+
+		System.out.println("\nList after reverseRecursively");
+		head = list.reverseRecursively(head);
+		list.display(head);
+	}
 
 	Node<E> getHead() {
 		return head;
@@ -96,22 +105,13 @@ public class LinkedList<E> {
 		return false;
 	}
 
-	public static void main(String[] arg) {
-		LinkedList<Integer> list = new LinkedList<>();
-		list.add(1);
-		list.add(2);
-		list.add(3);
-		list.add(4);
-		Node<Integer> head = list.getHead();
-		System.out.println("List before reverse");
-		list.display(head);
+	static class Node<E> {
+		E data;
+		Node<E> next;
 
-		System.out.println("\nList after reverseIteratively");
-		head = list.reverseIteratively(head);
-		list.display(head);
-
-		System.out.println("\nList after reverseRecursively");
-		head = list.reverseRecursively(head);
-		list.display(head);
-	}
+		Node(E data, Node<E> next) {
+			this.data = data;
+			this.next = next;
+		}
+	}// end of node class
 }

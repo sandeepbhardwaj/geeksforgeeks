@@ -54,7 +54,7 @@ public class LinkedList<E> {
      * @param head
      * @return head of reversed list
      */
-    public Node<E> reverseIteratively(Node<E> head) {
+    public Node<E> reverseIterativelyUsingSlidingPointers(Node<E> head) {
         Node<E> r = null;
         Node<E> q = null;
         Node<E> p = head;
@@ -72,22 +72,42 @@ public class LinkedList<E> {
     }
 
     /**
+     * Reverse a list iteratively
+     *
+     * @param head
+     * @return head of reversed list
+     */
+    public Node<E> reverseIteratively(Node<E> head) {
+        Node<E> prev = null;
+        Node<E> current = head;
+
+        while (current != null) {
+            Node<E> next = current.next; // getting the next Node
+            current.next = prev; // reverse the list
+            prev = current; // prev holds the reversed list
+            current = next;
+        }
+        return prev;
+    }
+
+    /**
      * Reverse a list recursively
      *
      * @param head
      * @return head of reversed list
      */
     public Node<E> reverseRecursively(Node<E> head) {
-        // base condition
-        if (head == null || head.next == null) {
+        //base case
+        if (head == null || head.next == null)
             return head;
-        }
 
-        Node<E> current = head;
-        head = reverseRecursively(current.next);
-        current.next.next = current; // reverse list
-        current.next = null; // remove link
-        return head;
+        Node<E> reverseList = reverseRecursively(head.next);
+        //reverse the list
+        head.next.next = head;
+        //remove pointer
+        head.next = null;
+
+        return reverseList;
     }
 
     /**

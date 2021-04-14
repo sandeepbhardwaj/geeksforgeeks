@@ -1,5 +1,7 @@
 package com.geeksforgeeks.linkedlist;
 
+import com.leetcode.ListNode;
+
 public class LinkedList<E> {
     private Node<E> head = null;
 
@@ -97,14 +99,16 @@ public class LinkedList<E> {
      * @return head of reversed list
      */
     public Node<E> reverseRecursively(Node<E> head) {
-        //base case
+        // base case
         if (head == null || head.next == null)
             return head;
 
+        //just holding the last node or tail or head of reverse list
+        //       (3)								   2 -> 3
         Node<E> reverseList = reverseRecursively(head.next);
-        //reverse the list
+        // reverse the list
         head.next.next = head;
-        //remove pointer
+        // remove pointer
         head.next = null;
 
         return reverseList;

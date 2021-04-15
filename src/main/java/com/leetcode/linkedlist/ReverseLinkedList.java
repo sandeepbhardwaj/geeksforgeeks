@@ -1,5 +1,6 @@
 package com.leetcode.linkedlist;
 
+import com.geeksforgeeks.linkedlist.LinkedList;
 import com.leetcode.ListNode;
 
 /**
@@ -13,26 +14,27 @@ import com.leetcode.ListNode;
  */
 public class ReverseLinkedList {
 
-    public ListNode reverseList(ListNode head) {
-        //prev will be new head of reversed list
-        ListNode prev = null;
-        ListNode next = null;
-        ListNode current = head;
+    /**
+     * Reverse a list iteratively using sliding pointers
+     *
+     * @param head
+     * @return head of reversed list
+     */
+    public ListNode reverseIterativelyUsingSlidingPointers(ListNode head) {
+        ListNode r = null;
+        ListNode q = null;
+        ListNode p = head;
 
-        while (current != null) {
-            // hold the current next
-            next = current.next;
+        while (p != null) {
+            //sliding pointers
+            r = q;
+            q = p;
+            p = p.next;
 
-            // added the reverse list to current next
-            current.next = prev;
-            //pointing the prev to new reversed list head
-            prev = current;
-
-            // moved the current to next node
-            current = next;
-
+            //reverse the link
+            q.next = r;
         }
-        return prev;
+        return q;
     }
 
     // 1->2->3->NULL

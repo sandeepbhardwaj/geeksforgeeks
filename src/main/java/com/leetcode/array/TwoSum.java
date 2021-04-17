@@ -17,25 +17,25 @@ import java.util.Map;
  * return [0, 1].
  */
 public class TwoSum {
-	public int[] twoSum(int[] nums, int target) {
-		// contains value and its index
-		Map<Integer, Integer> map = new HashMap<>();
 
-		for (int i = 0; i < nums.length; i++) {
-			map.put(nums[i], i);
-		}
+	/**
+	 * two sum in single pass
+	 * @param nums
+	 * @param target
+	 * @return
+	 */
+    public int[] twoSum(int[] nums, int target) {
+    	// store target-num[i] as key and index as value
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
 
-		// find the number
-		for (int i = 0; i < nums.length; i++) {
-			int find = target - nums[i];
-
-			// second condition is most important to discard the same element
-			if (map.containsKey(find) && map.get(find) != i) {
-				return new int[]{i, map.get(find)};
-			}
-
-		}
-		return null;
-	}
+        	//check if (target-num[i]) is already exit
+        	if (map.containsKey(nums[i])) {
+                return new int[]{map.get(nums[i]), i};
+            }
+            map.put(target - nums[i], i);
+        }
+        return null;
+    }
 
 }

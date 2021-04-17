@@ -34,7 +34,7 @@ public class RotateArray {
 		if (nums == null || nums.length == 0 || k <= 0)
 			return;
 
-		for (int i = 0; i < k; i++) {
+		while (k>0) {
 			int j = nums.length - 1;
 
 			//store the last element in temp
@@ -45,8 +45,10 @@ public class RotateArray {
 				//replace last with second-last element
 				nums[j] = nums[j - 1];
 			}
+			//now j point to zero location
 			nums[j] = temp;
 
+			k--;
 			System.out.println(Arrays.toString(nums));
 		}
 	}

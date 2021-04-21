@@ -33,6 +33,8 @@ public class TwoSum {
         	if (map.containsKey(nums[i])) {
                 return new int[]{map.get(nums[i]), i};
             }
+
+        	// for num[0]=2 , 7 as key and 0 as value {7,0}
             map.put(target - nums[i], i);
         }
         return null;

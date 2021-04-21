@@ -60,10 +60,6 @@ public class ThreeSum {
             }
         }
 
-        List<List<Integer>> result = new ArrayList<>();
-        for (List<Integer> l : set) {
-            result.add(l);
-        }
-        return result;
+		return new ArrayList<>(set);
     }
 }

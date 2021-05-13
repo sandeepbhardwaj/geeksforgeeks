@@ -27,10 +27,10 @@ public class FindAllNumbersDisappearedInAnArray {
 
 		// negate the value if found
 		for (int i = 0; i < nums.length; i++) {
-			int val = Math.abs(nums[i]);
+			int index = Math.abs(nums[i])-1;
 
 			// negate the output
-			nums[val - 1] = -Math.abs(nums[val - 1]);
+			nums[index] = -Math.abs(nums[index]);
 		}
 
 		// if value at index is positive then add to result

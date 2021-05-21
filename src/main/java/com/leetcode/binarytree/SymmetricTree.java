@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.binarytree;
 
 /**
  * 101. Symmetric Tree

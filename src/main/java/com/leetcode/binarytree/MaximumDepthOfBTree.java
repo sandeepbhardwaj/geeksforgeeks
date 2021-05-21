@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.binarytree;
 
 /**
  * 104. Maximum Depth of Binary Tree Given a binary tree, find its maximum

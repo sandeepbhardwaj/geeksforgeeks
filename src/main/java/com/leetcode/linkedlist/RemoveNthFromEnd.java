@@ -29,7 +29,7 @@ public class RemoveNthFromEnd {
 			fastPtr = fastPtr.next;
 		}
 
-		// for single node
+		// List contains only one node and n=1
 		if (fastPtr == null) {
 			head = head.next;
 			return head;

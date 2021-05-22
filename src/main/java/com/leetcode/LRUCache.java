@@ -39,89 +39,89 @@ import java.util.Map;
  * lRUCache.get(4);    // return 4
  */
 public class LRUCache {
-    Node head = new Node(-1, -1);
-    Node tail = new Node(-1, -1);
+	Node head = new Node(-1, -1);
+	Node tail = new Node(-1, -1);
 
-    Map<Integer, Node> cache;
-    int capacity;
+	Map<Integer, Node> cache;
+	int capacity;
 
-    public LRUCache(int capacity) {
-        cache = new HashMap<>();
-        this.capacity = capacity;
+	public LRUCache(int capacity) {
+		cache = new HashMap<>();
+		this.capacity = capacity;
 
-        head.next = tail;
-        tail.prev = head; //  head -> Prev ,  head <- tail
-    }
+		head.next = tail;
+		tail.prev = head; //  head -> Prev ,  head <- tail
+	}
 
-    public int get(int key) {
-        int result = -1;
+	public int get(int key) {
+		int result = -1;
 
-        Node node = cache.get(key);
-        if (node != null) {
-            //move node to head
-            result = node.value;
-            removeNode(node);
-            addNode(node);
-        }
-        return result;
-    }
+		Node node = cache.get(key);
+		if (node != null) {
+			//move node to head
+			result = node.value;
+			removeNode(node);
+			addNode(node);
+		}
+		return result;
+	}
 
-    public void put(int key, int value) {
-        Node node = cache.get(key);
+	public void put(int key, int value) {
+		Node node = cache.get(key);
 
-        //existing value
-        if (node != null) {
-            //override value
-            node.value = value;
-            removeNode(node);
-            addNode(node);
-        } else {
-            if (capacity == cache.size()) {
-                cache.remove(tail.prev.key); //remove from map
-                removeNode(tail.prev); //remove last node
-            }
+		//existing value
+		if (node != null) {
+			//override value
+			node.value = value;
+			removeNode(node);
+			addNode(node);
+		} else {
+			if (capacity == cache.size()) {
+				cache.remove(tail.prev.key); //remove from map
+				removeNode(tail.prev); //remove last node
+			}
 
-            node = new Node(key, value);
-            cache.put(key, node);
-            addNode(node);
-        }
+			node = new Node(key, value);
+			cache.put(key, node);
+			addNode(node);
+		}
 
-    }
+	}
 
-    //always add to head
-    private void addNode(Node node) {
-        //head --> head_next
-        Node head_next = head.next; // initially its tail
+	//always add to head
+	private void addNode(Node node) {
+		//head --> head_next
+		Node head_next = head.next; // initially its tail
 
-        node.prev = head;
-        node.next = head_next;
+		node.prev = head;
+		node.next = head_next;
 
-        head_next.prev = node;
-        head.next = node;
-    }
+		head_next.prev = node;
+		head.next = node;
+	}
 
-    //remove the given node
-    private void removeNode(Node node) {
-        // node_prev --> node ---> node_next
-        Node node_prev = node.prev;
-        Node node_next = node.next;
+	//remove the given node
+	private void removeNode(Node node) {
+		// node_prev --> node ---> node_next
+		Node node_prev = node.prev;
+		Node node_next = node.next;
 
-        node_prev.next = node_next;
-        node_next.prev = node_prev;
-    }
+		node_prev.next = node_next;
+		node_next.prev = node_prev;
+	}
 
-    //class to represent DoubleyLinkedList
-    class Node {
-        int key;
-        int value;
-        Node next;
-        Node prev;
+	//class to represent DoubleyLinkedList
+	class Node {
+		int key;
+		int value;
+		Node next;
+		Node prev;
 
-        Node(int key, int value) {
-            this.key = key;
-            this.value = value;
-        }
-    }
+		Node(int key, int value) {
+			this.key = key;
+			this.value = value;
+		}
+	}
 }
 
 /**

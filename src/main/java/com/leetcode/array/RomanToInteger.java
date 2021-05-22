@@ -53,34 +53,34 @@ import java.util.Map;
  * Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
  */
 public class RomanToInteger {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         /*
         M    CM         XC      IV
         1000+(1000-100)+(100-10)+(5-)=1994
         */
-        System.out.println(romanToInt("MCMXCIV"));
-    }
+		System.out.println(romanToInt("MCMXCIV"));
+	}
 
-    public static int romanToInt(String s) {
-        Map<Character, Integer> map = new HashMap<>();
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
+	public static int romanToInt(String s) {
+		Map<Character, Integer> map = new HashMap<>();
+		map.put('I', 1);
+		map.put('V', 5);
+		map.put('X', 10);
+		map.put('L', 50);
+		map.put('C', 100);
+		map.put('D', 500);
+		map.put('M', 1000);
 
-        int result = map.get(s.charAt(s.length() - 1)); //get last element value
+		int result = map.get(s.charAt(s.length() - 1)); //get last element value
 
-        for (int i = s.length() - 2; i >= 0; i--) {
-            //last element is greater than next
-            if (map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) {
-                result -= map.get(s.charAt(i));
-            } else {
-                result += map.get(s.charAt(i));
-            }
-        }
-        return result;
-    }
+		for (int i = s.length() - 2; i >= 0; i--) {
+			//last element is greater than next
+			if (map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) {
+				result -= map.get(s.charAt(i));
+			} else {
+				result += map.get(s.charAt(i));
+			}
+		}
+		return result;
+	}
 }

@@ -16,47 +16,47 @@ import com.leetcode.ListNode;
  * Output: [2,0,1]
  */
 public class RotateListToRight {
-    public ListNode rotateRight(ListNode head, int k) {
+	public ListNode rotateRight(ListNode head, int k) {
 
-        if (head == null || head.next == null) {
-            return head;
-        }
+		if (head == null || head.next == null) {
+			return head;
+		}
 
-        //calculate k if list size is 10 and k is 100 then no need to rotate
-        k = k % size(head); //is used for reminder
+		//calculate k if list size is 10 and k is 100 then no need to rotate
+		k = k % size(head); //is used for reminder
 
-        if (k == 0) return head;
+		if (k == 0) return head;
 
-        //Use two pointer approach
-        ListNode slowPtr = head;
-        ListNode fastPtr = head;
+		//Use two pointer approach
+		ListNode slowPtr = head;
+		ListNode fastPtr = head;
 
-        //move fastPtr to k nodes
-        while (fastPtr.next != null && k > 0) {
-            fastPtr = fastPtr.next;
-            k--;
-        }
+		//move fastPtr to k nodes
+		while (fastPtr.next != null && k > 0) {
+			fastPtr = fastPtr.next;
+			k--;
+		}
 
-        //Now move both the pointers
-        while (fastPtr.next != null) {
-            fastPtr = fastPtr.next;
-            slowPtr = slowPtr.next;
-        }
+		//Now move both the pointers
+		while (fastPtr.next != null) {
+			fastPtr = fastPtr.next;
+			slowPtr = slowPtr.next;
+		}
 
-        //Now rotate
-        ListNode newHead = slowPtr.next;
-        slowPtr.next = null; //break the link
-        fastPtr.next = head;
-        return newHead;
-    }
+		//Now rotate
+		ListNode newHead = slowPtr.next;
+		slowPtr.next = null; //break the link
+		fastPtr.next = head;
+		return newHead;
+	}
 
-    private int size(ListNode head) {
-        int count = 0;
-        ListNode current = head;
-        while (current != null) {
-            current = current.next;
-            count++;
-        }
-        return count;
-    }
+	private int size(ListNode head) {
+		int count = 0;
+		ListNode current = head;
+		while (current != null) {
+			current = current.next;
+			count++;
+		}
+		return count;
+	}
 }

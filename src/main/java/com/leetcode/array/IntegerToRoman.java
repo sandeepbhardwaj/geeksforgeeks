@@ -50,63 +50,63 @@ package com.leetcode.array;
  * Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
  */
 public class IntegerToRoman {
-    public static void main(String[] args) {
-        System.out.println(intToRoman(3200));
-    }
+	public static void main(String[] args) {
+		System.out.println(intToRoman(3200));
+	}
 
-    public static String intToRoman(int num) {
-        Numeral[] numerals = {
-                new Numeral("M", 1000),
-                new Numeral("CM", 900),
-                new Numeral("D", 500),
-                new Numeral("CD", 400),
-                new Numeral("C", 100),
-                new Numeral("XC", 90),
-                new Numeral("L", 50),
-                new Numeral("XL", 40),
-                new Numeral("X", 10),
-                new Numeral("IX", 9),
-                new Numeral("V", 5),
-                new Numeral("IV", 4),
-                new Numeral("I", 1)
-        };
+	public static String intToRoman(int num) {
+		Numeral[] numerals = {
+				new Numeral("M", 1000),
+				new Numeral("CM", 900),
+				new Numeral("D", 500),
+				new Numeral("CD", 400),
+				new Numeral("C", 100),
+				new Numeral("XC", 90),
+				new Numeral("L", 50),
+				new Numeral("XL", 40),
+				new Numeral("X", 10),
+				new Numeral("IX", 9),
+				new Numeral("V", 5),
+				new Numeral("IV", 4),
+				new Numeral("I", 1)
+		};
 
-        String result = "";
-        for (Numeral numeral : numerals) {
-            int noOfnumeral = num / numeral.value;
+		String result = "";
+		for (Numeral numeral : numerals) {
+			int noOfnumeral = num / numeral.value;
 
-            // not zero it means num is greater than numeral value like 6 is greater than V aka 5
-            if (noOfnumeral != 0) {
-                // suppose 3200/1000= 3 then add three MMM
-                result += numeral.symbol.repeat(noOfnumeral);
-            }
-            // 3200%1000 = 200
-            num = num % numeral.value;
-        }
-        return result;
-    }
+			// not zero it means num is greater than numeral value like 6 is greater than V aka 5
+			if (noOfnumeral != 0) {
+				// suppose 3200/1000= 3 then add three MMM
+				result += numeral.symbol.repeat(noOfnumeral);
+			}
+			// 3200%1000 = 200
+			num = num % numeral.value;
+		}
+		return result;
+	}
 
-    static class Numeral {
-        String symbol;
-        int value;
+	static class Numeral {
+		String symbol;
+		int value;
 
-        public Numeral(String symbol, int value) {
-            this.symbol = symbol;
-            this.value = value;
-        }
-    }
+		public Numeral(String symbol, int value) {
+			this.symbol = symbol;
+			this.value = value;
+		}
+	}
 
-    /**
-     * Method 2
-     *
-     * @param num
-     * @return
-     */
-    public static String intToRoman_2(int num) {
-        String[] thousands = {"", "M", "MM", "MMM"};
-        String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-        String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-        String[] units = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-        return thousands[num / 1000] + hundreds[(num % 1000) / 100] + tens[(num % 100) / 10] + units[num % 10];
-    }
+	/**
+	 * Method 2
+	 *
+	 * @param num
+	 * @return
+	 */
+	public static String intToRoman_2(int num) {
+		String[] thousands = {"", "M", "MM", "MMM"};
+		String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+		String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+		String[] units = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+		return thousands[num / 1000] + hundreds[(num % 1000) / 100] + tens[(num % 100) / 10] + units[num % 10];
+	}
 }

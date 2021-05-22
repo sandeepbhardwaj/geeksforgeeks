@@ -29,12 +29,13 @@ public class RotateArray {
 		int[] nums = {1, 2, 3, 4, 5, 6, 7};
 		rotate(nums, 3);
 	}
+
 	// left <--  --> Right
 	public static void rotate(int[] nums, int k) {
 		if (nums == null || nums.length == 0 || k <= 0)
 			return;
 
-		while (k>0) {
+		while (k > 0) {
 			int j = nums.length - 1;
 
 			//store the last element in temp

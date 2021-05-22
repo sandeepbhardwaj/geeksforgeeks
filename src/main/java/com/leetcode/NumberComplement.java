@@ -19,63 +19,63 @@ package com.leetcode;
  * So you need to output 0.
  */
 public class NumberComplement {
-    public int findComplement(int num) {
-        //Step 1. convert decimal number to binary number
-        String binary = decimalToBinary(num);
+	public int findComplement(int num) {
+		//Step 1. convert decimal number to binary number
+		String binary = decimalToBinary(num);
 
-        //Step 2. complement of binary number - just flip the bits
-        String complement = "";
-        for (char c : binary.toCharArray()) {
-            char flip = (c == '0') ? '1' : '0';
-            complement += flip;
-        }
+		//Step 2. complement of binary number - just flip the bits
+		String complement = "";
+		for (char c : binary.toCharArray()) {
+			char flip = (c == '0') ? '1' : '0';
+			complement += flip;
+		}
 
-        //Step 3. convert complement binary number to decimal number
-        int decValue = binaryToDecimal(complement);
-        return decValue;
-    }
+		//Step 3. convert complement binary number to decimal number
+		int decValue = binaryToDecimal(complement);
+		return decValue;
+	}
 
 
-    /**
-     * Code to convert decimal to Binary
-     *
-     * @param decimalNumber
-     * @return binary representation of decimal number
-     */
-    private String decimalToBinary(int decimalNumber) {
-        //create binary number of num
-        int[] binaryArr = new int[32];
+	/**
+	 * Code to convert decimal to Binary
+	 *
+	 * @param decimalNumber
+	 * @return binary representation of decimal number
+	 */
+	private String decimalToBinary(int decimalNumber) {
+		//create binary number of num
+		int[] binaryArr = new int[32];
 
-        // i is used to store the length of array
-        int i = 0;
-        while (decimalNumber != 0) {
-            binaryArr[i] = decimalNumber % 2; // to store rem
-            decimalNumber = decimalNumber / 2;
-            i++;
-        }
+		// i is used to store the length of array
+		int i = 0;
+		while (decimalNumber != 0) {
+			binaryArr[i] = decimalNumber % 2; // to store rem
+			decimalNumber = decimalNumber / 2;
+			i++;
+		}
 
-        String binaryNumber = "";
-        for (int j = i - 1; j >= 0; j--) {
-            binaryNumber += binaryArr[j]; //reverse the array to get output
-        }
-        return binaryNumber;
-    }
+		String binaryNumber = "";
+		for (int j = i - 1; j >= 0; j--) {
+			binaryNumber += binaryArr[j]; //reverse the array to get output
+		}
+		return binaryNumber;
+	}
 
-    /**
-     * Convert binary number to decimal number
-     *
-     * @param binaryNumber
-     * @return decimal representation of binary number
-     */
-    private int binaryToDecimal(String binaryNumber) {
-        int base = 1; //2^0
-        int decValue = 0;
-        for (int j = binaryNumber.length() - 1; j >= 0; j--) {
-            if (binaryNumber.charAt(j) == '1') {
-                decValue += base;
-            }
-            base = base * 2; // 2^0*2=2^1, 2^0*2*2=2^2
-        }
-        return decValue;
-    }
+	/**
+	 * Convert binary number to decimal number
+	 *
+	 * @param binaryNumber
+	 * @return decimal representation of binary number
+	 */
+	private int binaryToDecimal(String binaryNumber) {
+		int base = 1; //2^0
+		int decValue = 0;
+		for (int j = binaryNumber.length() - 1; j >= 0; j--) {
+			if (binaryNumber.charAt(j) == '1') {
+				decValue += base;
+			}
+			base = base * 2; // 2^0*2=2^1, 2^0*2*2=2^2
+		}
+		return decValue;
+	}
 }

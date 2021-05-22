@@ -27,7 +27,7 @@ public class FindAllNumbersDisappearedInAnArray {
 
 		// negate the value if found
 		for (int i = 0; i < nums.length; i++) {
-			int index = Math.abs(nums[i])-1;
+			int index = Math.abs(nums[i]) - 1;
 
 			// negate the output
 			nums[index] = -Math.abs(nums[index]);

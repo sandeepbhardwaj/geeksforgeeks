@@ -26,82 +26,82 @@ import com.leetcode.ListNode;
  */
 public class ReverseNodesInkGroups {
 
-    public ListNode reverseKGroup(ListNode head, int k) {
+	public ListNode reverseKGroup(ListNode head, int k) {
 
-        if (head == null)
-            return head;
+		if (head == null)
+			return head;
 
-        ListNode r = null;
-        ListNode q = null; // holds thre reversed linked list
-        ListNode p = head; //hold the next node
+		ListNode r = null;
+		ListNode q = null; // holds thre reversed linked list
+		ListNode p = head; //hold the next node
 
-        int count = 0; //to keep track of sub list
-        while (count < k && p != null) {
-            r = q;
-            q = p;
-            p = p.next;
+		int count = 0; //to keep track of sub list
+		while (count < k && p != null) {
+			r = q;
+			q = p;
+			p = p.next;
 
-            //reverse the link
-            q.next = r;
+			//reverse the link
+			q.next = r;
 
-            //increment count
-            count++;
-        }
+			//increment count
+			count++;
+		}
 
-        //m.imp why head , because head becomes tail of sublist
-        if (p != null) {
-            head.next = reverseKGroup(p, k);
-        }
+		//m.imp why head , because head becomes tail of sublist
+		if (p != null) {
+			head.next = reverseKGroup(p, k);
+		}
 
-        return q;
-    }
+		return q;
+	}
 
 
-    /**
-     * If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
-     *
-     * @param head
-     * @param k
-     * @return
-     */
-    public ListNode reverseKGroup2(ListNode head, int k) {
+	/**
+	 * If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
+	 *
+	 * @param head
+	 * @param k
+	 * @return
+	 */
+	public ListNode reverseKGroup2(ListNode head, int k) {
 
-        if (head == null)
-            return head;
+		if (head == null)
+			return head;
 
-        //code to validate - If the number of nodes is not a multiple of k then left-out nodes, in the end,
-        // should remain as it is.
-        ListNode temp = head;
-        int i = 0;
-        while (i < k && temp != null) {
-            temp = temp.next;
-            i++;
-        }
-        if (temp == null && i < k)
-            return head;
+		//code to validate - If the number of nodes is not a multiple of k then left-out nodes, in the end,
+		// should remain as it is.
+		ListNode temp = head;
+		int i = 0;
+		while (i < k && temp != null) {
+			temp = temp.next;
+			i++;
+		}
+		if (temp == null && i < k)
+			return head;
 
-        ListNode r = null;
-        ListNode q = null; // holds thre reversed linked list
-        ListNode p = head; //hold the next node
+		ListNode r = null;
+		ListNode q = null; // holds thre reversed linked list
+		ListNode p = head; //hold the next node
 
-        int count = 0; //to keep track of sub list
+		int count = 0; //to keep track of sub list
 
-        while (count < k && p != null) {
-            r = q;
-            q = p;
-            p = p.next;
+		while (count < k && p != null) {
+			r = q;
+			q = p;
+			p = p.next;
 
-            //reverse the link
-            q.next = r;
+			//reverse the link
+			q.next = r;
 
-            //increment count
-            count++;
-        }
+			//increment count
+			count++;
+		}
 
-        //m.imp why head , bcoz head becomes tail of sublist
-        if (p != null) {
-            head.next = reverseKGroup(p, k);
-        }
-        return q;
-    }
+		//m.imp why head , bcoz head becomes tail of sublist
+		if (p != null) {
+			head.next = reverseKGroup(p, k);
+		}
+		return q;
+	}
 }

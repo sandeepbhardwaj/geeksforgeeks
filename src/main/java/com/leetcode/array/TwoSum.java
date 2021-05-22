@@ -20,24 +20,25 @@ public class TwoSum {
 
 	/**
 	 * two sum in single pass
+	 *
 	 * @param nums
 	 * @param target
 	 * @return
 	 */
-    public int[] twoSum(int[] nums, int target) {
-    	// store target-num[i] as key and index as value
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
+	public int[] twoSum(int[] nums, int target) {
+		// store target-num[i] as key and index as value
+		Map<Integer, Integer> map = new HashMap<>();
+		for (int i = 0; i < nums.length; i++) {
 
-        	//check if (target-num[i]) is already exit
-        	if (map.containsKey(nums[i])) {
-                return new int[]{map.get(nums[i]), i};
-            }
+			//check if (target-num[i]) is already exit
+			if (map.containsKey(nums[i])) {
+				return new int[]{map.get(nums[i]), i};
+			}
 
-        	// for num[0]=2 , 7 as key and 0 as value {7,0}
-            map.put(target - nums[i], i);
-        }
-        return null;
-    }
+			// for num[0]=2 , 7 as key and 0 as value {7,0}
+			map.put(target - nums[i], i);
+		}
+		return null;
+	}
 
 }

@@ -32,6 +32,7 @@ public class RotateListToRight {
 		ListNode fastPtr = head;
 
 		//move fastPtr to k nodes
+		//1->2->3, k=2 :=> fastPtr on 3 after loop completion
 		while (fastPtr.next != null && k > 0) {
 			fastPtr = fastPtr.next;
 			k--;

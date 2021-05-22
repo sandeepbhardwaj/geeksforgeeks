@@ -5,7 +5,8 @@ import com.leetcode.ListNode;
 /**
  * 21. Merge Two Sorted Lists
  * <p>
- * Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+ * Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes
+ * of the first two lists.
  * <p>
  * Example:
  * <p>
@@ -14,6 +15,7 @@ import com.leetcode.ListNode;
  */
 public class MergeTwoSortedLists {
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+		//fakeHead is helpful to avoid so many initial condition for first node.
 		ListNode fakeHead = new ListNode(0);
 		ListNode current = fakeHead;
 

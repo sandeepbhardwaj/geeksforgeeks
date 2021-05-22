@@ -12,9 +12,12 @@ package com.leetcode.array;
  * C             100
  * D             500
  * M             1000
- * For example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+ * For example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII,
+ * which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
  * <p>
- * Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+ * Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII.
+ * Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same
+ * principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
  * <p>
  * I can be placed before V (5) and X (10) to make 4 and 9.
  * X can be placed before L (50) and C (100) to make 40 and 90.
@@ -48,8 +51,7 @@ package com.leetcode.array;
  */
 public class IntegerToRoman {
     public static void main(String[] args) {
-        System.out.println(intToRoman(2944));
-        System.out.println(intToRoman(49));
+        System.out.println(intToRoman(3200));
     }
 
     public static String intToRoman(int num) {
@@ -73,8 +75,9 @@ public class IntegerToRoman {
         for (Numeral numeral : numerals) {
             int noOfnumeral = num / numeral.value;
 
+            // not zero it means num is greater than numeral value like 6 is greater than V aka 5
             if (noOfnumeral != 0) {
-                // suppose 3000/1000= 3 then add three MMM
+                // suppose 3200/1000= 3 then add three MMM
                 result += numeral.symbol.repeat(noOfnumeral);
             }
             // 3200%1000 = 200
@@ -93,16 +96,17 @@ public class IntegerToRoman {
         }
     }
 
-	/**
-	 * Method 2
-	 * @param num
-	 * @return
-	 */
-	public static String intToRoman_2(int num) {
-		String[] thousands = {"", "M", "MM", "MMM"};
-		String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-		String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-		String[] units = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-		return thousands[num / 1000] + hundreds[(num % 1000) / 100] + tens[(num % 100) / 10] + units[num % 10];
-	}
+    /**
+     * Method 2
+     *
+     * @param num
+     * @return
+     */
+    public static String intToRoman_2(int num) {
+        String[] thousands = {"", "M", "MM", "MMM"};
+        String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+        String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+        String[] units = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+        return thousands[num / 1000] + hundreds[(num % 1000) / 100] + tens[(num % 100) / 10] + units[num % 10];
+    }
 }

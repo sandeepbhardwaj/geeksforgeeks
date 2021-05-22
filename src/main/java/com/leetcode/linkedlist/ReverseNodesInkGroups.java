@@ -32,7 +32,7 @@ public class ReverseNodesInkGroups {
 			return head;
 
 		ListNode r = null;
-		ListNode q = null; // holds thre reversed linked list
+		ListNode q = null; // holds the reversed linked list
 		ListNode p = head; //hold the next node
 
 		int count = 0; //to keep track of sub list
@@ -70,7 +70,7 @@ public class ReverseNodesInkGroups {
 			return head;
 
 		//code to validate - If the number of nodes is not a multiple of k then left-out nodes, in the end,
-		// should remain as it is.
+		//should remain as it is.
 		ListNode temp = head;
 		int i = 0;
 		while (i < k && temp != null) {

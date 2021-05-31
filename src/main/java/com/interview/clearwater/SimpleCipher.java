@@ -1,8 +1,5 @@
 package com.interview.clearwater;
 
-import static java.lang.Character.isLowerCase;
-import static java.lang.Character.isUpperCase;
-
 public class SimpleCipher {
 
 	// (A,1) = Z
@@ -17,7 +14,7 @@ public class SimpleCipher {
 			//left rotate
 			int index = ch - d;
 
-			if ((isUpperCase(ch) && index < 65) || (isLowerCase(ch) && index < 97)) {
+			if ((Character.isUpperCase(ch) && index < 65) || (Character.isLowerCase(ch) && index < 97)) {
 				index = index + 26;
 			}
 			result.append((char) index);
@@ -38,7 +35,7 @@ public class SimpleCipher {
 			int index = ch + d;
 
 			//index moves to out of max range then reduce to 26 char
-			if ((isUpperCase(ch) && index > 90) || (isLowerCase(ch) && index > 122)) {
+			if ((Character.isUpperCase(ch) && index > 90) || (Character.isLowerCase(ch) && index > 122)) {
 				index = index - 26;
 			}
 			result.append((char) index);
@@ -50,12 +47,12 @@ public class SimpleCipher {
 	// 65 to 90 => UpperCase A to Z
 	// 97 to 122 => LowerCase a to z
 	private static boolean isAlpha(Character ch) {
-		return ch >= 65 && ch <= 122;
+		return Character.isAlphabetic(ch);
 	}
 
 
 	public static void main(String[] args) {
-		System.out.println("left Rotate (A,2):" + leftRotate("A", 2) + ", Right Rotate (Y,2):" + rightRotate("Y", 2));
+		System.out.println("Left Rotate (A,2):" + leftRotate("A", 2) + ", Right Rotate (Y,2):" + rightRotate("Y", 2));
 	}
 
 }

@@ -110,7 +110,7 @@ public class LRUCache {
 		node_next.prev = node_prev;
 	}
 
-	//class to represent DoubleyLinkedList
+	//class to represent DoublyLinkedList
 	class Node {
 		int key;
 		int value;

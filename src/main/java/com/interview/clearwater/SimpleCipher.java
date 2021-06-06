@@ -1,5 +1,9 @@
 package com.interview.clearwater;
 
+/**
+ * 65 to 90 => UpperCase A to Z
+ * 97 to 122 => LowerCase a to z
+ */
 public class SimpleCipher {
 
 	// (A,1) = Z
@@ -7,14 +11,14 @@ public class SimpleCipher {
 		StringBuilder result = new StringBuilder();
 		d = d % 26;
 		for (Character ch : str.toCharArray()) {
-			if (!isAlpha(ch)) {
+			if (!Character.isAlphabetic(ch)) {
 				result.append(ch);
 				continue;
 			}
 			//left rotate
 			int index = ch - d;
 
-			if ((Character.isUpperCase(ch) && index < 65) || (Character.isLowerCase(ch) && index < 97)) {
+			if ((Character.isUpperCase(ch) && index < 'A') || (Character.isLowerCase(ch) && index < 'a')) {
 				index = index + 26;
 			}
 			result.append((char) index);
@@ -27,7 +31,7 @@ public class SimpleCipher {
 		StringBuilder result = new StringBuilder();
 		d = d % 26;
 		for (Character ch : str.toCharArray()) {
-			if (!isAlpha(ch)) {
+			if (!Character.isAlphabetic(ch)) {
 				result.append(ch);
 				continue;
 			}
@@ -42,14 +46,6 @@ public class SimpleCipher {
 		}
 		return result.toString();
 	}
-
-
-	// 65 to 90 => UpperCase A to Z
-	// 97 to 122 => LowerCase a to z
-	private static boolean isAlpha(Character ch) {
-		return Character.isAlphabetic(ch);
-	}
-
 
 	public static void main(String[] args) {
 		System.out.println("Left Rotate (A,2):" + leftRotate("A", 2) + ", Right Rotate (Y,2):" + rightRotate("Y", 2));

@@ -44,7 +44,7 @@ public class MinStack {
 	public void pop() {
 		int val = stack.pop();
 
-		//change pop behavious
+		//change pop behaviours
 		if (val == minStack.peek())
 			minStack.pop();
 	}

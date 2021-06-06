@@ -25,41 +25,6 @@ import java.util.Stack;
 public class ValidParentheses {
 
 	public boolean isValid(String s) {
-
-		Stack<Character> stack = new Stack<>();
-
-		for (int i = 0; i < s.length(); i++) {
-			char ch = s.charAt(i);
-
-			// for open parentheses push to stack
-			if (ch == '(' || ch == '{' || ch == '[') {
-				stack.push(ch);
-				continue;
-			}
-
-			if (stack.isEmpty()) {
-				return false;
-			}
-
-			char top = stack.pop();
-
-			if (ch == ')' && top != '(') {
-				return false;
-			}
-
-			if (ch == '}' && top != '{') {
-				return false;
-			}
-
-			if (ch == ']' && top != '[') {
-				return false;
-			}
-		}
-
-		return stack.isEmpty();
-	}
-
-	public boolean isValid2(String s) {
 		Stack<Character> stack = new Stack<Character>();
 
 		for (char c : s.toCharArray()) {

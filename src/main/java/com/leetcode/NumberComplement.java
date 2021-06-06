@@ -1,5 +1,9 @@
 package com.leetcode;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * 476. Number Complement
  * Given a positive integer num, output its complement number. The complement strategy is to flip the bits of its
@@ -42,23 +46,15 @@ public class NumberComplement {
 	 * @param decimalNumber
 	 * @return binary representation of decimal number
 	 */
-	private String decimalToBinary(int decimalNumber) {
-		//create binary number of num
-		int[] binaryArr = new int[32];
+	public static String decimalToBinary(int decimalNumber) {
+		StringBuilder binaryNumber = new StringBuilder();
 
-		// i is used to store the length of array
-		int i = 0;
 		while (decimalNumber != 0) {
-			binaryArr[i] = decimalNumber % 2; // to store rem
+			binaryNumber.append(decimalNumber % 2);// to store rem
 			decimalNumber = decimalNumber / 2;
-			i++;
 		}
 
-		String binaryNumber = "";
-		for (int j = i - 1; j >= 0; j--) {
-			binaryNumber += binaryArr[j]; //reverse the array to get output
-		}
-		return binaryNumber;
+		return binaryNumber.reverse().toString();
 	}
 
 	/**
@@ -67,7 +63,7 @@ public class NumberComplement {
 	 * @param binaryNumber
 	 * @return decimal representation of binary number
 	 */
-	private int binaryToDecimal(String binaryNumber) {
+	public static int binaryToDecimal(String binaryNumber) {
 		int base = 1; //2^0
 		int decValue = 0;
 		for (int j = binaryNumber.length() - 1; j >= 0; j--) {
@@ -77,5 +73,11 @@ public class NumberComplement {
 			base = base * 2; // 2^0*2=2^1, 2^0*2*2=2^2
 		}
 		return decValue;
+	}
+
+
+	public static void main(String[] args) {
+		//500 - 111110100
+		System.out.println("Decimal 7 to Binary :" + decimalToBinary(7));
 	}
 }

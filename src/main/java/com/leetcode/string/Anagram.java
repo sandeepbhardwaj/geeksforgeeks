@@ -1,7 +1,7 @@
 package com.leetcode.string;
 
 public class Anagram {
-	public boolean isAnagram(String s, String t) {
+	public static boolean isAnagram(String s, String t) {
 
 		if (s == null || t == null)
 			return false;
@@ -22,5 +22,9 @@ public class Anagram {
 				return false;
 		}
 		return true;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("IS abc and bca is anagram :" + isAnagram("abc", "bca"));
 	}
 }

@@ -26,24 +26,17 @@ public class JewelsAndStones {
 	}
 
 	public static int numJewelsInStones(String jewels, String stones) {
-		//create array to hold all alphabets
-
-		boolean[] markedJewels = new boolean['z' + 1];
-
 		int noOfJewels = 0;
 
-		//marked the jewels
-		for (int i = 0; i < jewels.length(); i++) {
-			markedJewels[jewels.charAt(i)] = true;
-		}
+		int[] map = new int[128];
 
-		//find the jewels in stones
-		for (int i = 0; i < stones.length(); i++) {
-			if (markedJewels[stones.charAt(i)]) {
+		for (char c : jewels.toCharArray())
+			map[c]++;
+
+		for (char c : stones.toCharArray()) {
+			if (map[c] > 0)
 				noOfJewels++;
-			}
 		}
-
 		return noOfJewels;
 	}
 }

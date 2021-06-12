@@ -12,7 +12,8 @@ import java.util.Map;
  * <p>
  * LRUCache(int capacity) Initialize the LRU cache with positive size capacity.
  * int get(int key) Return the value of the key if the key exists, otherwise return -1.
- * void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.
+ * void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the
+ * cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.
  * Follow up:
  * Could you do get and put in O(1) time complexity?
  * <p>
@@ -91,11 +92,14 @@ public class LRUCache {
 	//always add to head
 	private void addNode(Node node) {
 		//head --> head_next
+		// We have to insert the new node in between head and head_next
 		Node head_next = head.next; // initially its tail
 
+		//head <- node -> head_next
 		node.prev = head;
 		node.next = head_next;
 
+		// head -> node <- head_next
 		head_next.prev = node;
 		head.next = node;
 	}

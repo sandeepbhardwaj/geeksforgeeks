@@ -25,7 +25,7 @@ public class CheckPrimeNumber {
 	public static boolean isPrimeNumber(int num) {
 		boolean flag = true;
 		for (int i = 2; i <= num / 2; ++i) {
-			// condition for nonprime number
+			// condition for non-prime number
 			if (num % i == 0) {
 				flag = false;
 				break;

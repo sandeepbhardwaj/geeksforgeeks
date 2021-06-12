@@ -12,9 +12,6 @@ package com.leetcode;
  * Input: 120 Output: 21
  */
 public class ReverseInteger {
-	public static void main(String[] args) {
-		System.out.println(reverse(123));
-	}
 
 	public static int reverse(int x) {
 		long result = 0;
@@ -31,4 +28,9 @@ public class ReverseInteger {
 		}
 		return (int) result;
 	}
+
+	public static void main(String[] args) {
+		System.out.println(reverse(123));
+	}
+
 }

@@ -39,9 +39,9 @@ public class NextGreaterElement_I {
 
 	public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
 		int[] result = new int[nums1.length];
-
 		Stack<Integer> stack = new Stack<>();
-		//keeping value and its nge
+
+		//keeping value as key and its nge as value
 		Map<Integer, Integer> map = new HashMap<>();
 
 		for (Integer num : nums2) {

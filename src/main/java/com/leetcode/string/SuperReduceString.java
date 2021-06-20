@@ -1,7 +1,10 @@
-package com.hackerrank;
+package com.leetcode.string;
 
 import java.util.Stack;
 
+/**
+ * Hacker Rank - SuperReduceString
+ */
 public class SuperReduceString {
 	public static String superReducedString(String s) {
 		Stack<Character> stack = new Stack<>();

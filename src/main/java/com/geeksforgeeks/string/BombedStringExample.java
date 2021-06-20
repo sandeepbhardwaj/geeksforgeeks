@@ -1,5 +1,7 @@
 package com.geeksforgeeks.string;
 
+import java.util.Stack;
+
 /**
  * <pre>
  * Bomber Algo: The bomber algorithm doesn't like consecutive characters in a
@@ -46,31 +48,27 @@ package com.geeksforgeeks.string;
 
 public class BombedStringExample {
 
-	public static void main(String[] args) {
+	public static String removeAdjacentDuplicates(String s) {
+		Stack<Character> stack = new Stack<>();
+		for (char c : s.toCharArray()) {
+			if (!stack.isEmpty() && stack.peek() == c) {
+				stack.pop();
 
-		String str = "abbabba";
-		StringBuilder sb = new StringBuilder(str);
-
-		for (int i = 0; i < sb.length(); i++) {
-			boolean flag = false;
-			int occurrence = 1;
-			for (int j = i + 1; j < sb.length(); j++) {
-				if (sb.charAt(i) == sb.charAt(j)) {
-					flag = true;
-					occurrence++;
-				} else {
-					break;
-				}
-			}
-
-			if (flag) {
-				// remove the bombarded string
-				sb.delete(i, occurrence + i);
-				i = 0;
-				System.out.println("steps :" + sb.toString());
+			} else {
+				stack.push(c);
 			}
 		}
-		System.out.println(sb.toString());
+
+		StringBuilder sb = new StringBuilder();
+		while (!stack.isEmpty()) {
+			sb.append(stack.pop());
+		}
+		return sb.reverse().toString();
+	}
+
+	public static void main(String[] args) {
+		String str = "abbabba"; //
+		System.out.println(removeAdjacentDuplicates(str));
 	}
 
 }

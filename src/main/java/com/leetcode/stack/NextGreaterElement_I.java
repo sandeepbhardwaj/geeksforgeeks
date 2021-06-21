@@ -34,11 +34,12 @@ public class NextGreaterElement_I {
 	public static void main(String[] args) {
 		int[] nums1 = {4, 1, 2};
 		int[] nums2 = {1, 3, 4, 2};
-		Arrays.stream(nextGreaterElement(nums1, nums2)).forEach(result -> System.out.print(result + " "));
+		
+		Arrays.stream(nextGreaterElement(nums2)).forEach(result -> System.out.print(result + " "));
 	}
 
-	public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
-		int[] result = new int[nums1.length];
+	public static int[] nextGreaterElement(int[] nums2) {
+		int[] result = new int[nums2.length];
 		Stack<Integer> stack = new Stack<>();
 
 		//keeping value as key and its nge as value
@@ -51,8 +52,8 @@ public class NextGreaterElement_I {
 			stack.push(num);
 		}
 
-		for (int i = 0; i < nums1.length; i++) {
-			result[i] = map.getOrDefault(nums1[i], -1);
+		for (int i = 0; i < nums2.length; i++) {
+			result[i] = map.getOrDefault(nums2[i], -1);
 		}
 		return result;
 	}

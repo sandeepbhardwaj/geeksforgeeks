@@ -21,6 +21,8 @@ import java.util.List;
  * Output: [5,6]
  */
 public class FindAllNumbersDisappearedInAnArray {
+	// Mark the found element correct position -ve
+	// all non negative index+1 are missing values
 	public List<Integer> findDisappearedNumbers(int[] nums) {
 
 		List<Integer> results = new ArrayList<>();

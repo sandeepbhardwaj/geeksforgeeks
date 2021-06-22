@@ -20,7 +20,11 @@ import java.util.List;
  * [2,3]
  */
 public class FindAllDuplicatesInAnArray {
-	public List<Integer> findDuplicates(int[] nums) {
+
+	// Marking there position negative index=(value-1), if its already negative then add in duplicate array
+	// when find a number i, flip the number at position i-1 to negative.
+	// if the number at position i-1 is already negative, i is the number that occurs twice.
+	public static List<Integer> findDuplicates(int[] nums) {
 
 		List<Integer> result = new ArrayList<>();
 
@@ -28,11 +32,18 @@ public class FindAllDuplicatesInAnArray {
 			//if length is n then total index are n-1
 			int index = Math.abs(nums[i]) - 1;
 
+			//if we are able to find same index again then element is already -ver
 			if (nums[index] < 0) {
 				result.add(index + 1);
 			}
 			nums[index] = -nums[index];
 		}
 		return result;
+	}
+
+	public static void main(String[] args) {
+		//int[] nums = new int[]{4, 3, 2, 7, 8, 2, 3, 1};
+		int[] nums = new int[]{2, 1, 1};
+		findDuplicates(nums).forEach(e -> System.out.print(e + " ,"));
 	}
 }

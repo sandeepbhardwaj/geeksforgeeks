@@ -51,10 +51,12 @@ package com.leetcode.array;
  */
 public class IntegerToRoman {
 	public static void main(String[] args) {
-		System.out.println(intToRoman(3200));
+		System.out.println(intToRoman(3200));//MMMCC
+		//System.out.println(intToRoman(5));
 	}
 
 	public static String intToRoman(int num) {
+		//Total 13
 		Numeral[] numerals = {
 				new Numeral("M", 1000),
 				new Numeral("CM", 900),
@@ -75,17 +77,23 @@ public class IntegerToRoman {
 		for (Numeral numeral : numerals) {
 			int noOfnumeral = num / numeral.value;
 
-			// not zero it means num is greater than numeral value like 6 is greater than V aka 5
+			// not zero it means num is greater or equals to than numeral value like 6 is greater than V aka 5
 			if (noOfnumeral != 0) {
 				// suppose 3200/1000= 3 then add three MMM
 				result += numeral.symbol.repeat(noOfnumeral);
 			}
 			// 3200%1000 = 200
 			num = num % numeral.value;
+
+			//if num becomes zero then its resolved no need to loop further optimization
+			if (num == 0) break;
 		}
 		return result;
 	}
 
+	/**
+	 * Class to hold Roman symbol and its integral value
+	 */
 	static class Numeral {
 		String symbol;
 		int value;

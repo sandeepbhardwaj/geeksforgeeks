@@ -63,6 +63,7 @@ public class RomanToInteger {
 
 	public static int romanToInt(String s) {
 		Map<Character, Integer> map = new HashMap<>();
+		//Total-7
 		map.put('I', 1);
 		map.put('V', 5);
 		map.put('X', 10);

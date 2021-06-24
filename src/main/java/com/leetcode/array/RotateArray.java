@@ -35,6 +35,8 @@ public class RotateArray {
 		if (nums == null || nums.length == 0 || k <= 0)
 			return;
 
+		k = k % nums.length;
+
 		while (k > 0) {
 			int j = nums.length - 1;
 
@@ -42,9 +44,10 @@ public class RotateArray {
 			int temp = nums[j];
 
 			//reverse loop for right rotation
-			for (; j > 0; j--) {
+			while (j > 0) {
 				//replace last with second-last element
 				nums[j] = nums[j - 1];
+				j--;
 			}
 			//now j point to zero location
 			nums[j] = temp;

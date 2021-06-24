@@ -29,35 +29,14 @@ package com.leetcode.array;
  * It doesn't matter what values are set beyond the returned length
  */
 public class RemoveElement {
-	public int removeElement(int[] nums, int val) {
-		int count = 0;
-		int i = 0;
-		int j = nums.length - 1;
-
-		while (i <= j) {
-			if (nums[i] == val && nums[j] != val) {
-				nums[i] = nums[j];
-				count++;
-				j--;
-				i++;
-			} else if (nums[i] != val) {
-				i++;
-				count++;
-			} else if (nums[j] == val) {
-				j--;
-			}
-		}
-		return count;
-	}
-
 	/**
 	 * Best solution
 	 */
-	public int removeElement(int[] A, int n, int elem) {
+	public int removeElement(int[] nums, int elem) {
 		int begin = 0;
-		for (int i = 0; i < n; i++) {
-			if (A[i] != elem) {
-				A[begin++] = A[i];
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] != elem) {
+				nums[begin++] = nums[i];
 			}
 		}
 		return begin;

@@ -19,7 +19,7 @@ package com.leetcode.binarysearch;
  * exist in nums so return -1
  */
 public class BinarySearch {
-
+	//int mid = low + ((high - low) / 2);
 	/**
 	 * Iterative binary search
 	 *

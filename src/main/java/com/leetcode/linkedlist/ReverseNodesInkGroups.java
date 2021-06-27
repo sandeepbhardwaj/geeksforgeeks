@@ -81,7 +81,7 @@ public class ReverseNodesInkGroups {
 			return head;
 
 		ListNode r = null;
-		ListNode q = null; // holds thre reversed linked list
+		ListNode q = null; // holds the reversed linked list
 		ListNode p = head; //hold the next node
 
 		int count = 0; //to keep track of sub list

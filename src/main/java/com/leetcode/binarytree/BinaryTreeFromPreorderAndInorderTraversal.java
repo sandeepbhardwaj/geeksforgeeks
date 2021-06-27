@@ -11,6 +11,7 @@ import java.util.Map;
  */
 public class BinaryTreeFromPreorderAndInorderTraversal {
 	int preOrderIndex;
+	//to store element as key and its index as value
 	Map<Integer, Integer> inOrderIndexMap = new HashMap<>();
 
 	public TreeNode buildTree(int[] preorder, int[] inorder) {

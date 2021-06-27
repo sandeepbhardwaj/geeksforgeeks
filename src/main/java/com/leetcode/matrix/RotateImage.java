@@ -10,6 +10,17 @@ package com.leetcode.matrix;
  * Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
  * Output: [[7,4,1],[8,5,2],[9,6,3]]
  */
+
+/**
+ * clockwise rotate
+ * first swap the symmetry (i.e. transpose the matrix), then reverse each row
+ * 1 2 3     1 4 7     7 4 1
+ * 4 5 6  => 2 5 8  => 8 5 2
+ * 7 8 9     3 6 9     9 6 3
+ * <p>
+ * anti-clockwise rotate
+ * first swap the symmetry (i.e. transpose the matrix), then reverse each col
+ */
 public class RotateImage {
 	public void rotate(int[][] matrix) {
 		int n = matrix.length;

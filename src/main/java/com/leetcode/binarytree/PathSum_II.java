@@ -18,6 +18,7 @@ public class PathSum_II {
 		currentPath.add(root.val);
 
 		//leaf node and sum found
+		// targetSum == root.val OR targetSum - root.val == 0
 		if (root.left == null && root.right == null && targetSum == root.val) {
 			result.add(new ArrayList<>(currentPath));
 			return;

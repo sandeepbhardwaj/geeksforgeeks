@@ -33,21 +33,24 @@ public class RotateListToRight {
 
 		//move fastPtr to k nodes
 		//1->2->3, k=2 :=> fastPtr on 3 after loop completion
+		//1->2->3->4->5 :=> fastPtr on 3 after loop completion
 		while (fastPtr.next != null && k > 0) {
 			fastPtr = fastPtr.next;
 			k--;
 		}
 
 		//Now move both the pointers
+		//1->2->3->4->5 :=> fastPtr on 5 and slowPtr on 3 after loop completion
 		while (fastPtr.next != null) {
 			fastPtr = fastPtr.next;
 			slowPtr = slowPtr.next;
 		}
 
 		//Now rotate
-		ListNode newHead = slowPtr.next;
-		slowPtr.next = null; //break the link
-		fastPtr.next = head;
+		//1->2->3->4->5 :=> fastPtr on 5 and slowPtr on 3 after loop completion
+		ListNode newHead = slowPtr.next; // 3->4 : 4 becomes new head
+		slowPtr.next = null; //break the link 1->2->3  4->5
+		fastPtr.next = head; // 4->5->1->2->3
 		return newHead;
 	}
 

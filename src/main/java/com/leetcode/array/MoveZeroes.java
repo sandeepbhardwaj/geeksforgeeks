@@ -56,15 +56,33 @@ public class MoveZeroes {
 			return;
 		}
 
-		int insertPos = 0;
+		int index = 0;
 		for (int num : nums) {
 			if (num != 0) {
-				nums[insertPos++] = num;
+				nums[index++] = num;
 			}
 		}
 
-		while (insertPos < nums.length) {
-			nums[insertPos++] = 0;
+		while (index < nums.length) {
+			nums[index++] = 0;
+		}
+	}
+
+	/**
+	 * intresting solution O(n)
+	 *
+	 * @param nums
+	 */
+	public void moveZeroes3(int[] nums) {
+		int snowBallSize = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 0) {
+				snowBallSize++;
+			} else if (snowBallSize > 0) {
+				int t = nums[i];
+				nums[i] = 0;
+				nums[i - snowBallSize] = t;
+			}
 		}
 	}
 }

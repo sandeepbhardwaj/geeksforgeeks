@@ -1,4 +1,4 @@
-package com.koko.misc;
+package com.koko.string;
 
 /**
  * 65 to 90 => UpperCase A to Z

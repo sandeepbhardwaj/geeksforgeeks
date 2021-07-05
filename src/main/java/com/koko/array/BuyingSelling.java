@@ -1,4 +1,4 @@
-package com.koko.misc;
+package com.koko.array;
 
 /**
  * Calculate max profit in one iteration O(N)

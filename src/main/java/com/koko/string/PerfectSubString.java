@@ -1,4 +1,4 @@
-package com.koko.misc;
+package com.koko.string;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

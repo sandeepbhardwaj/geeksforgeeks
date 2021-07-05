@@ -1,4 +1,4 @@
-package com.koko.misc;
+package com.koko.string;
 
 public class MergeTwoStrings {
 	public static void main(String[] args) {

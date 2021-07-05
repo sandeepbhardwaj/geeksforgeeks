@@ -1,4 +1,4 @@
-package com.koko.misc;
+package com.koko.array;
 
 import java.util.Collections;
 import java.util.List;

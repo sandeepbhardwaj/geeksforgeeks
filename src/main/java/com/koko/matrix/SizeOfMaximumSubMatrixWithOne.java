@@ -1,4 +1,4 @@
-package com.koko.misc;
+package com.koko.matrix;
 
 import java.util.Arrays;
 

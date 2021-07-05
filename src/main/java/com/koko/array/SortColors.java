@@ -1,30 +1,24 @@
 package com.koko.array;
 
 public class SortColors {
-	public static void sortColors(int[] nums) {
-
+	public void sortColors(int[] nums) {
 		int low = 0;
 		int mid = 0;
 		int high = nums.length - 1;
 
-		while (mid <= high) {
+		while (low <= mid && mid <= high) {
 			if (nums[mid] == 0) {
-				//swap low and mid
-				int temp = nums[mid];
+				//swap with low
 				nums[mid] = nums[low];
-				nums[low] = temp;
-
-				mid++;
+				nums[low] = 0; //can assign 0 directly
 				low++;
+				mid++;
 			} else if (nums[mid] == 1) {
 				mid++;
-			} else {
-				//swap mid and high
-				int temp = nums[mid];
+			} else if (nums[mid] == 2) {
+				//swap with high
 				nums[mid] = nums[high];
-				nums[high] = temp;
-
-				//decrement high
+				nums[high] = 2; // can assign 2 directly
 				high--;
 			}
 		}

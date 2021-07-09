@@ -57,6 +57,7 @@ public class MinWindowSubString {
 			char ch = s.charAt(right);
 
 			//check is this exist in map
+			//only decrement count if its greater than 0
 			if (map[ch] > 0) {
 				count--; // one matching element found;
 			}
@@ -72,7 +73,7 @@ public class MinWindowSubString {
 				char leftCh = s.charAt(left);
 				map[leftCh]++;
 
-				//now reduce the window
+				//now reduce the window, required element count again greater than zero
 				if (map[leftCh] > 0) {
 					count++;
 				}
@@ -82,65 +83,6 @@ public class MinWindowSubString {
 			right++; //move the window
 		}
 
-		return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
-	}
-
-	public static String minWindow1(String s, String t) {
-		//base case
-		if (t.length() > s.length())
-			return "";
-
-		//map to hold the frequency
-		HashMap<Character, Integer> map = new HashMap<>();
-
-		for (char c : t.toCharArray()) {
-			map.put(c, map.getOrDefault(c, 0) + 1);
-		}
-
-
-		int left = 0;
-		int right = 0;
-		int count = t.length(); // no of char in pattern
-		int minLen = Integer.MAX_VALUE;
-		int minStart = 0;
-
-		//sliding window condition
-		while (right < s.length() && left <= right) {
-			char c = s.charAt(right);
-			//char found in pattern , decrement count and fequency of that element
-			if (map.containsKey(c)) {
-				map.put(c, map.get(c) - 1);
-				//count--;
-			}
-
-			if (map.containsKey(c) && map.get(c) >= 0) {
-				count--;
-			}
-
-			//increment window
-			right++;
-
-			//if we found all elements
-			while (count == 0) {
-
-				//if new minLen found update the minLen
-				if (minLen > right - left) {
-					minLen = right - left;
-					minStart = left;
-				}
-
-				char leftChar = s.charAt(left);
-				if (map.containsKey(leftChar)) {
-					map.put(leftChar, map.get(leftChar) + 1);
-
-				}
-
-				if (map.containsKey(leftChar) && map.get(leftChar) > 0) {
-					count++;
-				}
-				left++;
-			}
-		}
 		return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
 	}
 

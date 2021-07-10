@@ -30,6 +30,38 @@ public class RotateArray {
 		rotate(nums, 3);
 	}
 
+	/**
+	 * Rotate array using reversal algorithm, this algo is useful in case of very large array.
+	 * Step 1: Rotate complete array
+	 * Step 2: Rotate 0 to k-1 elements (k-1 ? array is 0 indexed)
+	 * Step 3: Rotate k to n-1 elements (n is length of array)
+	 *
+	 * @param nums
+	 * @param k
+	 */
+	public void rotateUsingReversalAlgo(int[] nums, int k) {
+		k = k % nums.length;
+
+		//reverse complete array
+		reverse(nums, 0, nums.length - 1);
+		//reverse k elements
+		reverse(nums, 0, k - 1);
+		//reverse k to n elements
+		reverse(nums, k, nums.length - 1);
+	}
+
+	private void reverse(int[] arr, int start, int end) {
+		while (start < end) {
+			int temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+
+			start++;
+			end--;
+		}
+	}
+
+
 	// left <--  --> Right
 	public static void rotate(int[] nums, int k) {
 		if (nums == null || nums.length == 0 || k <= 0)

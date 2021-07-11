@@ -25,28 +25,20 @@ package com.koko.array;
  */
 public class ContainerWithMostWater {
 	public int maxArea(int[] height) {
-
-		if (height.length == 0 || height.length == 1) {
-			return 0;
-		}
+		int maxArea = 0;
 
 		int left = 0;
 		int right = height.length - 1;
-		int maxWater = 0;
 
 		while (left < right) {
-			maxWater = Math.max(maxWater, (right - left) * Math.min(height[left], height[right]));
+			maxArea = Math.max(maxArea, (right - left) * Math.min(height[left], height[right]));
 
-			// this is for optimization can work with else if condition only
-			if (height[right] == height[left]) {
-				right--;
-				left++;
-			} else if (height[left] < height[right]) {
+			if (height[left] < height[right]) {
 				left++;
 			} else {
 				right--;
 			}
 		}
-		return maxWater;
+		return maxArea;
 	}
 }

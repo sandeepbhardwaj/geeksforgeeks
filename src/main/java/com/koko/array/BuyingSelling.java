@@ -13,16 +13,15 @@ public class BuyingSelling {
 		System.out.println("Profit :" + maxProfit(stockPrices));
 	}
 
-	public static int maxProfit(int[] stockPrices) {
+	public static int maxProfit(int[] prices) {
 		int profit = 0;
 		int minBuyPrice = Integer.MAX_VALUE;
 
-		for (int i = 0; i < stockPrices.length; i++) {
-			profit = Math.max(profit, stockPrices[i] - minBuyPrice);
-			minBuyPrice = Math.min(minBuyPrice, stockPrices[i]);
+		for (int price : prices) {
+			profit = Math.max(profit, price - minBuyPrice);
+			minBuyPrice = Math.min(minBuyPrice, price);
 		}
 
-		System.out.println("Buying Price :" + minBuyPrice);
 		return profit;
 	}
 }

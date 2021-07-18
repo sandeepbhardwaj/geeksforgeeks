@@ -1,4 +1,4 @@
-package com.koko;
+package com.koko.misc;
 
 /**
  * Determine whether an integer is a palindrome. An integer is a palindrome when

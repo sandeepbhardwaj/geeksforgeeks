@@ -1,4 +1,4 @@
-package com.koko;
+package com.koko.misc;
 
 /**
  * 476. Number Complement

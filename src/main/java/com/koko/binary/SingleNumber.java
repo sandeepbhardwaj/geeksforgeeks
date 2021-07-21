@@ -1,4 +1,4 @@
-package com.koko.misc;
+package com.koko.binary;
 
 /**
  * 136. Single Number
@@ -21,6 +21,8 @@ public class SingleNumber {
 	public static int singleNumber(int[] nums) {
 		int result = 0;
 
+		//XOR with same number is zero 4^4=0
+		//XOR with zero is same number 4^0=4
 		for (int num : nums) {
 			result ^= num;
 		}

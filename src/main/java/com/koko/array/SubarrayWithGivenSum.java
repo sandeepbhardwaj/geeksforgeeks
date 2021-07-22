@@ -32,7 +32,7 @@ public class SubarrayWithGivenSum {
 
 			preSum.put(currentSum, i);
 		}
-  
+
 		return result;
 	}
 

@@ -1,11 +1,17 @@
 package com.koko.binarytree;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.TreeMap;
 
 public class VerticalOrderTraversal {
 
 	/**
 	 * Vertical order traversal using Level order + HasTable
+	 *
 	 * @param root
 	 * @return
 	 */

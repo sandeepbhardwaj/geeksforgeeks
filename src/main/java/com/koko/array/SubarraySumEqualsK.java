@@ -31,24 +31,27 @@ public class SubarraySumEqualsK {
 	 * @return
 	 */
 	public static int subarraySum(int[] nums, int k) {
-		// map contains sum and its frequency
+		int count = 0;
+
+		// key as preSum and value as frequency
 		Map<Integer, Integer> preSum = new HashMap<>();
 
-		// this default value needed when we found sum-k=0
+		//for base case
+		//check whether currentSum - k = 0, if 0 it means the sub array is starting from index 0
 		preSum.put(0, 1);
 
-		int sum = 0;
-		int count = 0;
-		for (int i = 0; i < nums.length; i++) {
-			sum += nums[i];
+		int currentSum = 0;
+		for (int num : nums) {
+			currentSum += num;
 
-			// if sum-k present in map increment the count
-			count += preSum.getOrDefault(sum - k, 0);
+			//if currentSum-k found in map
+			if (preSum.containsKey(currentSum - k)) {
+				count += preSum.get(currentSum - k);
+			}
 
-			// add the sum in map and increment the frequency by 1
-			preSum.put(sum, preSum.getOrDefault(sum, 0) + 1);
-
+			preSum.put(currentSum, preSum.getOrDefault(currentSum, 0) + 1);
 		}
+
 		return count;
 	}
 

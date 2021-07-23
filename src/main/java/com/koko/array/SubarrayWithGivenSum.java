@@ -8,7 +8,7 @@ public class SubarrayWithGivenSum {
 	public static int[] subArrayWithGivenSumWithNegative(int[] nums, int k) {
 		int[] result = new int[2];
 
-		//presum as key and index as value
+		//preSum as key and index as value
 		Map<Integer, Integer> preSum = new HashMap<>();
 
 		int currentSum = 0;

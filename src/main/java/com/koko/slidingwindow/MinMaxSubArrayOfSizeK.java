@@ -15,15 +15,13 @@ package com.koko.slidingwindow;
  */
 public class MinMaxSubArrayOfSizeK {
 
-	public static int maxSubArrayOfSizeK()
-	{
+	public static int maxSubArrayOfSizeK() {
 
 		return 0;
 	}
 
 
-	public static int minSubArrayOfSizeK()
-	{
+	public static int minSubArrayOfSizeK() {
 
 		return 0;
 	}

@@ -13,6 +13,16 @@
 1. Reverse words in a given string
 2. Permutations of a given string
 
+## Binary Tree
+1. In order traversal - iteratively
+2. Pre order traversal - iteratively (push before while loop)
+3. Left/Right view
+4. Maximum Depth of Binary Tree
+5. Balanced Binary Tree (left_height-right_height <=1)
+6. Diameter of Binary Tree
+7. Children sum parent
+8. Root to leaf path - concept is important
+
 ## Dynamic Programming
 1. 0-1 knapsack
     1. Subset Sum

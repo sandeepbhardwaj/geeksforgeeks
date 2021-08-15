@@ -22,6 +22,8 @@
 6. Diameter of Binary Tree
 7. Children sum parent
 8. Root to leaf path - concept is important
+    1. Path Sum
+    2. Path Sum II
 
 ## Dynamic Programming
 1. 0-1 knapsack

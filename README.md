@@ -24,6 +24,9 @@
 8. Root to leaf path - concept is important
     1. Path Sum
     2. Path Sum II
+    
+## Heap - Priority Queue
+1. Kth Largest Element in an Array
 
 ## Dynamic Programming
 1. 0-1 knapsack

@@ -18,7 +18,7 @@ public class Anagram {
 			map[c]--;
 
 		for (int i : map) {
-			if (i > 0)
+			if (i != 0)
 				return false;
 		}
 		return true;

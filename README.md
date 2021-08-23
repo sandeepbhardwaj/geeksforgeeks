@@ -9,6 +9,8 @@
 5. Rearrange Array Alternately in O(1) space
 6. Sort an array of 0s, 1s and 2s
 
+7. Best Time to Buy and Sell Stock [Kadane's Problem]
+
 ## String
 1. Reverse words in a given string
 2. Permutations of a given string

@@ -20,28 +20,48 @@ import com.koko.ListNode;
  * Could you do this in one pass?
  */
 public class RemoveNthFromEnd {
-	public ListNode removeNthFromEnd(ListNode head, int n) {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
 
-		ListNode slowPtr = head;
-		ListNode fastPtr = head;
+        ListNode slowPtr = head;
+        ListNode fastPtr = head;
 
-		for (int i = 0; i < n; i++) {
-			fastPtr = fastPtr.next;
-		}
+        while (n > 0) {
+            fastPtr = fastPtr.next;
+            n--;
+        }
 
-		// List contains only one node and n=1
-		if (fastPtr == null) {
-			head = head.next;
-			return head;
-		}
+        // The head need to be removed, do it.
+        if (fastPtr == null) {
+            head = head.next;
+            return head;
+        }
 
-		while (fastPtr.next != null) {
-			fastPtr = fastPtr.next;
-			slowPtr = slowPtr.next;
-		}
+        while (fastPtr.next != null) {
+            fastPtr = fastPtr.next;
+            slowPtr = slowPtr.next;
+        }
 
-		slowPtr.next = slowPtr.next.next;
+        slowPtr.next = slowPtr.next.next; // the one after the h1 need to be removed
 
-		return head;
-	}
+        return head;
+    }
+
+    public ListNode removeNthFromEndUsingFakeHead(ListNode head, int n) {
+        ListNode fakeHead = new ListNode(0);
+        fakeHead.next = head;
+
+        ListNode slowPtr = fakeHead;
+        ListNode fastPtr = fakeHead;
+
+        while (n > 0) {
+            fastPtr = fastPtr.next;
+            n--;
+        }
+        while (fastPtr.next != null) {
+            fastPtr = fastPtr.next;
+            slowPtr = slowPtr.next;
+        }
+        slowPtr.next = slowPtr.next.next;
+        return fakeHead.next;
+    }
 }

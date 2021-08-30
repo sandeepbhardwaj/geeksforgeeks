@@ -9,9 +9,7 @@ public class FirstNonRepeatingCharacter {
 
 	public static void main(String[] args) {
 		System.out.println(getFirstNonRepeatedChar("abcdefghija"));
-
 		System.out.println(getFirstNonRepeatedCharUsingArray("abcdefghija"));
-
 	}
 
 	public static char getFirstNonRepeatedChar(String str) {
@@ -79,5 +77,5 @@ public class FirstNonRepeatingCharacter {
 		}
 		return -1;
 	}
-	
+
 }

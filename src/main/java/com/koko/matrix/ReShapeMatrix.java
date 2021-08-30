@@ -23,40 +23,40 @@ package com.koko.matrix;
  * Output: [[1,2],[3,4]]
  */
 public class ReShapeMatrix {
-    public int[][] matrixReshape(int[][] nums, int r, int c) {
-        int m = nums.length, n = nums[0].length;
-        if (m * n != r * c) return nums;
+	public int[][] matrixReshape(int[][] nums, int r, int c) {
+		int m = nums.length, n = nums[0].length;
+		if (m * n != r * c) return nums;
 
-        int[][] result = new int[r][c];
-        int row = 0, col = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                result[row][col] = nums[i][j];
-                col++;
-                if (col == c) {
-                    col = 0;
-                    row++;
-                }
-            }
-        }
-        return result;
-    }
+		int[][] result = new int[r][c];
+		int row = 0, col = 0;
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				result[row][col] = nums[i][j];
+				col++;
+				if (col == c) { // once we reach the end of column increase the row and reset the col
+					col = 0;
+					row++;
+				}
+			}
+		}
+		return result;
+	}
 
-    /**
-     * We can use matrix[index / width][index % width] for both the input and the output matrix.
-     *
-     * @param nums
-     * @param r
-     * @param c
-     * @return
-     */
-    public int[][] matrixReshape_II(int[][] nums, int r, int c) {
-        int m = nums.length, n = nums[0].length;
-        if (r * c != m * n)
-            return nums;
-        int[][] reshaped = new int[r][c];
-        for (int i = 0; i < r * c; i++)
-            reshaped[i / c][i % c] = nums[i / n][i % n];
-        return reshaped;
-    }
+	/**
+	 * We can use matrix[index / width][index % width] for both the input and the output matrix.
+	 *
+	 * @param nums
+	 * @param r
+	 * @param c
+	 * @return
+	 */
+	public int[][] matrixReshape_II(int[][] nums, int r, int c) {
+		int m = nums.length, n = nums[0].length;
+		if (r * c != m * n)
+			return nums;
+		int[][] reshaped = new int[r][c];
+		for (int i = 0; i < r * c; i++)
+			reshaped[i / c][i % c] = nums[i / n][i % n];
+		return reshaped;
+	}
 }

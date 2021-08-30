@@ -79,4 +79,5 @@ public class FirstNonRepeatingCharacter {
 		}
 		return -1;
 	}
+	
 }

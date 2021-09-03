@@ -46,4 +46,21 @@ public class BinaryTreeIterativeTraversal {
 		}
 		return result;
 	}
+
+	public List<Integer> postorderTraversal(TreeNode root) {
+		Stack<TreeNode> stack = new Stack<>();
+		List<Integer> vals = new ArrayList<>();
+		TreeNode node = root;
+		while (node != null || !stack.isEmpty()) {
+			if (node != null) {
+				stack.add(node);
+				vals.add(0, node.val);
+				node = node.right;
+			} else {
+				node = stack.pop();
+				node = node.left;
+			}
+		}
+		return vals;
+	}
 }

@@ -23,9 +23,11 @@ public class SubSetSumProblem {
 		if (n == 0)
 			return false;
 
-		/*  check if sum can be obtained  by any of the following
-            (a) including the last element
-            (b) excluding the last element */
+		/*
+		check if sum can be obtained  by any of the following
+        (a) including the last element
+        (b) excluding the last element
+        */
 		if (set[n - 1] <= sum) {
 			return isSubsetSumRecursion(set, sum - set[n - 1], n - 1) || isSubsetSumRecursion(set, sum, n - 1);
 		} else { // If last element is greater than sum, then ignore it
@@ -33,9 +35,32 @@ public class SubSetSumProblem {
 		}
 	}
 
+	public static boolean isSubsetSumDP(int[] set, int sum, int n) {
+		int i, j;
+		boolean[][] dp = new boolean[sum + 1][n + 1];
+		//i represent sum and j represents n
+		for (i = 0; i <= sum; i++) {
+			for (j = 0; j <= n; j++) {
+				if (i == 0) {
+					dp[i][j] = Boolean.TRUE;
+				} else if (j == 0) {
+					dp[i][j] = Boolean.FALSE;
+				} else if (set[j - 1] <= i) {
+					dp[i][j] = dp[i][j - 1] || dp[i - set[j - 1]][j - 1];
+				} else {
+					dp[i][j] = dp[i][j - 1];
+				}
+			}
+		}
+		//last element of matrix
+		return dp[sum][n];
+	}
+
 	public static void main(String[] args) {
 		int[] set = {3, 34, 4, 12, 5, 2};
 		int sum = 9;
 		System.out.println("isSubsetSum using recursion :" + isSubsetSumRecursion(set, sum, set.length));
+
+		System.out.println("isSubsetSum using recursion :" + isSubsetSumDP(set, sum, set.length));
 	}
 }

@@ -17,7 +17,7 @@ package com.koko.dp;
  */
 public class SubSetSumProblem {
 
-	public static boolean isSubsetSumRecursion(int[] set, int sum, int n) {
+	public static boolean isSubsetSumRecursion(int[] set, int n, int sum) {
 		if (sum == 0)
 			return true;
 		if (n == 0)
@@ -29,38 +29,38 @@ public class SubSetSumProblem {
         (b) excluding the last element
         */
 		if (set[n - 1] <= sum) {
-			return isSubsetSumRecursion(set, sum - set[n - 1], n - 1) || isSubsetSumRecursion(set, sum, n - 1);
+			return isSubsetSumRecursion(set, n - 1, sum - set[n - 1]) || isSubsetSumRecursion(set, n - 1, sum);
 		} else { // If last element is greater than sum, then ignore it
-			return isSubsetSumRecursion(set, sum, n - 1);
+			return isSubsetSumRecursion(set, n - 1, sum);
 		}
 	}
 
-	public static boolean isSubsetSumDP(int[] set, int sum, int n) {
+	public static boolean isSubsetSumDP(int[] set, int n, int sum) {
 		int i, j;
-		boolean[][] dp = new boolean[sum + 1][n + 1];
-		//i represent sum and j represents n
-		for (i = 0; i <= sum; i++) {
-			for (j = 0; j <= n; j++) {
-				if (i == 0) {
-					dp[i][j] = Boolean.TRUE;
-				} else if (j == 0) {
+		boolean[][] dp = new boolean[n + 1][sum + 1];
+		//i represent n and j represents sum
+		for (i = 0; i <= n; i++) {
+			for (j = 0; j <= sum; j++) {
+				if (i == 0) { // n==0
 					dp[i][j] = Boolean.FALSE;
-				} else if (set[j - 1] <= i) {
-					dp[i][j] = dp[i][j - 1] || dp[i - set[j - 1]][j - 1];
+				} else if (j == 0) { //sum==0
+					dp[i][j] = Boolean.TRUE;
+				} else if (set[i - 1] <= j) {
+					dp[i][j] = dp[i - 1][j] || dp[i - 1][j - set[i - 1]];
 				} else {
-					dp[i][j] = dp[i][j - 1];
+					dp[i][j] = dp[i - 1][j];
 				}
 			}
 		}
 		//last element of matrix
-		return dp[sum][n];
+		return dp[n][sum];
 	}
 
 	public static void main(String[] args) {
 		int[] set = {3, 34, 4, 12, 5, 2};
-		int sum = 9;
-		System.out.println("isSubsetSum using recursion :" + isSubsetSumRecursion(set, sum, set.length));
+		int sum = 11;
+		System.out.println("isSubsetSum using recursion :" + isSubsetSumRecursion(set, set.length, sum));
 
-		System.out.println("isSubsetSum using recursion :" + isSubsetSumDP(set, sum, set.length));
+		System.out.println("isSubsetSum using recursion :" + isSubsetSumDP(set, set.length, sum));
 	}
 }

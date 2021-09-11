@@ -25,28 +25,28 @@ public class EqualSumPartition {
 		if (sum % 2 != 0)
 			return false;
 
-		return isSubsetSumDP(nums, (int) sum / 2, nums.length);
+		return isSubsetSumDP(nums, nums.length, (int) sum / 2);
 	}
 
-	public static boolean isSubsetSumDP(int[] set, int sum, int n) {
+	public static boolean isSubsetSumDP(int[] set, int n, int sum) {
 		int i, j;
-		boolean[][] dp = new boolean[sum + 1][n + 1];
-		//i represent sum and j represents n
-		for (i = 0; i <= sum; i++) {
-			for (j = 0; j <= n; j++) {
-				if (i == 0) {
-					dp[i][j] = Boolean.TRUE;
-				} else if (j == 0) {
+		boolean[][] dp = new boolean[n + 1][sum + 1];
+		//i represent n and j represents sum
+		for (i = 0; i <= n; i++) {
+			for (j = 0; j <= sum; j++) {
+				if (i == 0) { // n==0
 					dp[i][j] = Boolean.FALSE;
-				} else if (set[j - 1] <= i) {
-					dp[i][j] = dp[i][j - 1] || dp[i - set[j - 1]][j - 1];
+				} else if (j == 0) { //sum==0
+					dp[i][j] = Boolean.TRUE;
+				} else if (set[i - 1] <= j) {
+					dp[i][j] = dp[i - 1][j] || dp[i - 1][j - set[i - 1]];
 				} else {
-					dp[i][j] = dp[i][j - 1];
+					dp[i][j] = dp[i - 1][j];
 				}
 			}
 		}
 		//last element of matrix
-		return dp[sum][n];
+		return dp[n][sum];
 	}
 
 	public static void main(String[] args) {

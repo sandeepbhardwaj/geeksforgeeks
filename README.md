@@ -34,10 +34,10 @@
 1. 0-1 knapsack
     1. Subset Sum
     2. Equal sum partition
-    3. Count of subset sum
+    3. Count of subset sum with a given sum
     4. Minimum subset sum difference
-    5. Target Sum
-    6. Hash of subset & given difference
+    5. Count the number of subset with a given difference
+    6. Target Sum
 2. Unbounded knapsack
 3. Fibonacci
 4. LCS

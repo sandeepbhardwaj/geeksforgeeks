@@ -23,11 +23,8 @@ import java.util.Stack;
  * only "aa" is possible, so the final string is "ca".
  */
 public class RemoveDuplicates {
-	public static void main(String[] args) {
-		System.out.println(removeDuplicates("aaa"));
-	}
 
-	public static String removeDuplicates(String S) {
+	private static String removeDuplicates(String S) {
 
 		Stack<Character> stack = new Stack<>();
 
@@ -47,5 +44,9 @@ public class RemoveDuplicates {
 		}
 
 		return result.reverse().toString();
+	}
+
+	public static void main(String[] args) {
+		System.out.println(removeDuplicates("aaa"));
 	}
 }

@@ -31,7 +31,7 @@ public class FirstAndLastPositionOfElementInSortedArray {
 	private int elementIndex(int[] nums, int target, int low, int high, boolean isSearchForStartIndex) {
 		int index = -1;
 		while (low <= high) {
-			int mid = (low + high) / 2;
+			int mid = low + ((high - low) / 2);
 			if (nums[mid] == target) {
 				index = mid;
 				if (isSearchForStartIndex) {

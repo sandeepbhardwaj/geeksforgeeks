@@ -19,7 +19,6 @@ package com.koko.binarysearch;
  * exist in nums so return -1
  */
 public class BinarySearch {
-	//int mid = low + ((high - low) / 2);
 
 	/**
 	 * Iterative binary search
@@ -33,7 +32,7 @@ public class BinarySearch {
 		int high = nums.length - 1;
 
 		while (low <= high) {
-			int mid = (low + high) / 2;
+			int mid = low + ((high - low) / 2);
 
 			if (nums[mid] == target)
 				return mid;
@@ -59,7 +58,7 @@ public class BinarySearch {
 	 */
 	public int binarySearch(int[] nums, int low, int high, int target) {
 		while (low <= high) {
-			int mid = (low + high) / 2;
+			int mid = low + ((high - low) / 2);
 
 			if (nums[mid] == target)
 				return mid;

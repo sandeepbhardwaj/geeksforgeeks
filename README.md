@@ -13,6 +13,8 @@
 ## Binary Search
 1. Binary Search
 2. Find First and Last Position of Element in Sorted Array
+3. Search in sorted rotated array
+4. Search in sorted rotated array with duplicates
 
 ## String
 1. Reverse words in a given string

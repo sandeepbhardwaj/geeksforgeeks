@@ -37,7 +37,7 @@ class FindMinimumInRotatedSortedArray {
 
 		// why < not <= ? because we want to partition of array not looking for target element
 		while (low < high) {
-			int mid = (low + high) / 2;
+			int mid = low + ((high - low) / 2);
 
 			if (nums[mid] < nums[high]) {
 				high = mid;

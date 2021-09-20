@@ -10,13 +10,17 @@
 6. Sort an array of 0s, 1s and 2s
 7. Best Time to Buy and Sell Stock [Kadane's Problem]
 
+## Binary Search
+1. Binary Search
+2. Find First and Last Position of Element in Sorted Array
+
 ## String
 1. Reverse words in a given string
 2. Permutations of a given string
 
 ## Binary Tree
 1. In order traversal - iteratively
-2. Pre order traversal - iteratively (push before while loop)
+2. Pre-order traversal - iteratively (push before while loop)
 3. Left/Right view
 4. Maximum Depth of Binary Tree
 5. Balanced Binary Tree (left_height-right_height <=1)

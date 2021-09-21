@@ -15,6 +15,7 @@
 2. Find First and Last Position of Element in Sorted Array
 3. Search in sorted rotated array
 4. Search in sorted rotated array with duplicates
+5. Find minimum in rotated sorted array
 
 ## String
 1. Reverse words in a given string
@@ -23,12 +24,13 @@
 ## Binary Tree
 1. In order traversal - iteratively
 2. Pre-order traversal - iteratively (push before while loop)
-3. Left/Right view
-4. Maximum Depth of Binary Tree
-5. Balanced Binary Tree (left_height-right_height <=1)
-6. Diameter of Binary Tree
-7. Children sum parent
-8. Root to leaf path - concept is important
+3. Level order traversal
+4. Left/Right view
+5. Maximum Depth of Binary Tree
+6. Balanced Binary Tree (left_height-right_height <=1)
+7. Diameter of Binary Tree
+8. Children sum parent
+9. Root to leaf path - concept is important
    1. Path Sum
    2. Path Sum II
     

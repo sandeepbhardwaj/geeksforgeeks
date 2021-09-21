@@ -1,19 +1,23 @@
 package com.koko.binarytree;
 
+/**
+ * For every node, data value must be equal to sum of data values in left and right children.
+ * Consider data value as 0 for NULL children.
+ */
 public class ChildrenSumParent {
-	public static int isSumProperty(TreeNode root) {
+	public static boolean isSumProperty(TreeNode root) {
 		// for leaf node or no node
 		if (root == null || (root.left == null && root.right == null))
-			return 1;
+			return true;
 
 		int lsum = root.left != null ? root.left.val : 0;
 		int rsum = root.right != null ? root.right.val : 0;
 
 		//check for current node and then left of node and right of node
-		if ((root.val == lsum + rsum) && isSumProperty(root.left) == 1 && isSumProperty(root.right) == 1) {
-			return 1;
+		if ((root.val == lsum + rsum) && isSumProperty(root.left) && isSumProperty(root.right)) {
+			return true;
 		} else {
-			return 0;
+			return false;
 		}
 	}
 }

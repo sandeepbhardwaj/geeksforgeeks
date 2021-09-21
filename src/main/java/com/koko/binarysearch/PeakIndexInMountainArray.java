@@ -35,7 +35,7 @@ public class PeakIndexInMountainArray {
 				low = mid + 1;
 			} else if (A[mid] < A[mid - 1]) { // mid is smaller than its previous element
 				high = mid;
-			} else {
+			} else { // mid is greater than it's prev and next element
 				return mid;
 			}
 		}

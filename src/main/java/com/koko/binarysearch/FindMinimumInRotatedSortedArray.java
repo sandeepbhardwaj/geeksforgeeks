@@ -36,6 +36,7 @@ class FindMinimumInRotatedSortedArray {
 		int high = nums.length - 1;
 
 		// why < not <= ? because we want to partition of array not looking for target element
+		// DO NOT use left <= right because that would loop forever
 		while (low < high) {
 			int mid = low + ((high - low) / 2);
 

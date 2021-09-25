@@ -33,6 +33,7 @@ public class LargestNumber {
 	}
 
 	public static String largestNumber(int[] nums) {
+		//convert to string array so that it can be concatenated instead of addition
 		String[] array = Arrays.stream(nums).mapToObj(String::valueOf).toArray(String[]::new);
 
 		Arrays.sort(array, (o1, o2) -> (o2 + o1).compareTo(o1 + o2));

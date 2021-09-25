@@ -18,17 +18,17 @@ package com.koko.array;
  */
 public class MultiplyStrings {
 	/*
-            9   9
-            9   9
+            8   9
+            6   4
        -----------------
-	             8  1
-	          8  1
-	          8  1
-	       8  1
+	             3  6
+	          5  4
+	          3  2
+	       4  8
        -----------------
-           9  8  0  1
+           5  6  9  6
     */
-	public String multiply(String num1, String num2) {
+	public static String multiply(String num1, String num2) {
 		int m = num1.length();
 		int n = num2.length();
 
@@ -39,7 +39,7 @@ public class MultiplyStrings {
 			for (int j = n - 1; j >= 0; j--) {
 				int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
 
-				int sum = result[i + j + 1] + mul;
+				int sum = result[i + j + 1] + mul; // i+j+1 refer to last index
 
 				result[i + j + 1] = sum % 10; //store at last index
 				result[i + j] = result[i + j] + sum / 10; // store at second last index
@@ -55,5 +55,9 @@ public class MultiplyStrings {
 		}
 
 		return sb.length() == 0 ? "0" : sb.toString();
+	}
+
+	public static void main(String[] args) {
+		System.out.println(multiply("3", "3"));
 	}
 }

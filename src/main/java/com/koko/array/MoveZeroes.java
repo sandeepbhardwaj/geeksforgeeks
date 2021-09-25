@@ -51,7 +51,7 @@ public class MoveZeroes {
 	 *
 	 * @param nums
 	 */
-	public void moveZeroes2(int[] nums) {
+	public static void moveZeroes2(int[] nums) {
 		if (nums == null || nums.length == 0) {
 			return;
 		}
@@ -83,6 +83,14 @@ public class MoveZeroes {
 				nums[i] = 0;
 				nums[i - snowBallSize] = t;
 			}
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] arr = new int[]{1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1};
+		moveZeroes2(arr);
+		for (int element : arr) {
+			System.out.print(" " + element);
 		}
 	}
 }

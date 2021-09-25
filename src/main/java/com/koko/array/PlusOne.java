@@ -39,11 +39,10 @@ public class PlusOne {
 			digits[i] = 0;
 		}
 
-		//this will execute if all digits are 9
+		//this will execute if all digits are 9, else code will return from line 35
 		int[] result = new int[n + 1];
 		result[0] = 1;
 
 		return result;
-
 	}
 }

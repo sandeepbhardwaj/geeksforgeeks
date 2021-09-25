@@ -1,4 +1,4 @@
-package com.koko.array;
+package com.koko.array.subarray;
 
 /**
  * 53. Maximum Subarray - Kadane's Algorithm

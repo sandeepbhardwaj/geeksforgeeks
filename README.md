@@ -19,7 +19,8 @@
 
 ## Sliding Window
 1. Max sum of 'k' consecutive elements in the array
-2. Ist -ve number in every window of Size K
+2. Ist -ve number in every window of Size K - use queue
+3. Count occurrences of Anagrams
 
 ## String
 1. Reverse words in a given string

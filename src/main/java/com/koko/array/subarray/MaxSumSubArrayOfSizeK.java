@@ -36,8 +36,7 @@ public class MaxSumSubArrayOfSizeK {
 			//if window is smaller than k , increase window size
 			if (right - left + 1 < k) {
 				right++;
-			} else if (right - left + 1 == k) // window is equal to k
-			{
+			} else if (right - left + 1 == k) { // window is equal to k
 				max_sum = Math.max(max_sum, current_sum);
 
 				current_sum -= nums[left];

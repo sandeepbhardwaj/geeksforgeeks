@@ -1,4 +1,4 @@
-package com.koko.array;
+package com.koko.array.subarray;
 
 public class ContinuousSubArrayWithGivenSum {
 

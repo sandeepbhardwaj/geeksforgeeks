@@ -17,6 +17,9 @@
 4. Search in sorted rotated array with duplicates
 5. Find minimum in rotated sorted array
 
+## Sliding Window
+1. Max sum of 'k' consecutive elements in the array
+
 ## String
 1. Reverse words in a given string
 2. Permutations of a given string

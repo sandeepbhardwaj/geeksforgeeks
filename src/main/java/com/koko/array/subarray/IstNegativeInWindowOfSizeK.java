@@ -43,14 +43,12 @@ public class IstNegativeInWindowOfSizeK {
 			if (right - left + 1 < k) {
 				right++;
 			} else if (right - left + 1 == k) { // window is equal to k
-				int element = 0;
 				for (int e : queue) {
-					if (e < 0) {
-						element = e;
+					if (e < 0) { // find Ist -ve and break the loop
+						result.add(e);
 						break;
 					}
 				}
-				result.add(element);
 
 				queue.poll(); // remove first element added using left
 				right++;

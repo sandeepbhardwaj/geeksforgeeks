@@ -16,6 +16,7 @@ public class NextGreaterNumber {
 
 		//logic
 		for (int i = 0; i < nums.length; i++) {
+			// change <= to >= for next smaller element
 			while (!stack.isEmpty() && nums[stack.peek()] <= nums[i]) {
 				int index = stack.pop();
 				nge[index] = nums[i];

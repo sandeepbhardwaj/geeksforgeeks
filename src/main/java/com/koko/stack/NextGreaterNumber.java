@@ -27,8 +27,27 @@ public class NextGreaterNumber {
 		return nge;
 	}
 
+	public static void printNextGE(int[] nums) {
+		Stack<Integer> stack = new Stack<>();
+		for (int i = 0; i < nums.length; i++) {
+			while (!stack.isEmpty() && stack.peek() <= nums[i]) {
+				System.out.print(nums[i] + " ");
+				stack.pop();
+			}
+
+			stack.push(nums[i]);
+		}
+
+		while (!stack.isEmpty()) {
+			stack.pop();
+			System.out.print(-1 + " ");
+		}
+	}
+
 	public static void main(String[] args) {
 		int[] nums = {1, 3, 4, 2};
+		printNextGE(nums);
+		System.out.println();
 		Arrays.stream(nextGreaterElement(nums)).forEach(result -> System.out.print(result + " "));
 	}
 }

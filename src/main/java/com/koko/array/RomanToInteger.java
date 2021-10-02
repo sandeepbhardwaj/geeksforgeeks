@@ -56,7 +56,7 @@ public class RomanToInteger {
 	public static void main(String[] args) {
         /*
         M    CM         XC      IV
-        1000+(1000-100)+(100-10)+(5-)=1994
+        1000+(1000-100)+(100-10)+(5-1)=1994
         */
 		System.out.println(romanToInt("MCMXCIV"));
 	}

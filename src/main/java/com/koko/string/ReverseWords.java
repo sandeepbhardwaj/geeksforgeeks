@@ -24,7 +24,7 @@ package com.koko.string;
  * Return char array as a String
  */
 public class ReverseWords {
-	public String reverseWords(String s) {
+	public static String reverseWords(String s) {
 
 		char[] c = s.toCharArray();
 		int start = 0, end = 0;
@@ -38,7 +38,7 @@ public class ReverseWords {
 		return new String(c);
 	}
 
-	private void reverse(char[] c, int start, int end) {
+	private static void reverse(char[] c, int start, int end) {
 		while (start < end) {
 			char tmp = c[end];
 			c[end] = c[start];
@@ -46,5 +46,10 @@ public class ReverseWords {
 			start++;
 			end--;
 		}
+	}
+
+	public static void main(String[] args) {
+		String s = "Let's take LeetCode contest";
+		System.out.println(reverseWords(s));
 	}
 }

@@ -1,4 +1,4 @@
-package com.koko.string;
+package com.koko.array.subarray;
 
 import java.util.HashSet;
 import java.util.Set;

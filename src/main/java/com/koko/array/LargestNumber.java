@@ -26,11 +26,6 @@ import java.util.Arrays;
  * Output: "10"
  */
 public class LargestNumber {
-	public static void main(String[] args) {
-		//int[] nums =new int[]{3,30,34,5,9};
-		int[] nums = new int[]{10, 2};
-		System.out.println(largestNumber(nums));
-	}
 
 	public static String largestNumber(int[] nums) {
 		//convert to string array so that it can be concatenated instead of addition
@@ -44,4 +39,11 @@ public class LargestNumber {
 		}
 		return sb.toString().startsWith("00") ? "0" : sb.toString();
 	}
+
+	public static void main(String[] args) {
+		//int[] nums =new int[]{3,30,34,5,9};
+		int[] nums = new int[]{10, 2};
+		System.out.println(largestNumber(nums));
+	}
+
 }

@@ -35,7 +35,7 @@ public class CountOccurrencesOfAnagrams {
 
 		while (right < str.length()) {
 			char rightChar = str.charAt(right);
-			if (map.containsKey(rightChar)) {
+			if (map.containsKey(rightChar)) { // put the element and then reduce match
 				map.put(rightChar, map.get(rightChar) - 1);
 
 				if (map.get(rightChar) == 0)
@@ -50,7 +50,7 @@ public class CountOccurrencesOfAnagrams {
 					count++;
 
 				char leftChar = str.charAt(left);
-				if (map.containsKey(leftChar)) {
+				if (map.containsKey(leftChar)) { // increment the match and then add to map
 
 					//M.Imp before putting left char again do increment match
 					if (map.get(leftChar) == 0)

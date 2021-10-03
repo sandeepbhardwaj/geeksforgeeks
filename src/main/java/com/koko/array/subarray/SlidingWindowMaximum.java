@@ -1,5 +1,7 @@
 package com.koko.array.subarray;
 
+import java.util.*;
+
 /**
  * 239. Sliding Window Maximum
  * <p>
@@ -26,8 +28,37 @@ package com.koko.array.subarray;
  * Output: [4]
  */
 public class SlidingWindowMaximum {
-	public int[] maxSlidingWindow(int[] nums, int k) {
+	public static int[] maxSlidingWindow(int[] nums, int k) {
+		List<Integer> result = new ArrayList<>();
 
-		return null;
+		int left = 0;
+		int right = 0;
+		// creating the max heap ,to get max element always
+		PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
+
+		while (right < nums.length) {
+			queue.add(nums[right]);
+
+			if (right - left + 1 < k) {
+				right++;
+			} else if (right - left + 1 == k) {
+				result.add(queue.peek());
+
+				queue.remove(nums[left]);
+				left++;
+				right++;
+			}
+		}
+
+		return result.stream().mapToInt(i -> i).toArray();
+	}
+
+	public static void main(String[] args) {
+		int[] nums={1, -1};
+		int k=1;
+		int[] result=maxSlidingWindow(nums,k);
+
+		for(int e:result)
+			System.out.print(" "+e);
 	}
 }

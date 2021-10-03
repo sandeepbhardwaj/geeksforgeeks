@@ -43,7 +43,6 @@ public class MaxSumSubArrayOfSizeK {
 				left++;
 				right++;
 			}
-
 		}
 		return max_sum;
 	}

@@ -15,13 +15,6 @@ import java.util.Map;
  */
 public class SubarraySumEqualsK {
 
-	public static void main(String[] args) {
-		//int[] nums = {1, 0, 1, 0, 1};
-		//System.out.println(subarraySum(nums, 1));
-		int[] nums = {4, 4, 4};
-		System.out.println(subarraySum(nums, 4));
-	}
-
 	/**
 	 * if the cumulative sum up to two indices, say ii and jj is at a difference of k i.e.
 	 * if sum[i] - sum[j] = k
@@ -77,5 +70,12 @@ public class SubarraySumEqualsK {
 			}
 		}
 		return count;
+	}
+
+	public static void main(String[] args) {
+		//int[] nums = {1, 0, 1, 0, 1};
+		//System.out.println(subarraySum(nums, 1));
+		int[] nums = {4, 4, 4};
+		System.out.println(subarraySum(nums, 4));
 	}
 }

@@ -38,14 +38,13 @@ public class SubarrayWithGivenSum {
 
 
 	public static void main(String[] args) {
-		//Input: arr[] = {10, 2, -2, -20, 10}, sum = -10
-		/*int[] nums = {10, 2, -2, -20, 10};
+		/*
+		int[] nums = {10, 2, -2, -20, 10};
 		int k = -10;
 		int[] result = subArrayWithGivenSumWithNegative(nums, k);
+		System.out.println("Sum found between indexes "+result[0]+" and "+result[1]);
+		*/
 
-		System.out.println("Sum found between indexes "+result[0]+" and "+result[1]);*/
-
-		//Input: arr[] = {1, 4, 20, 3, 10, 5}, sum = 33
 		int[] nums = {1, 4, 20, 3, 10, 5};
 		int k = 33;
 		int[] result = subArrayWithGivenSumWithNegative(nums, k);

@@ -23,9 +23,23 @@ public class KthLargest {
 		return minHeap.peek();
 	}
 
+	public static int findKthSmallest(int[] nums, int k) {
+		PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>((a, b) -> b.compareTo(a));
+
+		for (int num : nums) {
+			maxHeap.add(num);
+
+			if (maxHeap.size() > k) {
+				maxHeap.poll();
+			}
+		}
+		return maxHeap.peek();
+	}
+
 	public static void main(String[] args) {
 		int[] nums = new int[]{3, 2, 1, 5, 6, 4};
 		int k = 2;
 		System.out.println(findKthLargest(nums, k));
+		System.out.println(findKthSmallest(nums, k));
 	}
 }

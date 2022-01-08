@@ -61,8 +61,14 @@ public class TransposeMatrix {
 						{4, 5, 6, 7},
 						{8, 9, 10, 11}
 				};
+		CommonUtils.displayMatrix(transpose(matrix));
 
-		int[][] transposeMatrix = transpose(matrix);
-		CommonUtils.displayMatrix(transposeMatrix);
+		int[][] symmetricMatrix =
+				{
+						{1, 2, 3},
+						{4, 5, 6},
+						{7, 8, 9}
+				};
+		CommonUtils.displayMatrix(transposeSymmetricMatrix(symmetricMatrix));
 	}
 }

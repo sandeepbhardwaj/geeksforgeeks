@@ -1,5 +1,7 @@
 package com.koko.matrix;
 
+import com.koko.CommonUtils;
+
 /**
  * 867. Transpose Matrix
  * <p>
@@ -10,12 +12,13 @@ package com.koko.matrix;
 public class TransposeMatrix {
 
 	/**
-	 * If matrix is m*n and m!=n , then it can't be be done without using extra space
+	 * If matrix is m*n and m!=n , then it can't be done without using extra space
+	 * int x[3][4] = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}};
 	 *
 	 * @param matrix
 	 * @return
 	 */
-	public int[][] transpose(int[][] matrix) {
+	public static int[][] transpose(int[][] matrix) {
 		int row = matrix.length;
 		int column = matrix[0].length;
 
@@ -31,12 +34,12 @@ public class TransposeMatrix {
 
 
 	/**
-	 * If matrix is Symmetric m*n i.e m==n , then it can be be done without using extra space
+	 * If matrix is Symmetric m*n i.e m==n , then it can be done without using extra space
 	 *
 	 * @param matrix
 	 * @return
 	 */
-	public int[][] transposeSymmetricMatrix(int[][] matrix) {
+	public static int[][] transposeSymmetricMatrix(int[][] matrix) {
 		int row = matrix.length;
 		int column = matrix[0].length;
 
@@ -49,5 +52,18 @@ public class TransposeMatrix {
 			}
 		}
 		return matrix;
+	}
+
+	public static void main(String[] args) {
+
+		int[][] matrix =
+				{
+						{0, 1, 2, 3},
+						{4, 5, 6, 7},
+						{8, 9, 10, 11}
+				};
+
+		int[][] transposeMatrix = transpose(matrix);
+		CommonUtils.displayMatrix(transposeMatrix);
 	}
 }

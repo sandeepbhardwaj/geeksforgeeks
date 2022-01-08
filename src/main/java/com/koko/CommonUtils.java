@@ -1,7 +1,7 @@
 package com.koko;
 
 public class CommonUtils {
-	
+
 	public static void displayMatrix(int[][] matrix) {
 		int row = matrix.length;
 		int column = matrix[0].length;

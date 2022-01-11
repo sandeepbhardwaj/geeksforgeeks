@@ -22,7 +22,7 @@ package com.koko.matrix;
  */
 public class MaxAreaOfIsland {
 
-	public int maxAreaOfIsland(int[][] grid) {
+	public static int maxAreaOfIsland(int[][] grid) {
 
 		int max_area = 0;
 
@@ -45,7 +45,7 @@ public class MaxAreaOfIsland {
 	 * @param grid
 	 * @return
 	 */
-	private int area(int row, int column, int[][] grid) {
+	private static int area(int row, int column, int[][] grid) {
 		//overflow cases
 		// if grid is covered with water aka 0
 		if (row < 0 || row >= grid.length || column < 0 || column >= grid[0].length || grid[row][column] == 0) {
@@ -60,5 +60,21 @@ public class MaxAreaOfIsland {
 				+ area(row + 1, column, grid)
 				+ area(row, column - 1, grid)
 				+ area(row, column + 1, grid);
+	}
+
+	public static void main(String[] args) {
+		int[][] grid = new int[][]
+				{
+						{0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+						{0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0},
+						{0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}
+				};
+
+		System.out.println(maxAreaOfIsland(grid));
 	}
 }

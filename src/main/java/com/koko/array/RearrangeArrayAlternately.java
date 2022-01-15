@@ -39,7 +39,8 @@ public class RearrangeArrayAlternately {
 			arr[i] = arr[i] / max;
 		}
 
-		Arrays.stream(arr).forEach(System.out::println);
+		//Arrays.stream(arr).forEach(System.out::println);
+		System.out.println(Arrays.toString(arr));
 	}
 
 	public static void main(String[] args) {

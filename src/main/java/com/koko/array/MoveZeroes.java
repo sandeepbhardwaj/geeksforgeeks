@@ -16,37 +16,6 @@ package com.koko.array;
 public class MoveZeroes {
 
 	/**
-	 * sliding window technique
-	 *
-	 * @param nums
-	 */
-	public void moveZeroes(int[] nums) {
-		int left = 0;
-		int right = 0;
-
-		while (left <= right && right < nums.length) {
-			if (nums[left] == 0 && nums[right] == 0) {
-				right++;
-				continue;
-			}
-
-			if (nums[left] == 0) {
-				int temp = nums[right];
-				nums[right] = nums[left];
-				nums[left] = temp;
-
-				left++;
-				right++;
-				continue;
-			}
-
-			// if left is not zero
-			left++;
-			right++;
-		}
-	}
-
-	/**
 	 * here number of swapping is large
 	 *
 	 * @param nums

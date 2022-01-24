@@ -49,18 +49,18 @@ public class BinaryTreeIterativeTraversal {
 
 	public List<Integer> postorderTraversal(TreeNode root) {
 		Stack<TreeNode> stack = new Stack<>();
-		List<Integer> vals = new ArrayList<>();
-		TreeNode node = root;
-		while (node != null || !stack.isEmpty()) {
-			if (node != null) {
-				stack.add(node);
-				vals.add(0, node.val);
-				node = node.right;
+		List<Integer> result = new ArrayList<>();
+		TreeNode current = root;
+		while (current != null || !stack.isEmpty()) {
+			if (current != null) {
+				stack.add(current);
+				result.add(0, current.val);
+				current = current.right;
 			} else {
-				node = stack.pop();
-				node = node.left;
+				current = stack.pop();
+				current = current.left;
 			}
 		}
-		return vals;
+		return result;
 	}
 }

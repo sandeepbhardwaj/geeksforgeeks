@@ -34,7 +34,7 @@
 ## Binary Tree
 1. In order traversal - iteratively
 2. Pre-order traversal - iteratively (push before while loop)
-3. Level order traversal
+3. Level order traversal - (push before while loop)
 4. Left/Right view
 5. Maximum Depth of Binary Tree
 6. Balanced Binary Tree (left_height-right_height <=1)

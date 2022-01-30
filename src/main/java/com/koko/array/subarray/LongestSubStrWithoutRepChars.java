@@ -35,12 +35,12 @@ public class LongestSubStrWithoutRepChars {
 			if (set.add(s.charAt(right))) {
 				// move to next element to increase window size
 				right++;
-				max = Math.max(max, set.size());
 			} else {
 				// shrink the window size
 				set.remove(s.charAt(left));
 				left++;
 			}
+			max = Math.max(max, set.size());
 
 		}
 		return max;

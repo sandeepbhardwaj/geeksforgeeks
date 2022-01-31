@@ -1,6 +1,5 @@
 package com.koko.string;
 
-import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -9,7 +8,7 @@ public class FirstNonRepeatingCharacter {
 
 	public static void main(String[] args) {
 		System.out.println(getFirstNonRepeatedChar("abcdefghija"));
-		System.out.println(getFirstNonRepeatedCharUsingArray("abcdefghija"));
+		System.out.println(firstUniqChar("abcdefghija"));
 	}
 
 	public static char getFirstNonRepeatedChar(String str) {
@@ -21,24 +20,6 @@ public class FirstNonRepeatingCharacter {
 		for (Entry<Character, Integer> entry : counts.entrySet()) {
 			if (entry.getValue() == 1) {
 				return entry.getKey();
-			}
-		}
-		throw new RuntimeException("didn't find any non repeated Character");
-	}
-
-	public static char getFirstNonRepeatedCharUsingArray(String str) {
-		int[] map = new int[128];
-
-		Arrays.fill(map, 0);
-
-		for (char c : str.toCharArray()) {
-			map[c]++;
-		}
-
-		for (int i = 0; i < map.length; i++) {
-			if (map[i] == 1) {
-				char c = (char) i;
-				return c;
 			}
 		}
 		throw new RuntimeException("didn't find any non repeated Character");
@@ -64,11 +45,11 @@ public class FirstNonRepeatingCharacter {
 	 * @param s
 	 * @return
 	 */
-	public int firstUniqChar(String s) {
+	public static int firstUniqChar(String s) {
 		int freq[] = new int[26];
 
-		for (int i = 0; i < s.length(); i++) {
-			freq[s.charAt(i) - 'a']++;
+		for (char ch : s.toCharArray()) {
+			freq[ch - 'a']++;
 		}
 
 		for (int i = 0; i < s.length(); i++) {

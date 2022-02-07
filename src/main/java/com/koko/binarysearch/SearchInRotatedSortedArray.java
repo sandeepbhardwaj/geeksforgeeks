@@ -20,7 +20,7 @@ package com.koko.binarysearch;
  * Input: nums = [4,5,6,7,0,1,2], target = 3 Output: -1
  */
 public class SearchInRotatedSortedArray {
-	public int search(int[] nums, int target) {
+	public static int search(int[] nums, int target) {
 
 		if (nums == null || nums.length == 0)
 			return -1;
@@ -37,6 +37,8 @@ public class SearchInRotatedSortedArray {
 			// low ..............mid-1, mid, mid+1.............high
 
 			// first half is sorted
+			// V.V.IMP why we are considering mid here not mid-1 ?
+			// if we do mid-1 it may throw IndexOutOfBoundsException if [mid] points to 0
 			if (nums[low] <= nums[mid]) {
 				// element in b/w low and mid
 				if (target >= nums[low] && target < nums[mid]) {
@@ -56,5 +58,11 @@ public class SearchInRotatedSortedArray {
 			}
 		}
 		return -1;
+	}
+
+	public static void main(String[] args) {
+		int[] nums = new int[]{4, 5, 6, 7, 0, 1, 2};
+		int result = search(nums, 3);
+		System.out.println(result);
 	}
 }

@@ -1,5 +1,7 @@
 package com.koko.binarysearch;
 
+import java.util.Arrays;
+
 /**
  * 34. Find First and Last Position of Element in Sorted Array
  * <p>
@@ -17,7 +19,7 @@ package com.koko.binarysearch;
  * Input: nums = [5,7,7,8,8,10], target = 6 Output: [-1,-1]
  */
 public class FirstAndLastPositionOfElementInSortedArray {
-	public int[] searchRange(int[] nums, int target) {
+	public static int[] searchRange(int[] nums, int target) {
 		int start = elementIndex(nums, target, 0, nums.length - 1, true);
 
 		if (start == -1) {
@@ -28,7 +30,7 @@ public class FirstAndLastPositionOfElementInSortedArray {
 		return new int[]{start, end};
 	}
 
-	private int elementIndex(int[] nums, int target, int low, int high, boolean isSearchForStartIndex) {
+	private static int elementIndex(int[] nums, int target, int low, int high, boolean isSearchForStartIndex) {
 		int index = -1;
 		while (low <= high) {
 			int mid = low + ((high - low) / 2);
@@ -46,5 +48,11 @@ public class FirstAndLastPositionOfElementInSortedArray {
 			}
 		}
 		return index;
+	}
+
+	public static void main(String[] args) {
+		int[] nums = new int[]{8, 8};
+		int target = 8;
+		System.out.println(Arrays.toString(searchRange(nums, target)));
 	}
 }

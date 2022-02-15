@@ -19,23 +19,7 @@ import java.util.List;
  */
 public class Subsets {
 
-
-	public static void backtrack1(int start, List<Integer> current, int[] nums, List<List<Integer>> result) {
-		// add current to result;
-		result.add(new ArrayList<>(current));
-
-		for (int i = start; i < nums.length; i++) {
-			//add current element to list
-			current.add(nums[i]);
-
-			//backtrack for next element
-			backtrack1(i + 1, current, nums, result);
-			current.remove(current.size() - 1);
-		}
-
-	}
-
-	public static void backtrack(int index, List<Integer> current, int[] nums, List<List<Integer>> result) {
+	public static void backtrack_(int index, List<Integer> current, int[] nums, List<List<Integer>> result) {
 
 		if (index == nums.length) {
 			// add current to result;
@@ -47,14 +31,30 @@ public class Subsets {
 		current.add(nums[index]);
 
 		//include the  next element
-		backtrack(index + 1, current, nums, result);
+		backtrack_(index + 1, current, nums, result);
 
 		//remove the last element
 		current.remove(current.size() - 1);
 
 		//back track with removed element
-		backtrack(index + 1, current, nums, result);
+		backtrack_(index + 1, current, nums, result);
 	}
+
+
+	public static void backtrack(int start, List<Integer> current, int[] nums, List<List<Integer>> result) {
+		// add current to result;
+		result.add(new ArrayList<>(current));
+
+		for (int i = start; i < nums.length; i++) {
+			//add current element to list
+			current.add(nums[i]);
+
+			//backtrack for next element
+			backtrack(i + 1, current, nums, result);
+			current.remove(current.size() - 1);
+		}
+	}
+
 
 	public static List<List<Integer>> subsets(int[] nums) {
 		List<List<Integer>> result = new ArrayList<>();

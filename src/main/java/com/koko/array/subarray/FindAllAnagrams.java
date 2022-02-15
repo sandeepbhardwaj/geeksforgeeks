@@ -94,6 +94,5 @@ public class FindAllAnagrams {
 		String p = "abc";
 
 		System.out.println(findAnagrams(s, "abc"));
-
 	}
 }

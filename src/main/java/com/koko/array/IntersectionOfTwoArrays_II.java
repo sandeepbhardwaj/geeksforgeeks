@@ -3,6 +3,7 @@ package com.koko.array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 350. Intersection of Two Arrays II
@@ -28,23 +29,22 @@ import java.util.List;
  */
 public class IntersectionOfTwoArrays_II {
 	public int[] intersect(int[] nums1, int[] nums2) {
-		HashMap<Integer, Integer> map = new HashMap<>();
-		for (int i : nums1) {
-			int freq = map.getOrDefault(i, 0);
-			map.put(i, freq + 1);
+		List<Integer> result = new ArrayList<>();
+
+		//num as key , freq as value
+		Map<Integer, Integer> map = new HashMap<>();
+
+		for (int num : nums1) {
+			map.put(num, map.getOrDefault(num, 0) + 1);
 		}
 
-		List<Integer> list = new ArrayList<>();
-		for (int i : nums2) {
-			if (map.get(i) != null && map.get(i) > 0) {
-				list.add(i);
-				map.put(i, map.get(i) - 1);
+		for (int num : nums2) {
+			if (map.containsKey(num) && map.get(num) > 0) {
+				result.add(num);
+				map.put(num, map.getOrDefault(num, 0) - 1);
 			}
 		}
-		int[] ret = new int[list.size()];
-		for (int i = 0; i < list.size(); i++) {
-			ret[i] = list.get(i);
-		}
-		return ret;
+
+		return result.stream().mapToInt(Integer::intValue).toArray();
 	}
 }

@@ -1,5 +1,7 @@
 package com.koko.binarytree;
 
+import com.koko.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 

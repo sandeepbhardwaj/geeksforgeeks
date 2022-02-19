@@ -1,5 +1,7 @@
 package com.koko.binarytree;
 
+import com.koko.TreeNode;
+
 /**
  * For every node, data value must be equal to sum of data values in left and right children.
  * Consider data value as 0 for NULL children.

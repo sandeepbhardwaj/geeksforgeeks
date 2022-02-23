@@ -1,5 +1,7 @@
 package com.koko.binarytree;
 
+import com.koko.TreeNode;
+
 /**
  * 617. Merge Two Binary Trees
  * <p>

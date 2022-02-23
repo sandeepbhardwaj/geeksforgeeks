@@ -1,5 +1,7 @@
 package com.koko.binarytree;
 
+import com.koko.TreeNode;
+
 /**
  * 543. Diameter of Binary Tree
  * <p>

@@ -1,5 +1,7 @@
 package com.koko.binarytree;
 
+import com.koko.TreeNode;
+
 /**
  * 110. Balanced Binary Tree
  * Given a binary tree, determine if it is height-balanced.

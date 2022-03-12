@@ -11,6 +11,7 @@ import com.koko.TreeNode;
  */
 public class PathSum {
 
+	// preOrder top-down approach
 	public boolean hasPathSum(TreeNode root, int targetSum) {
 		if (root == null)
 			return false;

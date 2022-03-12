@@ -37,6 +37,7 @@ public class BinaryTreeFromInorderAndPostorderTraversal {
 		int rootValue = postorder[postOrderIndex--];
 		TreeNode root = new TreeNode(rootValue);
 
+		//because we are using post order LRN >> we are moving from righ to left
 		//right array from => ROOT_INDEX+1 to right
 		root.right = buildTree(postorder, inOrderIndexMap.get(rootValue) + 1, right);
 

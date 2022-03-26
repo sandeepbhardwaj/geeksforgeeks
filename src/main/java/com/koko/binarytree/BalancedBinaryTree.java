@@ -13,8 +13,7 @@ import com.koko.TreeNode;
 public class BalancedBinaryTree {
 	public boolean isBalanced(TreeNode root) {
 		// for single node or no node
-		if (root == null || (root.left == null && root.right == null))
-			return true;
+		if (root == null || (root.left == null && root.right == null)) return true;
 
 		if (Math.abs(maxDepth(root.left) - maxDepth(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right)) {
 			return true;
@@ -24,8 +23,7 @@ public class BalancedBinaryTree {
 	}
 
 	private int maxDepth(TreeNode root) {
-		if (root == null)
-			return 0;
-		return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+		if (root == null) return 0;
+		return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 	}
 }

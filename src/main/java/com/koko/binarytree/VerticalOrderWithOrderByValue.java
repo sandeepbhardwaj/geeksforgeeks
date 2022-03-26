@@ -5,6 +5,9 @@ import com.koko.TreeNode;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * 987. Vertical Order Traversal of a Binary Tree
+ */
 public class VerticalOrderWithOrderByValue {
 	public List<List<Integer>> verticalTraversal(TreeNode root) {
 		List<List<Integer>> result = new ArrayList<>();
@@ -32,9 +35,10 @@ public class VerticalOrderWithOrderByValue {
 		}
 
 		for (int key : map.keySet()) {
+			// list of same hd nodes
 			List<Pair> list = map.get(key);
 
-			//comparator to sort values if are on same level
+			//comparator to sort values if are on same level else sort based on level
 			list.sort((a, b) -> (a.level == b.level) ? Integer.compare(a.node.val, b.node.val) : Integer.compare(a.level, b.level));
 
 			List<Integer> sortedList = list.stream().map(e -> e.node.val).collect(Collectors.toList());

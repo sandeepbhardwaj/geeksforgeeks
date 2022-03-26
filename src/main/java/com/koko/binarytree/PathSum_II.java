@@ -21,8 +21,7 @@ public class PathSum_II {
 	}
 
 	private void preOrder(TreeNode root, int targetSum, List<Integer> currentPath, List<List<Integer>> result) {
-		if (root == null)
-			return;
+		if (root == null) return;
 
 		currentPath.add(root.val);
 
@@ -35,6 +34,22 @@ public class PathSum_II {
 
 		if (root.left != null) preOrder(root.left, targetSum - root.val, new ArrayList<Integer>(currentPath), result);
 		if (root.right != null) preOrder(root.right, targetSum - root.val, new ArrayList<Integer>(currentPath), result);
+	}
+
+	public void preOrder(TreeNode root, List<Integer> path, int targetSum, List<List<Integer>> result) {
+		if (root == null) return;
+
+		path.add(root.val);
+
+		if (root.left == null && root.right == null && targetSum == root.val) {
+			result.add(new ArrayList<Integer>(path));
+			// we can't return from here because then last line (remove element) will not execute for this node
+		}
+
+		preOrder(root.left, path, targetSum - root.val, result);
+		preOrder(root.right, path, targetSum - root.val, result);
+
+		path.remove(path.size() - 1); //remove from current path
 	}
 
 }

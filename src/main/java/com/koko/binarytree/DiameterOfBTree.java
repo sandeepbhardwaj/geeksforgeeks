@@ -14,8 +14,7 @@ import com.koko.TreeNode;
  */
 public class DiameterOfBTree {
 	public int diameterOfBinaryTree(TreeNode root) {
-		if (root == null)
-			return 0;
+		if (root == null) return 0;
 		// if diameter pass through root node
 		int maxDepth = maxDepth(root.left) + maxDepth(root.right);
 
@@ -26,9 +25,8 @@ public class DiameterOfBTree {
 	}
 
 	private int maxDepth(TreeNode root) {
-		if (root == null)
-			return 0;
-		return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+		if (root == null) return 0;
+		return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 	}
 
 }

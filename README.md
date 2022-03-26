@@ -34,15 +34,28 @@
 ## Binary Tree
 1. In order traversal - iteratively
 2. Pre-order traversal - iteratively (push before while loop)
-3. Level order traversal - (push before while loop)
-4. Left/Right view
-5. Maximum Depth of Binary Tree
-6. Balanced Binary Tree (left_height-right_height <=1)
-7. Diameter of Binary Tree
-8. Children sum parent
-9. Root to leaf path - concept is important
-   1. Path Sum
-   2. Path Sum II
+3. Post-order traversal - iteratively using one stack and 2 stacks
+4. Level order traversal - (push before while loop)
+5. Left/Right view - iteratively(using level order) and recursively
+6. Maximum Depth of Binary Tree
+   1. "Bottom-up" Solution >> postOrder traversal | bottom_up(root)
+   2. "Top-down" Solution >> preOrder traversal | top_down(root, params)
+7. Balanced Binary Tree (left_height-right_height <=1)
+8. Diameter of Binary Tree
+9. Basic recursion
+   1. Children sum parent 
+   2. Symmetric Tree
+   3. Sum of Left Leaves - Imp
+10. Root to leaf path - concept is important
+    1. Path Sum
+    2. Path Sum II
+11. Vertical order traversal - level order + hd (horizontal distance)
+12. Vertical order traversal II - with sorted node values if are on same level
+13. Construct Binary Tree from Inorder and Postorder Traversal
+14. Construct Binary Tree from Preorder and Inorder Traversal
+15. TODO
+    1. top view
+    2. bottom view
     
 ## Heap - Priority Queue
 1. Kth Largest Element in an Array
@@ -76,9 +89,9 @@
 - RemoveDuplicatesFromSortedList_II
 
 #Notes
--  sliding window will work for positive numbers only ..but if there negative numbers are also present then it will not 
+- sliding window will work for positive numbers only ..but if there negative numbers are also present then it will not 
    work.. in that case you can use hashmap to solve the problem
--  Because let's say in the given array [4,1,1,1,2,3,5] when we found the sum within the window to be greater than the 
+- Because let's say in the given array [4,1,1,1,2,3,5] when we found the sum within the window to be greater than the 
    desired value 5 (i=0, j=2 -> [4,1,1]), we started reducing the size of the window by doing i++. 
    Here we assumed that once the sum of elements within the window becomes greater than 5 then increasing the window size 
    will just add to the sum and hence we will not attain the sum 5 again. This is true when all the element are positive 
@@ -86,4 +99,9 @@
    numbers. Consider the array [4,1,1,-2,1,5], here we would have found the sum to be greater than 5 for i=0, j=2 and if 
    we would have now started reducing the window size by doing i++, we would have missed the potential subarray (i=0, j=4).
    In short, the discussed approach will not work with array having negative numbers.
+
+# Cheat Sheet
+```java
+Queue<TreeNode> queue = new LinkedList<>();
+```
 

@@ -32,6 +32,7 @@ public class BinaryTreeFromPreorderAndInorderTraversal {
 		int rootValue = preorder[preOrderIndex++];
 		TreeNode root = new TreeNode(rootValue);
 
+		// Preorder NLR moving from left to right so left tree first then right tree
 		//left array from => 0 to ROOT_INDEX-1
 		root.left = buildTree(preorder, left, inOrderIndexMap.get(rootValue) - 1);
 		//right array from => ROOT_INDEX+1 to right

@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Perfect SubString
+ * Perfect SubString - HackerRank
  * There is s that consists of digits from 0 to 9, and an integer k. A substring s[L:R] (where 0 ≤ L ≤ R < sizeof(s) )
  * is a contiguous group of characters with s.  A substring is called a perfect substring if all of its elements occur
  * exactly k times.

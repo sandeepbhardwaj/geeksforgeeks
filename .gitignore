@@ -37,6 +37,3 @@ nbdist/
 hs_err_pid*
 
 * text=auto
-
-# Ignore all differences in line endings
-* -crlf

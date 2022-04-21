@@ -2,7 +2,7 @@ package com.koko.matrix;
 
 /**
  * 74. Search a 2D Matrix
- * Write an efficient algorithm that searches for a value target in an m x n integer matrix matrix. This matrix has the
+ * Write an efficient algorithm that searches for a value target in an m x n integer matrix. This matrix has the
  * following properties:
  * <p>
  * Integers in each row are sorted from left to right.

@@ -59,6 +59,9 @@ public class RomanToInteger {
         1000+(1000-100)+(100-10)+(5-1)=1994
         */
 		System.out.println(romanToInt("MCMXCIV"));
+
+		//43
+		System.out.println(romanToInt("XLIII"));
 	}
 
 	public static int romanToInt(String s) {

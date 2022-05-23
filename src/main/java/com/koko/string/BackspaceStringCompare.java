@@ -41,8 +41,7 @@ public class BackspaceStringCompare {
 				} else if (sCount > 0) {
 					sCount--;
 					i--;
-				} else
-					break;
+				} else break;
 			}
 
 			while (j >= 0) {
@@ -52,8 +51,7 @@ public class BackspaceStringCompare {
 				} else if (tCount > 0) {
 					tCount--;
 					j--;
-				} else
-					break;
+				} else break;
 			}
 
 			//characters are not equal
@@ -62,8 +60,7 @@ public class BackspaceStringCompare {
 			}
 
 			//if one string is done and other having characters
-			if ((i >= 0) != (j >= 0))
-				return false;
+			if ((i >= 0) != (j >= 0)) return false;
 
 			i--;
 			j--;

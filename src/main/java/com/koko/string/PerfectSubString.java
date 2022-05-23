@@ -41,8 +41,7 @@ public class PerfectSubString {
 
 	private static boolean validate(Map<Character, Integer> map, int k) {
 		for (Integer i : map.values()) {
-			if (i != k)
-				return false;
+			if (i != k) return false;
 		}
 		return true;
 	}

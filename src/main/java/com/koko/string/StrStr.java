@@ -3,11 +3,9 @@ package com.koko.string;
 public class StrStr {
 	public static int strStr(String haystack, String needle) {
 
-		if (haystack.length() == 0 && needle.length() == 0)
-			return 0;
+		if (haystack.length() == 0 && needle.length() == 0) return 0;
 
-		if (needle.length() > haystack.length())
-			return -1;
+		if (needle.length() > haystack.length()) return -1;
 
 		int n = needle.length();
 
@@ -22,8 +20,7 @@ public class StrStr {
 				}
 			}
 
-			if (found == needle.length())
-				return i;
+			if (found == needle.length()) return i;
 
 		}
 		return -1;

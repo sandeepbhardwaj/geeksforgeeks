@@ -9,11 +9,9 @@ package com.koko.string;
  * Letters are case sensitive, so "a" is considered a different type of stone from "A".
  * <p>
  * Example 1:
- * <p>
  * Input: jewels = "aA", stones = "aAAbbbb"
  * Output: 3
  * Example 2:
- * <p>
  * Input: jewels = "z", stones = "ZZ"
  * Output: 0
  */
@@ -34,8 +32,7 @@ public class JewelsAndStones {
 			map[c]++;
 
 		for (char c : stones.toCharArray()) {
-			if (map[c] > 0)
-				noOfJewels++;
+			if (map[c] > 0) noOfJewels++;
 		}
 		return noOfJewels;
 	}

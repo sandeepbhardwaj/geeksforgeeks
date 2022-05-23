@@ -46,7 +46,7 @@ public class WordCompression {
 			}
 		}
 
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		while (!stack.isEmpty()) {
 			Pair<Character, Integer> pair = stack.pop();
 			//repeat method to repeat the char n number of times

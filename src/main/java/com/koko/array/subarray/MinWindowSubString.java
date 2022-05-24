@@ -92,58 +92,6 @@ public class MinWindowSubString {
 		return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
 	}
 
-	public static String minWindow(String s, String t) {
-
-		if (t.length() > s.length())
-			return "";
-
-		int left = 0;
-		int right = 0;
-		int count = t.length();
-		int minLen = Integer.MAX_VALUE;
-		int minStart = 0;
-
-
-		//populate t frequency map
-		int[] map = new int[256];
-		for (char ch : t.toCharArray()) {
-			map[ch]++;
-		}
-
-		//sliding window login starts here
-		while (left <= right && right < s.length()) {
-			char ch = s.charAt(right);
-
-			//check is this exist in map
-			//only decrement count if its greater than 0
-			if (map[ch] > 0) {
-				count--; // one matching element found;
-			}
-			map[ch]--; // reduce the frequency of that char
-
-			//window found that contains all char
-			while (count == 0) {
-				if (minLen > right - left + 1) {
-					minLen = Math.min(minLen, right - left + 1);
-					minStart = left;
-				}
-
-				char leftCh = s.charAt(left);
-				map[leftCh]++;
-
-				//now reduce the window, required element count again greater than zero
-				if (map[leftCh] > 0) {
-					count++;
-				}
-				left++;
-			}
-
-			right++; //move the window
-		}
-
-		return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
-	}
-
 	public static void main(String[] args) {
 		System.out.println("Min Window :" + minWindow1("ADOBECODEBANC", "ABC"));
 		System.out.println("Min Window :" + minWindow1("bba", "ab"));

@@ -18,19 +18,17 @@
 5. Find minimum in rotated sorted array
 
 ## Stack
-1. Nearest Greater to left
-2. Nearest Greater to right
-3. Nearest smallest to left
-4. Nearest smallest to right
-5. Stock Span Problem
-6. Maximum area of Histogram
-7. Maximum area of rectangle in binary matrix
-8. Rain water trapping
-9. Implement MinStack
-10. Implement stack using Heap
-11. The celebrity problem
-12. longest valid parenthesis
-13. Iterative TOH
+1. Next Greater to left/ Next smallest to left 
+2. Next smallest to right / Next Greater to right
+3. Stock Span Problem
+4. Maximum area of Histogram
+5. Maximum area of rectangle in binary matrix
+6. Rain water trapping
+7. Implement MinStack
+8. Implement stack using Heap
+9. The celebrity problem
+10. longest valid parenthesis
+11. Iterative TOH
 
 ## Sliding Window
 ### Fixed Size Window

@@ -37,8 +37,8 @@ public class BuyingSelling {
 		int minBuyPrice = Integer.MAX_VALUE;
 
 		for (int price : prices) {
-			profit = Math.max(profit, price - minBuyPrice);
 			minBuyPrice = Math.min(minBuyPrice, price);
+			profit = Math.max(profit, price - minBuyPrice);
 		}
 
 		return profit;

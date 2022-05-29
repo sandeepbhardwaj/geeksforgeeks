@@ -1,5 +1,7 @@
 package com.koko.array.subarray;
 
+import java.util.Arrays;
+
 /**
  * 53. Maximum Subarray - Kadane's Algorithm
  * <p>
@@ -28,8 +30,37 @@ public class MaximumSubarray {
 		return max_so_far;
 	}
 
+	public static void maxSubArrayWithIndices(int[] nums) {
+		int max_so_far = nums[0];
+		int max_ending_here = nums[0];
+		int start = 0;
+		int end = 0;
+
+		int tempStart = 0;
+
+		for (int i = 1; i < nums.length; i++) {
+			// add current element to running sum
+			max_ending_here = max_ending_here + nums[i];
+
+			if (max_ending_here < nums[i]) {
+				max_ending_here = nums[i];
+				tempStart = i; // reset the temp start
+			}
+
+			if (max_ending_here > max_so_far) {
+				max_so_far = max_ending_here;
+				start = tempStart;
+				end = i;
+			}
+		}
+
+		System.out.println("Result :" + max_so_far);
+		System.out.println("start:" + start + " ,end:" + end);
+	}
+
 	public static void main(String[] args) {
 		int[] nums = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
 		System.out.println(maxSubArray(nums));
+		maxSubArrayWithIndices(nums);
 	}
 }

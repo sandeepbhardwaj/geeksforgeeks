@@ -19,6 +19,7 @@ public class PascalTriangle {
 		for (int i = 0; i < numRows; i++) {
 			List<Integer> list = new ArrayList<>();
 
+			// number of elements in row is i+1, ex:- row zero contains 1 element
 			for (int j = 0; j < i + 1; j++) {
 
 				// First and last values in every row are 1
@@ -26,9 +27,9 @@ public class PascalTriangle {
 					list.add(1);
 				} else {
 					// get the above row
-					int a = result.get(i - 1).get(j - 1);
-					int b = result.get(i - 1).get(j);
-					list.add(a + b);
+					List<Integer> prev = result.get(i - 1);
+					// get the above elements
+					list.add(prev.get(j - 1) + prev.get(j));
 				}
 			}
 			result.add(list);

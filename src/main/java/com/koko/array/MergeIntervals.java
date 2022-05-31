@@ -39,12 +39,16 @@ public class MergeIntervals {
 			}
 		}
 
-		return result.toArray(new int[result.size()][2]);
+		return result.toArray(new int[result.size()][]);
 	}
 
 	public static void main(String[] args) {
 		int[][] intervals = new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}};
 
 		int[][] result = merge(intervals);
+
+		for (int[] interval : result) {
+			System.out.print("{" + interval[0] + "," + interval[1] + "}, ");
+		}
 	}
 }

@@ -1,4 +1,4 @@
-package com.koko.array.subarray;
+package com.koko.array.subarray.prefixsum;
 
 import java.util.HashMap;
 import java.util.Map;

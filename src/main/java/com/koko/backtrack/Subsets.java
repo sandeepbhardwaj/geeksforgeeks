@@ -55,6 +55,20 @@ public class Subsets {
 		}
 	}
 
+	public List<List<Integer>> subsetsIteratively(int[] nums) {
+		List<List<Integer>> res = new ArrayList<>();
+
+		res.add(new ArrayList<>());
+		for (int i = 0; i < nums.length; i++) {
+			int n = res.size();
+			for (int j = 0; j < n; j++) {
+				List<Integer> temp = new ArrayList(res.get(j));
+				temp.add(nums[i]);
+				res.add(temp);
+			}
+		}
+		return res;
+	}
 
 	public static List<List<Integer>> subsets(int[] nums) {
 		List<List<Integer>> result = new ArrayList<>();
@@ -63,8 +77,9 @@ public class Subsets {
 		return result;
 	}
 
+
 	public static void main(String[] args) {
-		int[] nums = new int[]{1, 2};
+		int[] nums = new int[]{1, 2, 3};
 		System.out.println(subsets(nums));
 	}
 }

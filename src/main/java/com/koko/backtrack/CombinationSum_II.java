@@ -27,7 +27,6 @@ public class CombinationSum_II {
 			current.add(candidates[i]);
 			backtrack(i + 1, current, candidates, target - candidates[i], result);
 			current.remove(current.size() - 1);
-
 		}
 	}
 }

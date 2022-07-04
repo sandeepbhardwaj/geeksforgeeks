@@ -95,7 +95,19 @@
 9. DP on grids
 
 ## Recursion / Backtracking
-1. Subsets - No duplicates
+1. Subsets 
+2. Subset Sum
+3. Combiantions 
+4. Combiantions III 
+5. Subset II 
+6. Combination Sum II 
+7. Combination Sum 
+8. Permutation 
+9. Permutation II 
+10. Generate Parentheses 
+11. Letter Combinations of a Phone Number 
+12. Palindrome Partitioning 
+13. Permutations
 
 # TODO
 - FindPeakElement

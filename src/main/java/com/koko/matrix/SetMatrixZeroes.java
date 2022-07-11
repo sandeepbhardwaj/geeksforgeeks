@@ -88,7 +88,6 @@ public class SetMatrixZeroes {
 
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
-
 				if (rows_arr[i] == 0 || col_arr[j] == 0) {
 					matrix[i][j] = 0;
 				}

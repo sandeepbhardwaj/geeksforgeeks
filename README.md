@@ -10,6 +10,10 @@
 6. Sort an array of 0s, 1s and 2s
 7. Best Time to Buy and Sell Stock [Kadane's Problem]
 
+## Matrix
+1. UniquePaths
+2. MaxAreaOfIsland
+
 ## Binary Search
 1. Binary Search
 2. Find First and Last Position of Element in Sorted Array

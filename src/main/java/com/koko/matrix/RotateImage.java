@@ -26,8 +26,8 @@ public class RotateImage {
 		int n = matrix.length;
 		//Step 1: transpose n*n matrix
 		for (int i = 0; i < n; i++) {
-			//j=i for Symmetric matrix
-			for (int j = i; j < n; j++) {
+			//j < i – all th elements till diagonal
+			for (int j = 0; j < i; j++) {
 				//swap
 				int temp = matrix[i][j];
 				matrix[i][j] = matrix[j][i];

@@ -1,14 +1,52 @@
 # FANG
 
 ## Array
-1. Find subarray with given sum (Non negative Numbers) | ContinuousSubArrayWithGivenSum | [sliding window, preSum]
-2. Find subarray with given sum (Negative Numbers) | SubarrayWithGivenSum | [preSum]
+### Reverse/Rotate the array
+
+- Reverse integer (without using long) - https://leetcode.com/problems/reverse-integer/
+   ```
+   tricky if you can't store the output in long, overflow cases are important
+   temp = rev * 10 + pop; statement can cause overflow.
+   
+   Integer.MIN_VALUE = -2147483648  , Integer.MAX_VALUE = 2147483647
+   
+   
+   if (rev > Integer.MAX_VALUE/10 || (rev == Integer.MAX_VALUE / 10 && pop > 7)) return 0; // why 7 ? because due to max value
+   if (rev < Integer.MIN_VALUE/10 || (rev == Integer.MIN_VALUE / 10 && pop < -8)) return 0; // why -8 ? because due to min value
+   ```
+- Reverse string recursively
+    ```
+   return reverse(str.substring(1)) + str.charAt(0);
+   ```
+- Reverse Words in a String - https://leetcode.com/problems/reverse-words-in-a-string-iii/
+
+- Write a program to cyclically rotate an array by one. - Reversal algorithm - https://leetcode.com/problems/rotate-array/
+   ```
+   //reverse complete array
+   reverse(nums, 0, nums.length - 1);
+   //reverse k elements
+   reverse(nums, 0, k - 1);
+   //reverse k to n elements
+   reverse(nums, k, nums.length - 1);
+   ```
+Similar
+- Reverse Only Letters - https://leetcode.com/problems/reverse-only-letters/   
+
+### SubArray - sliding window
+- Kadane’s Algorithm - Maximum Subarray
+   ```
+   max_end_here=Math.max(num,max_end_here+num);        
+   max_so_far=Math.max(max_so_far,max_end_here);
+   ```
+- Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ - Similar to kadane's algo
+- Find subarray with given sum (Non negative Numbers) | ContinuousSubArrayWithGivenSum | [sliding window, preSum]
+- Find subarray with given sum (Negative Numbers) | SubarrayWithGivenSum | [preSum]
     -   Note  :- It can be done only using preSum not with sliding window
-3. Subarray Sum Equals K - total number of continuous subarrays whose sum equals to k | SubarraySumEqualsK | [preSum, frequency map]
-4. Merge two sorted array without extra space
-5. Rearrange Array Alternately in O(1) space
-6. Sort an array of 0s, 1s and 2s
-7. Best Time to Buy and Sell Stock [Kadane's Problem]
+- Subarray Sum Equals K - total number of continuous subarrays whose sum equals to k | SubarraySumEqualsK | [preSum, frequency map]
+- Merge two sorted array without extra space
+- Rearrange Array Alternately in O(1) space
+- Sort an array of 0s, 1s and 2s
+- Best Time to Buy and Sell Stock [Kadane's Problem]
 
 ## Matrix
 1. UniquePaths

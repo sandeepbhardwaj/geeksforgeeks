@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 438. Find All Anagrams in a String / Count Occurences of Anagrams
+ * 438. Find All Anagrams in a String / Count Occurrences of Anagrams
  * <p>
  * Given a word pat and a text txt. Return the count of the occurrences of anagrams of the word in the text.
  * <p>

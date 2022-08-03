@@ -21,42 +21,36 @@ package com.koko.binarysearch;
  */
 public class SearchInRotatedSortedArray {
 	public static int search(int[] nums, int target) {
-
-		if (nums == null || nums.length == 0)
-			return -1;
-
 		int low = 0;
 		int high = nums.length - 1;
 
 		while (low <= high) {
-			int mid = (low + high) / 2;
+			int mid = low + (high - low) / 2;
 
-			if (nums[mid] == target)
+			if (nums[mid] == target) {
 				return mid;
+			}
 
-			// low ..............mid-1, mid, mid+1.............high
-
-			// first half is sorted
-			// V.V.IMP why we are considering mid here not mid-1 ?
-			// if we do mid-1 it may throw IndexOutOfBoundsException if [mid] points to 0
+			//if left part is sorter
 			if (nums[low] <= nums[mid]) {
-				// element in b/w low and mid
-				if (target >= nums[low] && target < nums[mid]) {
+				//element exit in range
+				if (nums[low] <= target && target <= nums[mid]) {
 					high = mid - 1;
 				} else {
 					low = mid + 1;
 				}
-			}
-			// second half is sorted
-			else {
-				// element in b/w low and mid
-				if (target >= nums[mid + 1] && target <= nums[high]) {
+
+			} else {
+				//element exit in range
+				if (nums[mid + 1] <= target && target <= nums[high]) {
 					low = mid + 1;
 				} else {
 					high = mid - 1;
 				}
 			}
+
 		}
+
 		return -1;
 	}
 

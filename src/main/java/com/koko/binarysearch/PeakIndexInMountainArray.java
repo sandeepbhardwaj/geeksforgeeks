@@ -19,26 +19,20 @@ package com.koko.binarysearch;
  * Output: 1
  */
 public class PeakIndexInMountainArray {
-	public int peakIndexInMountainArray(int[] A) {
-
-		if (A == null || A.length == 0)
-			return -1;
+	public int peakIndexInMountainArray(int[] nums) {
 
 		int low = 0;
-		int high = A.length - 1;
+		int high = nums.length - 1;
 
-		// low should be always smaller than high to avoid ArrayIndexOutOfBoundException
 		while (low < high) {
 			int mid = low + (high - low) / 2;
 
-			if (A[mid] < A[mid + 1]) { // mid is smaller than its next element
+			if (nums[mid] < nums[mid + 1]) {
 				low = mid + 1;
-			} else if (A[mid] < A[mid - 1]) { // mid is smaller than its previous element
+			} else {
 				high = mid;
-			} else { // mid is greater than it's prev and next element
-				return mid;
 			}
 		}
-		return -1;
+		return low;
 	}
 }

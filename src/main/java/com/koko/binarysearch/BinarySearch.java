@@ -37,8 +37,8 @@ public class BinarySearch {
 			if (nums[mid] == target)
 				return mid;
 
-			// mid greater than target then search in left part
-			if (nums[mid] > target) {
+			// target is less than mid
+			if (target < nums[mid]) {
 				high = mid - 1;
 			} else {
 				low = mid + 1;
@@ -63,8 +63,8 @@ public class BinarySearch {
 			if (nums[mid] == target)
 				return mid;
 
-			// mid greater than target then search in left part
-			if (nums[mid] > target) {
+			// target is less than mid
+			if (target < nums[mid]) {
 				return binarySearch(nums, low, mid - 1, target);
 			} else {
 				return binarySearch(nums, mid + 1, high, target);

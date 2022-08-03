@@ -35,10 +35,10 @@ public class CountOccurrencesOfAnagrams {
 
 		while (right < str.length()) {
 			char rightChar = str.charAt(right);
-			if (map.containsKey(rightChar)) { // put the element and then reduce match
-				map.put(rightChar, map.get(rightChar) - 1);
+			if (map.containsKey(rightChar)) {
+				map.put(rightChar, map.get(rightChar) - 1); // put the element and then reduce match
 
-				if (map.get(rightChar) == 0)
+				if (map.get(rightChar) == 0) // if all occurrences of char found
 					match--;
 			}
 

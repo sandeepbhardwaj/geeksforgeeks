@@ -1,5 +1,7 @@
 package com.koko.string;
 
+import org.junit.Assert;
+
 /**
  * 557. Reverse Words in a String III
  * <p>
@@ -25,31 +27,37 @@ package com.koko.string;
  */
 public class ReverseWords {
 	public static String reverseWords(String s) {
+		int start = 0;
+		char[] arr = s.toCharArray();
 
-		char[] c = s.toCharArray();
-		int start = 0, end = 0;
-		for (; end < c.length; end++) {
-			if (c[end] == ' ') {
-				reverse(c, start, end - 1);
-				start = end + 1;
+		for (int i = 0; i < arr.length; i++) {
+
+			if (arr[i] == ' ') {
+				reverse(arr, start, i - 1);
+				start = i + 1;
 			}
 		}
-		reverse(c, start, end - 1);
-		return new String(c);
+
+		reverse(arr, start, arr.length - 1);
+		return new String(arr);
 	}
 
-	private static void reverse(char[] c, int start, int end) {
-		while (start < end) {
-			char tmp = c[end];
-			c[end] = c[start];
-			c[start] = tmp;
+
+	private static void reverse(char[] arr, int start, int end) {
+		while (start <= end) {
+			char temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+
 			start++;
 			end--;
 		}
 	}
 
+
 	public static void main(String[] args) {
 		String s = "Let's take LeetCode contest";
-		System.out.println(reverseWords(s));
+		//System.out.println(reverseWords(s));
+		Assert.assertEquals("s'teL ekat edoCteeL tsetnoc",reverseWords(s));
 	}
 }

@@ -29,7 +29,7 @@ import com.koko.CommonUtils;
 public class FloodFill {
 	public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
 
-		int color = image[sc][sc];
+		int color = image[sr][sc];
 		if (color != newColor)
 			dfs(image, sr, sc, color, newColor);
 		return image;
@@ -55,7 +55,7 @@ public class FloodFill {
 		int[][] image = new int[][]
 				{
 						{0, 0, 0},
-						{1, 0, 0}
+						{1, 1, 0}
 				};
 
 		image = floodFill(image, 1, 0, 2);

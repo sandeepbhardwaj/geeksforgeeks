@@ -50,6 +50,14 @@ public class TransposeMatrix {
 				matrix[j][i] = temp;
 			}
 		}
+		// OR
+		/*for (int i = 0; i < row; i++) {
+			for (int j = 0; j < i; j++) { //j < i – all the elements till diagonal
+				int temp = matrix[i][j];
+				matrix[i][j] = matrix[j][i];
+				matrix[j][i] = temp;
+			}
+		}*/
 		return matrix;
 	}
 

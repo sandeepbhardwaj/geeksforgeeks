@@ -43,7 +43,7 @@ public class NextGreaterElement {
 	 * a = {1, 6, 2}
 	 * Output: -1 1 1
 	 */
-	public static List<Integer> nextSmallerToRight(int arr[], int n) {
+	public static List<Integer> nextSmallerToLeft(int arr[], int n) {
 		int[] result = new int[n];
 
 		// stack for holding index of smaller number
@@ -67,8 +67,8 @@ public class NextGreaterElement {
 	}
 
 	public static void main(String[] args) {
-		int arr[] = {1, 6, 2};
-		nextSmallerToRight(arr, 3).forEach(result -> System.out.print(result + " "));
+		int arr[] = {1, 2, 3, 4};
+		nextSmallerToLeft(arr, 4).forEach(result -> System.out.print(result + " "));
 	}
 
 }

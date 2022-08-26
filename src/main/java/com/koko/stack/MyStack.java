@@ -1,7 +1,6 @@
 package com.koko.stack;
 
 import java.util.Arrays;
-import java.util.EmptyStackException;
 import java.util.stream.Collectors;
 
 // LIFO 1,2,3
@@ -66,6 +65,6 @@ public class MyStack {
 		System.out.println("pop :" + stack.pop());
 		System.out.println("pop :" + stack.pop());
 		System.out.println("size :" + stack.size());
-		//stack.display();
+		stack.display();
 	}
 }

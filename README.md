@@ -2,42 +2,15 @@
 
 ## Array
 ### Reverse/Rotate the array
-
 - Reverse integer (without using long) - https://leetcode.com/problems/reverse-integer/
-   ```
-   tricky if you can't store the output in long, overflow cases are important
-   temp = rev * 10 + pop; statement can cause overflow.
-   
-   Integer.MIN_VALUE = -2147483648  , Integer.MAX_VALUE = 2147483647
-   
-   
-   if (rev > Integer.MAX_VALUE/10 || (rev == Integer.MAX_VALUE / 10 && pop > 7)) return 0; // why 7 ? because due to max value
-   if (rev < Integer.MIN_VALUE/10 || (rev == Integer.MIN_VALUE / 10 && pop < -8)) return 0; // why -8 ? because due to min value
-   ```
 - Reverse string recursively
-    ```
-   return reverse(str.substring(1)) + str.charAt(0);
-   ```
 - Reverse Words in a String - https://leetcode.com/problems/reverse-words-in-a-string-iii/
-
 - Write a program to cyclically rotate an array by one. - Reversal algorithm - https://leetcode.com/problems/rotate-array/
-   ```
-   //reverse complete array
-   reverse(nums, 0, nums.length - 1);
-   //reverse k elements
-   reverse(nums, 0, k - 1);
-   //reverse k to n elements
-   reverse(nums, k, nums.length - 1);
-   ```
 Similar
 - Reverse Only Letters - https://leetcode.com/problems/reverse-only-letters/   
 
 ### SubArray - sliding window
 - Kadane’s Algorithm - Maximum Subarray
-   ```
-   max_end_here=Math.max(num,max_end_here+num);        
-   max_so_far=Math.max(max_so_far,max_end_here);
-   ```
 - Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ - Similar to kadane's algo
 - Find subarray with given sum (Non negative Numbers) | ContinuousSubArrayWithGivenSum | [sliding window, preSum]
 - Find subarray with given sum (Negative Numbers) | SubarrayWithGivenSum | [preSum]
@@ -139,8 +112,8 @@ Similar
 ## Recursion / Backtracking
 1. Subsets 
 2. Subset Sum
-3. Combiantions 
-4. Combiantions III 
+3. Combinations 
+4. Combinations III 
 5. Subset II 
 6. Combination Sum II 
 7. Combination Sum 

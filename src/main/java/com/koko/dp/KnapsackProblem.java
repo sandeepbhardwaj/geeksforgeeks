@@ -49,7 +49,7 @@ public class KnapsackProblem {
 		if (n == 0 || w == 0)
 			return 0;
 
-		if (dp[n][w] != -1)
+		if (dp[n][w] != -1) // already having value for n and w then return
 			return dp[n][w];
 
 		// Return the maximum of two cases:

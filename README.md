@@ -89,25 +89,26 @@ Similar
 1. Kth Largest Element in an Array
 
 ## Dynamic Programming
-1. 0-1 knapsack
+1. 0-1 knapsack -6
    1. Subset Sum
    2. Equal sum partition
    3. Count of subset sum with a given sum
    4. Minimum subset sum difference
    5. Count the number of subset with a given difference
    6. Target Sum
-2. Unbounded knapsack
+2. Unbounded knapsack -5
    1. Rod cutting problem
    2. Coin change problem - Maximum number of ways
    3. Coin change problem - Minimum number of ways
    4. Ribbon cut problem
-3. Fibonacci
-4. LCS
-5. LIS
-6. Kadane's algorithm
-7. Matrix chain multiplication
-8. DP on trees
-9. DP on grids
+3. Fibonacci -7
+4. LCS -15
+5. LIS -10
+6. Kadane's algorithm -6
+7. Matrix chain multiplication -7
+8. DP on trees -4
+9. DP on grids -14
+10. Others -5
 
 ## Recursion / Backtracking
 1. Subsets 

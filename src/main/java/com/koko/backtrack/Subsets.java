@@ -49,13 +49,15 @@ public class Subsets {
 			//add current element to list
 			current.add(nums[i]);
 
-			//backtrack for next element
+			// Exclude the element using i+1
 			backtrack(i + 1, current, nums, result);
+
+			// backtrack to use the
 			current.remove(current.size() - 1);
 		}
 	}
 
-	public List<List<Integer>> subsetsIteratively(int[] nums) {
+	public static List<List<Integer>> subsetsIteratively(int[] nums) {
 		List<List<Integer>> res = new ArrayList<>();
 
 		res.add(new ArrayList<>());
@@ -80,6 +82,8 @@ public class Subsets {
 
 	public static void main(String[] args) {
 		int[] nums = new int[]{1, 2, 3};
+
+		//System.out.println(subsetsIteratively(nums));
 		System.out.println(subsets(nums));
 	}
 }

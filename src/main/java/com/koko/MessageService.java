@@ -1,4 +1,4 @@
-package com;
+package com.koko;
 
 public class MessageService {
 	public static void main(String[] args) {
